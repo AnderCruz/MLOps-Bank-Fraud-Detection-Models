@@ -1,0 +1,4425 @@
+{
+  "acquisition_tasks": [
+    {
+      "action": "Inventory existing repository evidence against Operational Planning v2",
+      "blocked_downstream_stages": [
+        "External evidence verification remains open."
+      ],
+      "completion_condition": "All v2 evidence gaps have a documented search scope, located project sources where present, limitations and next action; no external availability is implied.",
+      "dependencies": [],
+      "expected_deliverable": "This versioned source inventory with paths, bounded claims, availability status and remaining information.",
+      "owner_role": "Unassigned in the planning source; the repository inventory was prepared for this work package.",
+      "prerequisites": [
+        "Operational Planning v2 identified as authoritative reference."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-02",
+        "EVD-03",
+        "EVD-04",
+        "EVD-05",
+        "EVD-06",
+        "EVD-07",
+        "EVD-08",
+        "EVD-09",
+        "EVD-10",
+        "EVD-11",
+        "EVD-12",
+        "EVD-13"
+      ],
+      "related_request_ids": [],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "COMPLETED_REPOSITORY_SCOPE_ONLY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-01",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Operational objective, risk and review constraints",
+      "blocked_downstream_stages": [
+        "Threshold definition/calibration",
+        "Acceptance criteria",
+        "Independent confirmation protocol",
+        "Production approval"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-01"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-02",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Target population and transaction eligibility",
+      "blocked_downstream_stages": [
+        "Feature/provenance verification",
+        "Evaluation freeze",
+        "Cohort qualification",
+        "Independent confirmation",
+        "Threshold calibration context"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-12",
+        "EVD-09"
+      ],
+      "related_request_ids": [
+        "STREQ-02"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-03",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Fraud label provenance and maturity",
+      "blocked_downstream_stages": [
+        "Data provenance review",
+        "Acceptance/calibration protocol",
+        "Cohort qualification",
+        "Independent confirmation"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-02",
+        "EVD-09"
+      ],
+      "related_request_ids": [
+        "STREQ-03"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-04",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Acceptance criteria, calibration and decision authority",
+      "blocked_downstream_stages": [
+        "Threshold definition/calibration",
+        "Protocol freeze",
+        "Independent confirmation",
+        "Production approval"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-04",
+        "EVD-13",
+        "EVD-08"
+      ],
+      "related_request_ids": [
+        "STREQ-04"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-05",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Data provenance and point-in-time feature availability",
+      "blocked_downstream_stages": [
+        "Evaluation freeze",
+        "Cohort qualification",
+        "Independent confirmation"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-03",
+        "EVD-12"
+      ],
+      "related_request_ids": [
+        "STREQ-05"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-06",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Service mode, transaction workload and engineering targets",
+      "blocked_downstream_stages": [
+        "Candidate benchmark",
+        "Monitoring design",
+        "Failure/fallback design",
+        "Production approval"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-05"
+      ],
+      "related_request_ids": [
+        "STREQ-06"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-07",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Model update governance and monitoring",
+      "blocked_downstream_stages": [
+        "Operational readiness",
+        "Production approval"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-06"
+      ],
+      "related_request_ids": [
+        "STREQ-07"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-08",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Incident response, fallback and rollback",
+      "blocked_downstream_stages": [
+        "Operational readiness",
+        "Production approval"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-11"
+      ],
+      "related_request_ids": [
+        "STREQ-08"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-09",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Security, privacy, retention and audit requirements",
+      "blocked_downstream_stages": [
+        "Operational approval",
+        "Production approval"
+      ],
+      "completion_condition": "Request is sent by an authorized requester and its disposition is recorded; drafting alone does not close this task or any evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "expected_deliverable": "An authorized disposition of the request, with response/evidence references or explicit no-response/unavailable status.",
+      "owner_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "prerequisites": [
+        "Operational Planning v2 defines the recipient role and linked decision/evidence gap."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-07"
+      ],
+      "related_request_ids": [
+        "STREQ-09"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-10",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-01",
+      "blocked_downstream_stages": [
+        "Threshold definition/calibration",
+        "Acceptance criteria",
+        "Independent confirmation protocol",
+        "Production approval"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-02"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-01 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-01"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-11",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-02",
+      "blocked_downstream_stages": [
+        "Feature/provenance verification",
+        "Evaluation freeze",
+        "Cohort qualification",
+        "Independent confirmation",
+        "Threshold calibration context"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-03"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-02 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-12",
+        "EVD-09"
+      ],
+      "related_request_ids": [
+        "STREQ-02"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-12",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-03",
+      "blocked_downstream_stages": [
+        "Data provenance review",
+        "Acceptance/calibration protocol",
+        "Cohort qualification",
+        "Independent confirmation"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-04"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-03 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-02",
+        "EVD-09"
+      ],
+      "related_request_ids": [
+        "STREQ-03"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-13",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-04",
+      "blocked_downstream_stages": [
+        "Threshold definition/calibration",
+        "Protocol freeze",
+        "Independent confirmation",
+        "Production approval"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-05"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-04 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-04",
+        "EVD-13",
+        "EVD-08"
+      ],
+      "related_request_ids": [
+        "STREQ-04"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-14",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-05",
+      "blocked_downstream_stages": [
+        "Evaluation freeze",
+        "Cohort qualification",
+        "Independent confirmation"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-06"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-05 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-03",
+        "EVD-12"
+      ],
+      "related_request_ids": [
+        "STREQ-05"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-15",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-06",
+      "blocked_downstream_stages": [
+        "Candidate benchmark",
+        "Monitoring design",
+        "Failure/fallback design",
+        "Production approval"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-07"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-06 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-05"
+      ],
+      "related_request_ids": [
+        "STREQ-06"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-16",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-07",
+      "blocked_downstream_stages": [
+        "Operational readiness",
+        "Production approval"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-08"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-07 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-06"
+      ],
+      "related_request_ids": [
+        "STREQ-07"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-17",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-08",
+      "blocked_downstream_stages": [
+        "Operational readiness",
+        "Production approval"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-09"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-08 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-11"
+      ],
+      "related_request_ids": [
+        "STREQ-08"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-18",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-09",
+      "blocked_downstream_stages": [
+        "Operational approval",
+        "Production approval"
+      ],
+      "completion_condition": "Any received item is source-verified, linked to requirements/decisions/gaps, assessed for sufficiency and recorded without overstating evidence; no response is recorded as unavailable/no response, not as evidence.",
+      "dependencies": [
+        "ACQ-10"
+      ],
+      "expected_deliverable": "Evidence-result record with source, version/date, provenance, sufficiency assessment, remaining gaps and reviewer role.",
+      "owner_role": "Unassigned in the planning source; designate an evidence-review owner role before response intake.",
+      "prerequisites": [
+        "STREQ-09 is authorized and sent; a response or source is provided."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-07"
+      ],
+      "related_request_ids": [
+        "STREQ-09"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-19",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Assess candidate cohort availability after population, label and provenance rules are established",
+      "blocked_downstream_stages": [
+        "Evaluation freeze",
+        "independent confirmation",
+        "threshold calibration where cohort-dependent"
+      ],
+      "completion_condition": "Authorized custodian documents availability or unavailability with supporting population, maturity, disjointness, provenance and access facts.",
+      "dependencies": [
+        "ACQ-12",
+        "ACQ-13",
+        "ACQ-15"
+      ],
+      "expected_deliverable": "Written custodian assessment of whether an eligible, disjoint, mature-label cohort can be made available, with boundaries and custody; no extraction is authorized by this work package.",
+      "owner_role": "Data custodian with fraud product/risk and label operations roles (availability/assignment unknown).",
+      "prerequisites": [
+        "Approved target population and eligibility rules; documented label maturity/unresolved-label policy; data provenance and access authorization."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-02",
+        "EVD-03",
+        "EVD-09",
+        "EVD-12"
+      ],
+      "related_request_ids": [
+        "STREQ-02",
+        "STREQ-03",
+        "STREQ-05"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-20",
+      "workflow_status_authority_note": "Task status tracks work execution only; request/response/review/acceptance/decision status is authoritative in its own lifecycle record."
+    },
+    {
+      "action": "Prepare and route when authorized: Missed-fraud risk constraints",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "expected_deliverable": "Authorized dispatch and disposition record; drafting alone does not close a gap.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "Operational Planning v2 identifies the linked question; authorization is still required."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-10"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-21",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-10",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-21"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "expected_deliverable": "Source-attributed response record, or explicit unavailable/no-response status; review and acceptance remain separate.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "STREQ-10 authorization and dispatch are required before response intake."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-10"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-22",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Prepare and route when authorized: False-positive and customer-experience constraints",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "expected_deliverable": "Authorized dispatch and disposition record; drafting alone does not close a gap.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "Operational Planning v2 identifies the linked question; authorization is still required."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-11"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-23",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-11",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-23"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "expected_deliverable": "Source-attributed response record, or explicit unavailable/no-response status; review and acceptance remain separate.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "STREQ-11 authorization and dispatch are required before response intake."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-11"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-24",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Prepare and route when authorized: Fraud review capacity and alert-handling workflow",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "expected_deliverable": "Authorized dispatch and disposition record; drafting alone does not close a gap.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "Operational Planning v2 identifies the linked question; authorization is still required."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-12"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-25",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-12",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-25"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "expected_deliverable": "Source-attributed response record, or explicit unavailable/no-response status; review and acceptance remain separate.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "STREQ-12 authorization and dispatch are required before response intake."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_request_ids": [
+        "STREQ-12"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-26",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Prepare and route when authorized: Candidate cohort availability and coverage (custodian response)",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-01"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-07"
+      ],
+      "expected_deliverable": "Authorized dispatch and disposition record; drafting alone does not close a gap.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "Operational Planning v2 identifies the linked question; authorization is still required."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-09",
+        "EVD-12"
+      ],
+      "related_request_ids": [
+        "STREQ-13"
+      ],
+      "request_template_status": "NOT_SENT",
+      "status": "REQUEST_PREPARED_NOT_SENT",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-27",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    },
+    {
+      "action": "Receive, provenance-check and classify response to STREQ-13",
+      "blocked_downstream_stages": [
+        "Linked evidence gap review and dependent planning stages"
+      ],
+      "completion_condition": "Record actual lifecycle event and provenance; preparation or no-response does not resolve an evidence gap.",
+      "dependencies": [
+        "ACQ-27"
+      ],
+      "direct_related_planning_task_ids": [
+        "TASK-07"
+      ],
+      "expected_deliverable": "Source-attributed response record, or explicit unavailable/no-response status; review and acceptance remain separate.",
+      "owner_role": "Unassigned; role must be formally designated before execution.",
+      "prerequisites": [
+        "STREQ-13 authorization and dispatch are required before response intake."
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-09",
+        "EVD-12"
+      ],
+      "related_request_ids": [
+        "STREQ-13"
+      ],
+      "request_template_status": "NOT_APPLICABLE",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "status_authority": "Workflow only; not authoritative for request, response, review, evidence acceptance, or decision state.",
+      "task_id": "ACQ-28",
+      "workflow_status_authority_note": "Task status is workflow-only and does not substitute for request, response, review, evidence-acceptance, or decision-resolution status."
+    }
+  ],
+  "authorization_policy": {
+    "allowed_identities_by_scope": {},
+    "allowed_roles_by_scope": {},
+    "organizational_authority_verified": false,
+    "policy_id": "ORGANIZATIONAL_AUTHORIZATION_NOT_CONFIGURED",
+    "recorded_claims_are_not_verified_authority": true,
+    "required_before_real_lifecycle_actions": [
+      "trusted_identity_source",
+      "approved_scope_to_role_or_identity_mapping",
+      "independent_verification_of_authority"
+    ],
+    "status": "UNCONFIGURED",
+    "trusted_identity_source": null
+  },
+  "created_at_utc": "2026-10-17T12:43:45Z",
+  "decision_evidence_policy": {
+    "mode": "ALL_REQUIRED_GAPS_ACCEPTED",
+    "authoritative_source": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+    "relationship_field": "decision_register.decisions[].related_evidence_gap_ids",
+    "requirement": "Every explicitly related evidence gap must have exactly one fully accepted current evidence result before the decision can be resolved. Partial acceptance is ineligible.",
+    "decision_required_evidence_gap_ids": {
+      "DEC-OPS-01": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-08",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-02": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-03": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-04": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-05": [
+        "EVD-05",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-06": [
+        "EVD-05",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-07": [
+        "EVD-06",
+        "EVD-08",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-08": [
+        "EVD-02",
+        "EVD-03",
+        "EVD-04",
+        "EVD-08",
+        "EVD-09",
+        "EVD-10",
+        "EVD-11",
+        "EVD-12",
+        "EVD-13"
+      ],
+      "DEC-OPS-09": [
+        "EVD-06",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-10": [
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-11": [
+        "EVD-03",
+        "EVD-07",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ],
+      "DEC-OPS-12": [
+        "EVD-03",
+        "EVD-04",
+        "EVD-08",
+        "EVD-09",
+        "EVD-10",
+        "EVD-11",
+        "EVD-12",
+        "EVD-13"
+      ],
+      "DEC-OPS-13": [
+        "EVD-04",
+        "EVD-08",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    "ordering": "The Planning v2 list order is preserved and must match the resolution record exactly."
+  },
+  "decision_resolution_records": [
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-01",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud operations / product owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-08",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-02",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud risk owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-03",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud operations / customer experience owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-04",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud operations owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-05",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Platform / service owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-05",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-06",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Data / platform owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-05",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-07",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Model risk / product owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-06",
+        "EVD-08",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-08",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud data / label operations owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-02",
+        "EVD-03",
+        "EVD-04",
+        "EVD-08",
+        "EVD-09",
+        "EVD-10",
+        "EVD-11",
+        "EVD-12",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-09",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Model operations owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-06",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-10",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Service owner / fraud operations",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-11",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Security / privacy / compliance roles",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-03",
+        "EVD-07",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-12",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud product / risk owner with data custodian",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-03",
+        "EVD-04",
+        "EVD-08",
+        "EVD-09",
+        "EVD-10",
+        "EVD-11",
+        "EVD-12",
+        "EVD-13"
+      ]
+    },
+    {
+      "current_resolution_record_id": null,
+      "decision_id": "DEC-OPS-13",
+      "initial_resolution_status": "OPEN",
+      "required_owner_role_from_plan": "Fraud risk / product owner and model-risk owner",
+      "resolution_records": [],
+      "resolution_status": "OPEN",
+      "required_evidence_gap_ids": [
+        "EVD-04",
+        "EVD-08",
+        "EVD-10",
+        "EVD-11",
+        "EVD-13"
+      ]
+    }
+  ],
+  "directory_token": "20261017_9d18b0dc3417481aa24d179c5afb5307",
+  "evidence_availability_inventory": [
+    {
+      "availability_status": "AVAILABLE_PARTIAL",
+      "blocked_by": [],
+      "dependencies": [],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-01",
+      "evidence_id": "EVD-01",
+      "evidence_needed": "Approved objective, action policy, acceptable missed-fraud risk, false-positive/customer-impact constraints, and review capacity.",
+      "external_evidence_acquired": false,
+      "missing_information": "Fraud objective and risk/capacity decisions remain stakeholder-dependent.",
+      "next_acquisition_action": "Request authorized objective and operational constraints; keep unsupported numbers null.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "source_id": "SRC-EVALUATION"
+        },
+        {
+          "path": "reports/validation_analysis/operational_feasibility_v1/1d24658eef4f4241b4f4e4c1e3a00578/a3d9952ae0f44206a6b4f1e20c372a5d/operational_feasibility_report.json",
+          "source_id": "SRC-OPERATIONAL-ANALYSIS"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-01",
+        "TASK-02"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Fraud operations / product / risk owners",
+      "result_id": "ER-EVD-01",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify against an authorized, versioned decision with rationale, scope, approval role and cited evidence.",
+      "what_located_artifacts_establish_and_do_not_establish": "Existing validation ranking and exploratory operating-point records document model evidence and its selection-conditioned limitations. No approved objective, action policy, missed-fraud constraint, false-positive/customer-impact constraint, or review-capacity requirement is established."
+    },
+    {
+      "availability_status": "STAKEHOLDER_INPUT_REQUIRED",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-08"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-08"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-02",
+      "evidence_id": "EVD-02",
+      "evidence_needed": "Label-generation/adjudication provenance, label-maturity delay, unresolved-label policy, and label custody. Population availability is tracked separately in EVD-12.",
+      "external_evidence_acquired": false,
+      "missing_information": "Label source, adjudication, maturity delay, unresolved-label policy, observation window and custody are unknown.",
+      "next_acquisition_action": "Ask fraud-label operations/data custodian for authoritative label documentation and maturity rules.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-08"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-08"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-03"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Fraud data / label operations owner",
+      "result_id": "ER-EVD-02",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify source and approval, definitions, timing, unresolved-label treatment, custody and applicable cohort.",
+      "what_located_artifacts_establish_and_do_not_establish": "M6 records label-generation/maturity provenance as missing or unresolved. The planning artifact specifies the question but is not label evidence. No label-process document was located in the inspected planning/evidence sources."
+    },
+    {
+      "availability_status": "AVAILABLE_PARTIAL",
+      "blocked_by": [
+        "TASK-03",
+        "TASK-14"
+      ],
+      "dependencies": [
+        "EVD-02"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-08",
+        "DEC-OPS-11",
+        "DEC-OPS-12"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-08",
+        "OPS-11",
+        "OPS-12"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01"
+      ],
+      "evidence_gap_id": "EVD-03",
+      "evidence_id": "EVD-03",
+      "evidence_needed": "Point-in-time availability evidence for each feature, source/extraction provenance, deduplication/overlap rules, and evidence relevant to population representativeness.",
+      "external_evidence_acquired": false,
+      "missing_information": "Authoritative feature-source attestations and future-cohort extraction/custody evidence are not established.",
+      "next_acquisition_action": "Request feature dictionary/source lineage, scoring-time availability, extraction and deduplication evidence from data governance/custodian.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-08",
+        "DEC-OPS-11",
+        "DEC-OPS-12"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-08",
+        "OPS-11",
+        "OPS-12"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "src/inference.py",
+          "source_id": "SRC-INFERENCE"
+        },
+        {
+          "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+          "source_id": "SRC-PR-MANIFEST"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-04"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Data owner / security and privacy roles",
+      "result_id": "ER-EVD-03",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify all feature sources/timestamps, transformations, overlap rules, and approved representativeness criteria against the proposed cohort.",
+      "what_located_artifacts_establish_and_do_not_establish": "The inference implementation and validation analysis manifest document the current ordered feature/inference contract. They do not establish upstream source lineage, point-in-time availability in an independent cohort, duplicate/overlap handling, or target-population representativeness."
+    },
+    {
+      "availability_status": "AVAILABLE_PARTIAL",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01",
+        "EVD-02"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-08",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-08",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-04",
+      "evidence_id": "EVD-04",
+      "evidence_needed": "Approved ranking-metric interpretation, business acceptance requirements, decision procedure, calibration need/method/cohort if required, and versioned acceptance criteria; see EVD-13 for explicit acceptance-decision traceability.",
+      "external_evidence_acquired": false,
+      "missing_information": "No approved business acceptance rule, justified threshold, calibration cohort/method, or authorized decision procedure is established.",
+      "next_acquisition_action": "Request separate ranking-versus-acceptance criteria and any calibration decision from risk/product/model-risk roles.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-08",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-08",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "configs/validation_policy_v2.json",
+          "source_id": "SRC-M5-POLICY"
+        },
+        {
+          "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+          "source_id": "SRC-M5-ANALYSIS"
+        },
+        {
+          "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "source_id": "SRC-EVALUATION"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-05"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Risk/product stakeholders and data science/evaluation owner",
+      "result_id": "ER-EVD-04",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify approved versioned criteria and sources; numeric values only if explicitly justified and authorized.",
+      "what_located_artifacts_establish_and_do_not_establish": "M5 defines policy metric semantics and shows thresholds undefined; evaluation reports provide selection-conditioned ranking evidence. None establishes authorized business acceptance criteria or calibration requirements."
+    },
+    {
+      "availability_status": "NOT_AVAILABLE_IN_REPOSITORY",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-05",
+        "DEC-OPS-06"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-05",
+        "OPS-06"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-05",
+      "evidence_id": "EVD-05",
+      "evidence_needed": "Approved use mode and service targets, expected/peak workload, and reproducible resource/latency measurements for frozen candidate configurations.",
+      "external_evidence_acquired": false,
+      "missing_information": "Traffic volume/peaks, latency/throughput, availability, deployment mode and resource/cost requirements remain unknown.",
+      "next_acquisition_action": "Request service mode and workload expectations; benchmark only after candidate freeze and agreed profile.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-05",
+        "DEC-OPS-06"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-05",
+        "OPS-06"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "README.md",
+          "source_id": "SRC-README"
+        },
+        {
+          "path": "src/inference.py",
+          "source_id": "SRC-INFERENCE"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-09",
+        "TASK-15"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Platform / service owner and data/platform owner",
+      "result_id": "ER-EVD-05",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": false,
+      "verification_conditions": "Verify owner-approved targets and reproducible benchmark report for frozen candidate configurations.",
+      "what_located_artifacts_establish_and_do_not_establish": "README/M6 state that a production service and operational performance evidence are not documented; src/inference.py is an offline interface, not measured serving evidence. No workload/service target or benchmark report was located in the inspected sources."
+    },
+    {
+      "availability_status": "STAKEHOLDER_INPUT_REQUIRED",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01",
+        "EVD-02"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-07",
+        "DEC-OPS-09"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-07",
+        "OPS-09"
+      ],
+      "downstream_decision_dependency_ids": [
+        "DEC-OPS-10"
+      ],
+      "downstream_requirement_dependency_ids": [
+        "OPS-10"
+      ],
+      "evidence_gap_id": "EVD-06",
+      "evidence_id": "EVD-06",
+      "evidence_needed": "Update triggers/approval, monitoring ownership and label-delay-aware measures, alerting/escalation, and monitoring runbooks. Incident/failure/fallback/rollback are separated into EVD-11.",
+      "external_evidence_acquired": false,
+      "linkage_note": "Direct links are limited to the decision(s) this evidence directly informs; other planning-source links are retained as downstream dependencies, not direct evidence relationships.",
+      "missing_information": "Monitoring measures, owners, label-delay treatment, alerting/escalation and update triggers/approval remain unknown.",
+      "next_acquisition_action": "Request model-operations and model-risk requirements; distinguish service/input signals from delayed fraud labels.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-07",
+        "DEC-OPS-09"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-07",
+        "OPS-09",
+        "OPS-10"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-10"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Model operations / production operations / service owner",
+      "result_id": "ER-EVD-06",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify approved roles, signal definitions, limitations, escalation, update triggers and runbooks.",
+      "what_located_artifacts_establish_and_do_not_establish": "M6 identifies monitoring/update governance as an open gap; v2 separates it as its own acquisition item. No approved project-specific monitoring/update standard was located in the inspected sources."
+    },
+    {
+      "availability_status": "STAKEHOLDER_INPUT_REQUIRED",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-11"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-11"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-07",
+      "evidence_id": "EVD-07",
+      "evidence_needed": "Applicable access control, privacy/legal basis, retention/deletion, auditability, incident governance, and sensitive-data constraints.",
+      "external_evidence_acquired": false,
+      "missing_information": "Legal basis, data classification, access control, retention/deletion, audit and compliance obligations remain unknown.",
+      "next_acquisition_action": "Request formal security/privacy/compliance assessment or authoritative policies from the designated roles.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-11"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-11"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-13"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Security / privacy / compliance roles",
+      "result_id": "ER-EVD-07",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify applicability, approved control mappings, exceptions, evidence references and ownership.",
+      "what_located_artifacts_establish_and_do_not_establish": "M6 identifies security/privacy/governance evidence as missing or unverified. The existence of this audit record does not establish applicable controls or approvals."
+    },
+    {
+      "availability_status": "AVAILABLE_PARTIAL",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01",
+        "EVD-02",
+        "EVD-03",
+        "EVD-04"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-01",
+        "OPS-07",
+        "OPS-08",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-08",
+      "evidence_id": "EVD-08",
+      "evidence_needed": "Frozen candidate set, source hashes/revisions, cohort rules, metric implementations, uncertainty method, acceptance policy, exclusions, and reporting/decision plan for independent confirmation.",
+      "external_evidence_acquired": false,
+      "missing_information": "Future candidate hashes, cohort eligibility, exclusions, acceptance rules, uncertainty method and decision procedure require authorized freeze.",
+      "next_acquisition_action": "Use existing manifests as inputs only after objective, population, data provenance and acceptance decisions; prepare a new approved freeze record later.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-07",
+        "OPS-08",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "source_id": "SRC-EVALUATION"
+        },
+        {
+          "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+          "source_id": "SRC-PR-MANIFEST"
+        },
+        {
+          "path": "configs/validation_policy_v2.json",
+          "source_id": "SRC-M5-POLICY"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-06"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Model owner / evaluation owner / risk owner",
+      "result_id": "ER-EVD-08",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify all prespecified candidates/hashes, preprocessing/inference, cohort rules, metrics, policy and approvals before confirmation access.",
+      "what_located_artifacts_establish_and_do_not_establish": "Existing evaluation/analysis records persist validation cohort, model/artifact provenance, score definitions and analysis metadata. They are not an approved freeze manifest for a future independent confirmation, nor do they resolve acceptance policy/population."
+    },
+    {
+      "availability_status": "BLOCKED_BY_DEPENDENCY",
+      "blocked_by": [
+        "TASK-03",
+        "TASK-04",
+        "TASK-06",
+        "TASK-14"
+      ],
+      "dependencies": [
+        "EVD-02",
+        "EVD-03",
+        "EVD-08"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-08",
+        "DEC-OPS-12"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-08",
+        "OPS-12"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04"
+      ],
+      "evidence_gap_id": "EVD-09",
+      "evidence_id": "EVD-09",
+      "evidence_needed": "Authorized, disjoint, later or independently governed population with mature labels and documented eligibility, extraction and custody.",
+      "external_evidence_acquired": false,
+      "missing_information": "A later/disjoint or independently governed eligible population with mature labels, custody and authorized access is unconfirmed.",
+      "next_acquisition_action": "Resolve population and label maturity, then request a custodian availability/qualification assessment without extracting data in this phase.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-08",
+        "DEC-OPS-12"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-08",
+        "OPS-12"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-07"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Data custodian / fraud label operations / evaluation owner",
+      "result_id": "ER-EVD-09",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify written eligibility, disjointness, maturity, boundaries, custody, availability and access authorization.",
+      "what_located_artifacts_establish_and_do_not_establish": "M6 states no qualifying fresh independent cohort is confirmed and marks the earlier test split ineligible as fresh blind confirmation. No dataset was inspected for this inventory."
+    },
+    {
+      "availability_status": "BLOCKED_BY_DEPENDENCY",
+      "blocked_by": [
+        "TASK-05",
+        "TASK-06",
+        "TASK-07"
+      ],
+      "dependencies": [
+        "EVD-04",
+        "EVD-05",
+        "EVD-06",
+        "EVD-07",
+        "EVD-08",
+        "EVD-09"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-10",
+        "DEC-OPS-11",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-10",
+      "evidence_id": "EVD-10",
+      "evidence_needed": "After upstream decisions and eligible data exist: frozen independent evaluation results, uncertainty summaries, operational benchmark evidence, and documented acceptance disposition.",
+      "external_evidence_acquired": false,
+      "missing_information": "Frozen independent results, uncertainty and authorized acceptance disposition do not exist in the inspected project sources.",
+      "next_acquisition_action": "Do not run evaluation until objective, acceptance, freeze, cohort and approvals are complete.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-10",
+        "DEC-OPS-11",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "source_id": "SRC-EVALUATION"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-08",
+        "TASK-11"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Evaluation owner, risk owner, platform owner, production operations owner",
+      "result_id": "ER-EVD-10",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify a completed protocol-compliant report and authorized disposition tied to the frozen cohort and artifacts.",
+      "what_located_artifacts_establish_and_do_not_establish": "The existing evaluation report documents validation results only. M6 states independent confirmation has not occurred; validation metrics cannot substitute for it."
+    },
+    {
+      "availability_status": "STAKEHOLDER_INPUT_REQUIRED",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-05"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-10"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-10"
+      ],
+      "downstream_decision_dependency_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-11",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "evidence_gap_id": "EVD-11",
+      "evidence_id": "EVD-11",
+      "evidence_needed": "Approved failure-mode behavior, fallback/degraded-mode options, rollback triggers and authority, incident escalation, recovery expectations, and operational runbooks.",
+      "external_evidence_acquired": false,
+      "linkage_note": "Direct links are limited to the decision(s) this evidence directly informs; other planning-source links are retained as downstream dependencies, not direct evidence relationships.",
+      "missing_information": "Failure modes, safe behavior, fallback/degraded mode, rollback triggers/authority, incident escalation and recovery are unknown.",
+      "next_acquisition_action": "Request service-owner/fraud-operations failure requirements and existing authoritative runbooks, if any.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-10"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-11",
+        "TASK-12"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Service owner / fraud operations / model operations",
+      "result_id": "ER-EVD-11",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify approved failure-mode decisions, owner/authority, triggers, recovery steps and required review.",
+      "what_located_artifacts_establish_and_do_not_establish": "M6 identifies failure/rollback behavior as an open operational gap; v2 separates it from monitoring and security. No approved fallback/rollback runbook was located in the inspected sources."
+    },
+    {
+      "availability_status": "UNKNOWN_SOURCE_AVAILABILITY",
+      "blocked_by": [],
+      "dependencies": [],
+      "direct_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-08",
+        "DEC-OPS-12"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-08",
+        "OPS-12"
+      ],
+      "downstream_decision_dependency_ids": [],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01"
+      ],
+      "evidence_gap_id": "EVD-12",
+      "evidence_id": "EVD-12",
+      "evidence_needed": "Authorized target population, transaction eligibility rules, exclusions and rationale, deployment-context relationship, representativeness criteria, and confirmation that an eligible candidate population is available.",
+      "external_evidence_acquired": false,
+      "missing_information": "Target population, eligibility/exclusions, deployment-context relationship and data availability/representativeness remain unknown.",
+      "next_acquisition_action": "Request the product/risk population decision and a custodian availability/coverage assessment; do not inspect data.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-08",
+        "DEC-OPS-12"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-08",
+        "OPS-12"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-07",
+        "TASK-14"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Fraud product / risk owner with data custodian",
+      "result_id": "ER-EVD-12",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify authorized population rules and separate documented evidence that a suitable cohort exists and is accessible.",
+      "what_located_artifacts_establish_and_do_not_establish": "M6 independent-evaluation design lists population/boundaries as a blocked prerequisite and reports no qualifying cohort confirmed. No approved population definition or availability assessment was located in the inspected sources."
+    },
+    {
+      "availability_status": "AVAILABLE_PARTIAL",
+      "blocked_by": [],
+      "dependencies": [
+        "EVD-01",
+        "EVD-12"
+      ],
+      "direct_related_decision_ids": [
+        "DEC-OPS-13"
+      ],
+      "direct_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-13"
+      ],
+      "downstream_decision_dependency_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-10",
+        "DEC-OPS-11",
+        "DEC-OPS-12"
+      ],
+      "downstream_requirement_dependency_ids": [
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12"
+      ],
+      "evidence_gap_id": "EVD-13",
+      "evidence_id": "EVD-13",
+      "evidence_needed": "Authorized business acceptance requirements and metric interpretation, distinguished from model ranking; documented false-positive/review constraints, calibration need and method/cohort, independent confirmation criteria, and approval authority.",
+      "external_evidence_acquired": false,
+      "linkage_note": "Direct links are limited to the decision(s) this evidence directly informs; other planning-source links are retained as downstream dependencies, not direct evidence relationships.",
+      "missing_information": "Metric roles, business acceptance criteria, threshold/calibration need, independent confirmation criteria and decision authority remain open.",
+      "next_acquisition_action": "Request an authorized acceptance-policy decision; do not infer a business cutoff from ranking results.",
+      "planning_source_related_decision_ids": [
+        "DEC-OPS-13"
+      ],
+      "planning_source_related_requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "project_evidence_located": [
+        {
+          "path": "configs/validation_policy_v2.json",
+          "source_id": "SRC-M5-POLICY"
+        },
+        {
+          "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+          "source_id": "SRC-M5-ANALYSIS"
+        },
+        {
+          "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+          "source_id": "SRC-M6"
+        },
+        {
+          "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+          "source_id": "SRC-PLAN-V2"
+        }
+      ],
+      "related_task_ids": [
+        "TASK-05",
+        "TASK-11"
+      ],
+      "repository_search_scope": "Targeted filename inventory and keyword search across README.md, docs/, reports/ and configs/ for operational, evidence, service, monitoring, rollback, privacy, security, label, population, acceptance, runbook, deployment and evaluation material; detailed content review of the explicitly listed authoritative planning, M5/M6, evaluation, manifest and inference sources. This is not a search of external organizational systems or dataset contents.",
+      "responsible_owner_role": "Fraud risk / product owner and model-risk owner",
+      "result_id": "ER-EVD-13",
+      "result_note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "result_status": "PENDING_ADDITIONAL_OR_EXTERNAL_EVIDENCE",
+      "source_existence_outside_repository": "UNKNOWN_UNLESS_DOCUMENTED",
+      "stakeholder_input_required": true,
+      "verification_conditions": "Verify an approved, versioned decision separating ranking metrics, operational criteria, calibration, independent confirmation and production approval; unsupported numerical cutoffs remain null.",
+      "what_located_artifacts_establish_and_do_not_establish": "M5 policy v2 and analysis document that quality thresholds remain null and candidate status is insufficient evidence; they distinguish supervised AP from the Autoencoder reconstruction-MSE gate. They do not define approved business acceptance requirements."
+    }
+  ],
+  "evidence_results": [
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-01",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-01",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-02",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-02",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-03",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-03",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-04",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-04",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-05",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-05",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-06",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-06",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-07",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-07",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-08",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-08",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-09",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-09",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-10",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-10",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-11",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-11",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-12",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-12",
+      "review_status": "PENDING",
+      "review_versions": []
+    },
+    {
+      "acceptance_status": "NOT_ASSESSED",
+      "acceptance_versions": [],
+      "assessment_status": "OPEN",
+      "current_acceptance_id": null,
+      "current_review_version_id": null,
+      "evidence_gap_id": "EVD-13",
+      "evidence_record_ids": [],
+      "initial_acceptance_status": "NOT_ASSESSED",
+      "initial_review_status": "PENDING",
+      "note": "Existing project references above are discovery findings only; this work package does not claim the gap is resolved or that new evidence was acquired.",
+      "re_review_required": false,
+      "result_id": "ER-EVD-13",
+      "review_status": "PENDING",
+      "review_versions": []
+    }
+  ],
+  "history_initial_states": {
+    "acceptance_status": "NOT_ASSESSED",
+    "authorization_status": "PENDING",
+    "by_entity": {
+      "DEC-OPS-01": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-02": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-03": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-04": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-05": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-06": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-07": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-08": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-09": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-10": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-11": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-12": {
+        "resolution_status": "OPEN"
+      },
+      "DEC-OPS-13": {
+        "resolution_status": "OPEN"
+      },
+      "EVD-01": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-02": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-03": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-04": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-05": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-06": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-07": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-08": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-09": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-10": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-11": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-12": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "EVD-13": {
+        "acceptance_status": "NOT_ASSESSED",
+        "review_status": "PENDING"
+      },
+      "STREQ-01": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-02": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-03": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-04": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-05": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-06": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-07": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-08": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-09": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-10": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-11": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-12": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      },
+      "STREQ-13": {
+        "authorization_status": "PENDING",
+        "dispatch_status": "NOT_SENT",
+        "request_status": "PREPARED",
+        "response_status": "PENDING"
+      }
+    },
+    "dispatch_status": "NOT_SENT",
+    "request_status": "PREPARED",
+    "resolution_status": "OPEN",
+    "response_status": "PENDING",
+    "review_status": "PENDING"
+  },
+  "history_model": {
+    "actor_authorization": "Actor attribution and role/identity claims are recorded separately from authority verification. UNCONFIGURED policy blocks authority-dependent actions. Test-only policy is available only to synthetic tests.",
+    "application_semantics": "Lifecycle APIs return copied records and appended events. V4 package validation independently checks event contracts, record/event links, materialized state replay, exact current review/acceptance links, evidence eligibility for decisions, unique collection cardinality, and chronological causal order.",
+    "causal_order": "Authorization time <= dispatch sent time <= response received time <= review time <= acceptance time <= decision resolution time when those linked records exist. Event log timestamps are globally nondecreasing; cross-entity evidence dependencies are checked by record references and timestamps.",
+    "decision_evidence": "Every resolution reference must identify exactly one evidence result in ACCEPTED state with a current ACCEPTED/SUFFICIENT review and a current accepted record; PARTIAL is not sufficient.",
+    "event_contracts": "Known event_type values are explicitly mapped to entity_type, domain, and permitted state transitions in src/evidence_lifecycle.py.",
+    "event_fields": [
+      "event_id",
+      "entity_type",
+      "entity_id",
+      "domain",
+      "event_type",
+      "previous_status",
+      "resulting_status",
+      "actor",
+      "occurred_at_utc",
+      "supporting_record_refs",
+      "reason",
+      "supersedes_event_id"
+    ],
+    "immutability_limit": "Application validation is not a digital signature, tamper-proof hash chain, WORM store, authenticated identity provider, or transactional persistence layer. A coordinated rewrite of records, events, and their pointers cannot be independently detected without trusted storage/integrity controls."
+  },
+  "id_mappings": {
+    "direct_linkage_refinements": {
+      "EVD-06": "Direct decisions DEC-OPS-07/09; direct requirements OPS-07/09; OPS-10 retained as downstream.",
+      "EVD-11": "Direct decision DEC-OPS-10 and direct requirement OPS-10; all broader links retained only as downstream dependencies.",
+      "EVD-13": "Direct decision DEC-OPS-13 and direct requirement OPS-13; all broader links retained only as downstream dependencies."
+    },
+    "new_request_mappings": {
+      "STREQ-10": "Separate missed-fraud risk responsibility formerly combined in STREQ-01.",
+      "STREQ-11": "Separate false-positive/customer-experience responsibility formerly combined in STREQ-01.",
+      "STREQ-12": "Separate review-capacity responsibility formerly combined in STREQ-01.",
+      "STREQ-13": "Separate custodian cohort-availability support formerly mixed into STREQ-02; not a population decision."
+    },
+    "original_request_ids_preserved": [
+      "STREQ-01",
+      "STREQ-02",
+      "STREQ-03",
+      "STREQ-04",
+      "STREQ-05",
+      "STREQ-06",
+      "STREQ-07",
+      "STREQ-08",
+      "STREQ-09"
+    ],
+    "v2_path": "reports/evidence_acquisition_v2/20261016_d32e5b3157544eb4b9c0e1dca5a045d5/evidence_acquisition.json"
+  },
+  "implementation_validation": {
+    "validator": "src/evidence_lifecycle.py",
+    "event_reference_policy": "supporting_record_refs contains exact lifecycle record IDs; source_references carries external citations and is validated against its source record.",
+    "event_timestamp_policy": "An event timestamp must be greater than or equal to the timestamp of its associated record; equal timestamps are allowed.",
+    "decision_policy": "All Planning v2 required evidence gaps must be represented by current accepted and sufficient evidence."
+  },
+  "lifecycle_authority": {
+    "actor_authorization": "authorization_policy is UNCONFIGURED; nonempty actor claims are attribution only and cannot authorize real actions.",
+    "authorization_status": "stakeholder_request_templates[].authorization.status",
+    "decision_resolution_status": "decision_resolution_records[].resolution_status; every supporting_evidence_ref must resolve to exactly one fully accepted evidence result.",
+    "dispatch_status": "stakeholder_request_templates[].dispatch.status",
+    "evidence_acceptance_status": "evidence_results[].acceptance_status",
+    "history": "lifecycle_events is append-only at application level; current status must replay from initial states plus events. No legacy request status field is retained.",
+    "request_status": "stakeholder_request_templates[].request_status",
+    "response_status": "stakeholder_request_templates[].response_status",
+    "review_status": "evidence_results[].review_status; versioned review records are in review_versions"
+  },
+  "lifecycle_events": [],
+  "lifecycle_transition_rules": {
+    "acceptance_status": {
+      "ACCEPTED": [],
+      "NOT_ASSESSED": [
+        "ACCEPTED",
+        "PARTIAL",
+        "REJECTED"
+      ],
+      "PARTIAL": [
+        "ACCEPTED",
+        "REJECTED"
+      ],
+      "REJECTED": []
+    },
+    "authorization_status": {
+      "AUTHORIZED": [],
+      "DENIED": [],
+      "PENDING": [
+        "AUTHORIZED",
+        "DENIED"
+      ]
+    },
+    "dispatch_status": {
+      "CANCELLED": [],
+      "NOT_SENT": [
+        "CANCELLED",
+        "SENT"
+      ],
+      "SENT": []
+    },
+    "request_status": {
+      "AUTHORIZED": [
+        "CANCELLED"
+      ],
+      "CANCELLED": [],
+      "PREPARED": [
+        "AUTHORIZED",
+        "CANCELLED"
+      ]
+    },
+    "resolution_status": {
+      "OPEN": [
+        "RESOLVED"
+      ],
+      "RESOLVED": []
+    },
+    "response_status": {
+      "NOT_PROVIDED": [
+        "RECEIVED"
+      ],
+      "PENDING": [
+        "NOT_PROVIDED",
+        "RECEIVED"
+      ],
+      "RECEIVED": []
+    },
+    "review_status": {
+      "ACCEPTED": [],
+      "INCONCLUSIVE": [
+        "IN_PROGRESS"
+      ],
+      "IN_PROGRESS": [
+        "ACCEPTED",
+        "INCONCLUSIVE",
+        "REJECTED"
+      ],
+      "PENDING": [
+        "INCONCLUSIVE",
+        "IN_PROGRESS",
+        "REJECTED"
+      ],
+      "REJECTED": []
+    }
+  },
+  "lifecycle_vocabulary": {
+    "acceptance_status": [
+      "NOT_ASSESSED",
+      "ACCEPTED",
+      "PARTIAL",
+      "REJECTED"
+    ],
+    "authorization_status": [
+      "PENDING",
+      "AUTHORIZED",
+      "DENIED"
+    ],
+    "dispatch_status": [
+      "NOT_SENT",
+      "SENT",
+      "CANCELLED"
+    ],
+    "request_status": [
+      "PREPARED",
+      "AUTHORIZED",
+      "CANCELLED"
+    ],
+    "resolution_status": [
+      "OPEN",
+      "RESOLVED"
+    ],
+    "response_status": [
+      "PENDING",
+      "RECEIVED",
+      "NOT_PROVIDED"
+    ],
+    "review_status": [
+      "PENDING",
+      "IN_PROGRESS",
+      "ACCEPTED",
+      "REJECTED",
+      "INCONCLUSIVE"
+    ]
+  },
+  "limitations": [
+    "No formal organizational roles are assigned.",
+    "No request has authorization or dispatch.",
+    "No response, evidence review, acceptance, or decision resolution is recorded.",
+    "JSON files are not storage-level immutable; application append-only semantics depend on preserving prior versions."
+  ],
+  "planning_task_ids": [
+    "TASK-01",
+    "TASK-02",
+    "TASK-03",
+    "TASK-04",
+    "TASK-05",
+    "TASK-06",
+    "TASK-07",
+    "TASK-08",
+    "TASK-09",
+    "TASK-10",
+    "TASK-11",
+    "TASK-12",
+    "TASK-13",
+    "TASK-14",
+    "TASK-15"
+  ],
+  "preserved_evidence_boundaries": {
+    "business_acceptance": "Existing validation metrics do not establish approved objective or acceptance criteria.",
+    "evidence_gap_closure": "Templates or report existence alone do not resolve a gap. Evidence acceptance and decision resolution are separate events.",
+    "independent_confirmation": "No eligible, mature-label independent confirmation cohort is established by reviewed evidence.",
+    "m5_candidate_assessments": "All eight remain INSUFFICIENT_EVIDENCE.",
+    "m5_model_family_count": 8,
+    "m5_null_threshold_values": 8,
+    "m5_policy_path": "configs/validation_policy_v2.json",
+    "m5_policy_sha256": "a0d1fb0431c2888b4ac48cd862c526ee8fe0ef81370cc77d96141fe6f7a9f54d",
+    "m6_report_path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+    "m6_sha256": "ebe13a58d27ace0d3bad930fa02149687f5584fcb9b552fb50fbf0e0bc5ebf83",
+    "offline_inference": "Offline inference code is not evidence of production-service readiness.",
+    "organizational_records": "Repository inspection does not establish that all organizational records have been found.",
+    "prior_test": "Previously examined; not a fresh blind confirmation cohort."
+  },
+  "record_type": "evidence_acquisition_register",
+  "schema_version": "5.0.0",
+  "scope": {
+    "dataset_content_inspected": false,
+    "external_requests_sent": false,
+    "mlflow_database_modified": false,
+    "new_evidence_acquired": false,
+    "organizational_authority_verified": false,
+    "purpose": "Enforce v4 application-level lifecycle, decision-evidence eligibility, authorization-policy matching, event integrity, and traceability before outreach.",
+    "test_split_accessed": false,
+    "training_inference_scoring_performed": false
+  },
+  "source_inventory": [
+    {
+      "classification": "planning_register",
+      "establishes": "Authoritative execution questions, roles, links, statuses, dependencies, and source availability claims; planning records are not evidence of stakeholder decisions.",
+      "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "8c3ebe1df068fd23d34f922db13e6b660958311994cac3809c108caf27b31f1c",
+      "source_id": "SRC-PLAN-V2"
+    },
+    {
+      "classification": "planning_report",
+      "establishes": "Human-readable summary of v2; not an independent evidence source.",
+      "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning_report.md",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "3c215ce9eae21fc8a7f5c21c17a3440cdf61e79b50fe55e3150d341d2766ce0a",
+      "source_id": "SRC-PLAN-V2-MD"
+    },
+    {
+      "classification": "policy_configuration",
+      "establishes": "Authoritative M5 metric/threshold semantics: eight model families and null numeric thresholds.",
+      "path": "configs/validation_policy_v2.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "a0d1fb0431c2888b4ac48cd862c526ee8fe0ef81370cc77d96141fe6f7a9f54d",
+      "source_id": "SRC-M5-POLICY"
+    },
+    {
+      "classification": "policy_analysis",
+      "establishes": "Recorded candidate/threshold analysis; does not provide approved business criteria.",
+      "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "2a31a7ac022cf82d2296993106eee57e0e326d6633fca9f7ce789ac0b214203b",
+      "source_id": "SRC-M5-ANALYSIS"
+    },
+    {
+      "classification": "evidence_readiness_report",
+      "establishes": "M6 evidence inventory, limitations, source classifications, cohort readiness, and independent evaluation design.",
+      "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "ebe13a58d27ace0d3bad930fa02149687f5584fcb9b552fb50fbf0e0bc5ebf83",
+      "source_id": "SRC-M6"
+    },
+    {
+      "classification": "validation_evaluation",
+      "establishes": "Existing validation metrics/cohorts and score semantics; selection-conditioned, not business approval or independent confirmation.",
+      "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274",
+      "source_id": "SRC-EVALUATION"
+    },
+    {
+      "classification": "analysis_manifest",
+      "establishes": "Persisted validation analysis, model/file provenance, feature/score semantics; does not establish source-system data lineage.",
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17",
+      "source_id": "SRC-PR-MANIFEST"
+    },
+    {
+      "classification": "derived_validation_analysis",
+      "establishes": "Exploratory operating-point and qualitative analysis; no selected operational threshold or approved target.",
+      "path": "reports/validation_analysis/operational_feasibility_v1/1d24658eef4f4241b4f4e4c1e3a00578/a3d9952ae0f44206a6b4f1e20c372a5d/operational_feasibility_report.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "7016f942db008580542dd4f7e0e2c966df7eb8c879f7fb4717cc058871a9ed41",
+      "source_id": "SRC-OPERATIONAL-ANALYSIS"
+    },
+    {
+      "classification": "derived_validation_analysis",
+      "establishes": "Paired AP uncertainty conditional on selected validation cohort; not independent generalization evidence.",
+      "path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "12ba2b3d9794744f99607304f47bdadc91096b05452d0671e1b032ba57e4a134",
+      "source_id": "SRC-AP-UNCERTAINTY"
+    },
+    {
+      "classification": "derived_validation_analysis",
+      "establishes": "Descriptive segment stability on validation data; not proof of drift or a new cohort.",
+      "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "82097a301ab7512761c75a46a965d50a190cb46f3afc64403cba4cd258456642",
+      "source_id": "SRC-TEMPORAL-STABILITY"
+    },
+    {
+      "classification": "source_code_inspection",
+      "establishes": "Offline inference contract and preprocessing requirements; not source data provenance or production service evidence.",
+      "path": "src/inference.py",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "0d7a6e216f0ea97c33883d1a83b526ceef0553c8f7b49ca902b8368550e8a553",
+      "source_id": "SRC-INFERENCE"
+    },
+    {
+      "classification": "project_documentation",
+      "establishes": "Project status and known service/evidence limitations; documentation does not prove absence outside repository.",
+      "path": "README.md",
+      "repository_presence": "PRESENT",
+      "scope_note": "Presence/content of this project artifact only; no claim about organizational systems outside the inspected repository.",
+      "sha256": "ba7421e506f21cfd31892b7ce803f39c73c39a8d83353ed47aa1fbabaccf5b84",
+      "source_id": "SRC-README"
+    }
+  ],
+  "source_plan": {
+    "document_id": "34a613a9-083e-4d45-98de-8958a63e58ad",
+    "document_version": "2",
+    "json_path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+    "markdown_path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning_report.md",
+    "plan_id": "operational-planning-v2-20261016-85cd78147e3b41c0ba796f6c1d5d7d19",
+    "source_sha256": "8c3ebe1df068fd23d34f922db13e6b660958311994cac3809c108caf27b31f1c"
+  },
+  "source_refs": {
+    "m5_analysis": {
+      "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+      "sha256": "2a31a7ac022cf82d2296993106eee57e0e326d6633fca9f7ce789ac0b214203b"
+    },
+    "m5_policy": {
+      "path": "configs/validation_policy_v2.json",
+      "sha256": "a0d1fb0431c2888b4ac48cd862c526ee8fe0ef81370cc77d96141fe6f7a9f54d"
+    },
+    "m6_report": {
+      "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+      "sha256": "ebe13a58d27ace0d3bad930fa02149687f5584fcb9b552fb50fbf0e0bc5ebf83"
+    },
+    "planning_json": {
+      "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning.json",
+      "sha256": "8c3ebe1df068fd23d34f922db13e6b660958311994cac3809c108caf27b31f1c"
+    },
+    "planning_markdown": {
+      "path": "reports/operational_planning_v2/20261016_85cd78147e3b41c0ba796f6c1d5d7d19/operational_planning_report.md",
+      "sha256": "3c215ce9eae21fc8a7f5c21c17a3440cdf61e79b50fe55e3150d341d2766ce0a"
+    },
+    "v1_json": {
+      "path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "sha256": "cb48aebd9e00ac5479396ea36021c36358fd820035f4a17a30eda874aeea3b84"
+    },
+    "v1_markdown": {
+      "path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition_report.md",
+      "sha256": "ec4d997a1797b3b689f045c440262e040356e7dec57a12a482ef81cb70e54dba"
+    },
+    "v2_json": {
+      "path": "reports/evidence_acquisition_v2/20261016_d32e5b3157544eb4b9c0e1dca5a045d5/evidence_acquisition.json",
+      "sha256": "0417f1c173ffdb1f46936ce6ebc06bbc3f566a6560f76ba8ebde35c54ea639de"
+    },
+    "v2_markdown": {
+      "path": "reports/evidence_acquisition_v2/20261016_d32e5b3157544eb4b9c0e1dca5a045d5/evidence_acquisition_report.md",
+      "sha256": "110d2b87c454745b6976f67f98343ba54e2920cb6b41cba50167466e4443260a"
+    }
+  },
+  "stakeholder_request_templates": [
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Threshold definition/calibration",
+        "Acceptance criteria",
+        "Independent confirmation protocol",
+        "Production approval"
+      ],
+      "historical_request_id": "STREQ-01",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Clarify the intended fraud-related outcome and action only. Risk tolerance, customer-impact constraints, and review capacity are separate requests.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud operations / product owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-02",
+        "ACQ-11"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-01"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01"
+      ],
+      "related_planning_task_ids": [
+        "TASK-01"
+      ],
+      "related_requirement_ids": [
+        "OPS-01"
+      ],
+      "request_id": "STREQ-01",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Approved fraud/risk objective, action policy, loss/risk policy, investigation workflow or capacity evidence, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What operational outcome and action should a fraud score support?",
+        "What scope and rationale define that objective?",
+        "Which role is authorized to approve the objective?"
+      ],
+      "sufficient_response": "An authorized, versioned response identifies scope, intended action, rationale, evidence references and approval state; unsupported numeric values may remain explicitly undefined.",
+      "title": "Operational objective and action",
+      "why_needed": "Ranking results do not define an operational objective or business acceptance policy. No numerical cutoff is presumed."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Feature/provenance verification",
+        "Evaluation freeze",
+        "Cohort qualification",
+        "Independent confirmation",
+        "Threshold calibration context"
+      ],
+      "historical_request_id": "STREQ-02",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Obtain the authorized population and eligibility decision. A data custodian availability response is supporting evidence only and is requested separately.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud product / risk owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-03",
+        "ACQ-12",
+        "ACQ-20"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-12"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-12"
+      ],
+      "related_planning_task_ids": [
+        "TASK-14"
+      ],
+      "related_requirement_ids": [
+        "OPS-12"
+      ],
+      "request_id": "STREQ-02",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Approved population/eligibility specification, source-system coverage description, and a custodian availability assessment, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What target population and deployment context should govern evaluation?",
+        "Which transaction eligibility and exclusion rules apply, and what is their rationale?",
+        "How should population boundaries and chronology be specified?",
+        "What representativeness criteria should be documented?",
+        "Which role is authorized to approve this population decision?"
+      ],
+      "sufficient_response": "Authorized population, inclusion/exclusion rules and rationale are recorded; the custodian separately documents availability/coverage or explicitly states it is unknown.",
+      "title": "Target population and transaction eligibility decision",
+      "why_needed": "Population and eligibility determine the scope of valid conclusions and whether independent confirmation can be planned."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Data provenance review",
+        "Acceptance/calibration protocol",
+        "Cohort qualification",
+        "Independent confirmation"
+      ],
+      "historical_request_id": "STREQ-03",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Clarify label definition, maturity, adjudication, and custody.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud data / label operations owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-04",
+        "ACQ-13",
+        "ACQ-20"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-08"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-02",
+        "EVD-09"
+      ],
+      "related_planning_task_ids": [
+        "TASK-03"
+      ],
+      "related_requirement_ids": [
+        "OPS-08"
+      ],
+      "request_id": "STREQ-03",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Label data dictionary, adjudication procedure, maturity/observation-window policy, lineage and versioning records, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What is the authoritative fraud-label definition and source?",
+        "How are labels generated, adjudicated, corrected and versioned?",
+        "What observation window or maturity delay is required?",
+        "How are unresolved, disputed, or not-yet-mature outcomes handled?",
+        "What custody and provenance record accompanies a future cohort?"
+      ],
+      "sufficient_response": "An authorized source record defines labels, maturity, unresolved-label handling, source/version and custody; unavailable items are explicitly identified.",
+      "title": "Fraud label provenance and maturity",
+      "why_needed": "Immature or unresolved outcomes must not be silently treated as legitimate; label maturity is required for cohort qualification."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Threshold definition/calibration",
+        "Protocol freeze",
+        "Independent confirmation",
+        "Production approval"
+      ],
+      "historical_request_id": "STREQ-04",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Separate ranking evidence from authorized business acceptance and calibration requirements. Operational risk and capacity questions are handled in STREQ-10 through STREQ-12.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud risk / product owner and model-risk owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-05",
+        "ACQ-14"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-13"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-04",
+        "EVD-08",
+        "EVD-13"
+      ],
+      "related_planning_task_ids": [
+        "TASK-05"
+      ],
+      "related_requirement_ids": [
+        "OPS-13"
+      ],
+      "request_id": "STREQ-04",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Approved acceptance policy, calibration procedure, model-risk standard, independent validation criteria and approval matrix, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "Which ranking measures are decision inputs, and what business acceptance requirements are separate from ranking?",
+        "Is threshold calibration required? If so, what approved method, cohort, and authorization apply?",
+        "What independent-confirmation criteria and exclusions are required?",
+        "Which role can approve acceptance criteria and any calibration protocol?"
+      ],
+      "sufficient_response": "A versioned authorized decision distinguishes ranking, business criteria, calibration, independent confirmation and production approval; any numeric value has cited rationale and approval.",
+      "title": "Acceptance criteria, calibration, and decision authority",
+      "why_needed": "M5 thresholds remain null. Supervised AP is ranking evidence; Autoencoder reconstruction MSE and anomaly-ranking AP have distinct meanings."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Evaluation freeze",
+        "Cohort qualification",
+        "Independent confirmation"
+      ],
+      "historical_request_id": "STREQ-05",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Establish upstream feature lineage and point-in-time availability for the eventual authorized population.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Data owner / security and privacy roles"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-06",
+        "ACQ-15",
+        "ACQ-20"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-08",
+        "DEC-OPS-11",
+        "DEC-OPS-12"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-03",
+        "EVD-12"
+      ],
+      "related_planning_task_ids": [
+        "TASK-04"
+      ],
+      "related_requirement_ids": [
+        "OPS-08",
+        "OPS-11",
+        "OPS-12"
+      ],
+      "request_id": "STREQ-05",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Feature/source lineage, data dictionary, point-in-time availability attestations, extraction specification and data-quality controls, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "For each feature, what source and transformation produce it?",
+        "When is each value available relative to the transaction/scoring action?",
+        "What extraction, deduplication, overlap and custody rules apply?",
+        "What evidence can establish coverage and representativeness for the decided population?",
+        "Which data-access approval and handling constraints apply?"
+      ],
+      "sufficient_response": "A source/timing record covers all required features, extraction and overlap rules, population coverage and custodian approval; unknowns remain explicit.",
+      "title": "Data provenance and point-in-time feature availability",
+      "why_needed": "The model feature contract does not establish source lineage or point-in-time availability in a future cohort."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Candidate benchmark",
+        "Monitoring design",
+        "Failure/fallback design",
+        "Production approval"
+      ],
+      "historical_request_id": "STREQ-06",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Establish service profile and workload requirements without presuming a deployment decision.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Platform / service owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-07",
+        "ACQ-16"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-05",
+        "DEC-OPS-06"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-05"
+      ],
+      "related_planning_task_ids": [
+        "TASK-09",
+        "TASK-15"
+      ],
+      "related_requirement_ids": [
+        "OPS-05",
+        "OPS-06"
+      ],
+      "request_id": "STREQ-06",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Service architecture or operating requirements, traffic/workload records, service-level objectives, deployment constraints, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "Is a deployment or operational service contemplated, and in what inference mode?",
+        "What expected and peak transaction workloads need support?",
+        "What latency, throughput, availability or freshness objectives are approved, if any?",
+        "What integration, recovery or resource constraints apply?",
+        "Which owner can approve the service profile?"
+      ],
+      "sufficient_response": "An accountable service owner records mode, workload, targets, evidence source, constraints and approval; unknown values are not invented.",
+      "title": "Service mode, workload, and engineering requirements",
+      "why_needed": "No production service or workload is documented; benchmark values without a target profile would not support a decision."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Operational readiness",
+        "Production approval"
+      ],
+      "historical_request_id": "STREQ-07",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Establish monitored signals and the governance for interpreting and acting on drift.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Model operations / production operations / service owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-08",
+        "ACQ-17"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-07",
+        "DEC-OPS-09"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-06"
+      ],
+      "related_planning_task_ids": [
+        "TASK-10"
+      ],
+      "related_requirement_ids": [
+        "OPS-07",
+        "OPS-09"
+      ],
+      "request_id": "STREQ-07",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Monitoring standards, model change-control procedure, label-delay guidance, alert/escalation runbook, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "Which input-quality, service, and outcome signals should be monitored, including signals of data or model drift?",
+        "How should each signal and potential drift be interpreted, including delayed or revised fraud labels?",
+        "What escalation criteria or triggers apply when signals change or drift is suspected?",
+        "Who is responsible for monitoring, interpretation, escalation, and approving model review or update?",
+        "What monitoring records and runbooks are required?"
+      ],
+      "sufficient_response": "Versioned plan assigns owners, signals, label-delay limitations, alert/escalation, update triggers/approval and evidence references.",
+      "title": "Model update governance, monitoring, and drift response",
+      "why_needed": "No project-specific monitoring or update evidence is documented; early operational signals and delayed outcome metrics have different limits."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Operational readiness",
+        "Production approval"
+      ],
+      "historical_request_id": "STREQ-08",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Clarify incident response, fallback/degraded mode, and rollback authority.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Service owner / fraud operations"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-09",
+        "ACQ-18"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-10"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-11"
+      ],
+      "related_planning_task_ids": [
+        "TASK-12"
+      ],
+      "related_requirement_ids": [
+        "OPS-10"
+      ],
+      "request_id": "STREQ-08",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Service failure-mode analysis, incident response, fallback/rollback and recovery runbooks, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What failures require fallback, degraded operation, manual review, or service interruption?",
+        "What fallback behavior is considered acceptable for each scenario?",
+        "Who can trigger rollback and on what evidence or criteria?",
+        "What recovery, communication, audit and post-incident steps are required?",
+        "Which existing incident/runbook documents govern the service, if any?"
+      ],
+      "sufficient_response": "Authorized roles document failure modes, behavior, fallback, rollback authority/triggers, recovery steps and cited procedures.",
+      "title": "Incident response, fallback, and rollback",
+      "why_needed": "No approved fallback or rollback procedure is established in the inspected repository; the safe action depends on service context."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Operational approval",
+        "Production approval"
+      ],
+      "historical_request_id": "STREQ-09",
+      "historical_source_path": "reports/evidence_acquisition_v1/20261016_c048f5dba2834c66b484dfc6b958880a/evidence_acquisition.json",
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Clarify security, privacy, retention, and audit controls.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Security / privacy / compliance roles"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-10",
+        "ACQ-19"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-11"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-07"
+      ],
+      "related_planning_task_ids": [
+        "TASK-13"
+      ],
+      "related_requirement_ids": [
+        "OPS-11"
+      ],
+      "request_id": "STREQ-09",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Applicable security/privacy policies, data classification, retention schedule, audit standards and approval records, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What data classification, lawful/use basis and privacy constraints apply?",
+        "Which access controls, audit events and review procedures are required?",
+        "What retention, deletion, minimization or incident-reporting rules apply?",
+        "What security/privacy assessment and approval are prerequisites?",
+        "Which owner is accountable for ongoing control verification?"
+      ],
+      "sufficient_response": "Authorized assessment cites applicable requirements, controls, owners, evidence, exceptions and approval state.",
+      "title": "Security, privacy, retention, and audit",
+      "why_needed": "The inspected project records do not establish applicable organizational controls; no assumptions about formal departments or rules are made."
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Only the linked planning tasks and evidence gaps; request preparation alone closes none."
+      ],
+      "historical_request_id": "STREQ-10",
+      "historical_source_path": null,
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Obtain the risk-owner view of missed-fraud risk, separate from objective, customer experience, and review capacity.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud risk owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-21",
+        "ACQ-22"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-02"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "related_requirement_ids": [
+        "OPS-02"
+      ],
+      "request_id": "STREQ-10",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Authoritative, versioned records and provenance, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "Which missed-fraud risk or loss dimensions should decision-makers consider?",
+        "Are there approved risk constraints or policies, and what scope and rationale support them?",
+        "Which role is authorized to approve those requirements?"
+      ],
+      "sufficient_response": "An attributable, source-referenced response with scope, provenance, rationale, and any approval status; unknowns may remain explicitly unknown.",
+      "title": "Missed-fraud risk constraints"
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Only the linked planning tasks and evidence gaps; request preparation alone closes none."
+      ],
+      "historical_request_id": "STREQ-11",
+      "historical_source_path": null,
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Obtain customer-experience requirements separately from risk appetite and review capacity.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud operations / customer experience owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-23",
+        "ACQ-24"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-03"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "related_requirement_ids": [
+        "OPS-03"
+      ],
+      "request_id": "STREQ-11",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Authoritative, versioned records and provenance, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What false-positive, customer-impact, or investigation-burden requirements are documented?",
+        "What scope, rationale, and approval apply to those requirements?",
+        "Which role is authorized to approve them?"
+      ],
+      "sufficient_response": "An attributable, source-referenced response with scope, provenance, rationale, and any approval status; unknowns may remain explicitly unknown.",
+      "title": "False-positive and customer-experience constraints"
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Only the linked planning tasks and evidence gaps; request preparation alone closes none."
+      ],
+      "historical_request_id": "STREQ-12",
+      "historical_source_path": null,
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Obtain review-capacity and alert-handling requirements as a separate operational input.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Fraud operations owner"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-25",
+        "ACQ-26"
+      ],
+      "related_decision_ids": [
+        "DEC-OPS-04"
+      ],
+      "related_evidence_gap_ids": [
+        "EVD-01",
+        "EVD-04"
+      ],
+      "related_planning_task_ids": [
+        "TASK-02"
+      ],
+      "related_requirement_ids": [
+        "OPS-04"
+      ],
+      "request_id": "STREQ-12",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Authoritative, versioned records and provenance, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "What review capacity, staffing, queue, and alert-handling workflow apply?",
+        "What scope and evidence support those capacity requirements?",
+        "Which role is authorized to approve them?"
+      ],
+      "sufficient_response": "An attributable, source-referenced response with scope, provenance, rationale, and any approval status; unknowns may remain explicitly unknown.",
+      "title": "Fraud review capacity and alert-handling workflow"
+    },
+    {
+      "authorization": {
+        "current_authorization_id": null,
+        "records": [],
+        "status": "PENDING"
+      },
+      "authorized_sender": {
+        "identity": null,
+        "role": null
+      },
+      "current_response_version_id": null,
+      "dispatch": {
+        "current_dispatch_id": null,
+        "records": [],
+        "status": "NOT_SENT"
+      },
+      "dispatch_reference": null,
+      "downstream_activities_blocked": [
+        "Only the linked planning tasks and evidence gaps; request preparation alone closes none."
+      ],
+      "historical_request_id": "STREQ-13",
+      "historical_source_path": null,
+      "initial_authorization_status": "PENDING",
+      "initial_dispatch_status": "NOT_SENT",
+      "initial_request_status": "PREPARED",
+      "initial_response_status": "PENDING",
+      "purpose": "Request a data-custodian availability/coverage assessment as supporting evidence; the custodian response does not make or approve the target-population decision.",
+      "recipient_role_assignment_status": "ROLE_LABEL_FROM_PLANNING; FORMAL_ORGANIZATIONAL_ASSIGNMENT_UNKNOWN",
+      "recipient_roles": [
+        "Data custodian / data governance role"
+      ],
+      "related_acquisition_task_ids": [
+        "ACQ-27",
+        "ACQ-28"
+      ],
+      "related_decision_ids": [],
+      "related_evidence_gap_ids": [
+        "EVD-09",
+        "EVD-12"
+      ],
+      "related_planning_task_ids": [
+        "TASK-07"
+      ],
+      "related_requirement_ids": [
+        "OPS-12"
+      ],
+      "request_id": "STREQ-13",
+      "request_status": "PREPARED",
+      "requested_supporting_documentation": [
+        "Authoritative, versioned records and provenance, if available."
+      ],
+      "requester_role": "Unassigned in the planning source; designate an authorized requester role before routing.",
+      "response": {
+        "documented_exception": null,
+        "outstanding_information": [],
+        "provenance_status": "NOT_RECORDED",
+        "received_at_utc": null,
+        "respondent": {
+          "identity": null,
+          "role": null
+        },
+        "source_references": []
+      },
+      "response_disposition_records": [],
+      "response_status": "PENDING",
+      "response_versions": [],
+      "sent_at_utc": null,
+      "specific_questions": [
+        "Without extracting or inspecting data, can a custodian confirm whether a disjoint, eligible, sufficiently mature candidate cohort may be available?",
+        "What known coverage, boundary, custody, access-authorization, or availability limitations apply?",
+        "What evidence would be needed to verify availability after the population decision is authorized?"
+      ],
+      "sufficient_response": "An attributable, source-referenced response with scope, provenance, rationale, and any approval status; unknowns may remain explicitly unknown.",
+      "title": "Candidate cohort availability and coverage (custodian response)"
+    }
+  ],
+  "status": "READY_WITH_GAPS",
+  "status_summary": {
+    "evidence_gaps": 13,
+    "prepared_unsent_requests": 13,
+    "pending_evidence_results": 13,
+    "open_decisions": 13,
+    "lifecycle_events": 0,
+    "fabricated_responses": 0,
+    "fabricated_completed_reviews": 0,
+    "fabricated_accepted_evidence": 0,
+    "fabricated_resolved_decisions": 0
+  },
+  "supersedes": {
+    "historical_v1_json_sha256": "cb48aebd9e00ac5479396ea36021c36358fd820035f4a17a30eda874aeea3b84",
+    "historical_v1_markdown_sha256": "ec4d997a1797b3b689f045c440262e040356e7dec57a12a482ef81cb70e54dba",
+    "json_path": "reports/evidence_acquisition_v2/20261016_d32e5b3157544eb4b9c0e1dca5a045d5/evidence_acquisition.json",
+    "markdown_path": "reports/evidence_acquisition_v2/20261016_d32e5b3157544eb4b9c0e1dca5a045d5/evidence_acquisition_report.md",
+    "prior_current_version": {
+      "version": 5,
+      "json_path": "reports/evidence_acquisition_v5/20261016_878beac23d0848bba190b3f955c1390b/evidence_acquisition.json",
+      "json_sha256": "3a943ded492fff8a3989df364a78e8b12c071fab4af8ae185f0d3bb619fd858d",
+      "markdown_path": "reports/evidence_acquisition_v5/20261016_878beac23d0848bba190b3f955c1390b/evidence_acquisition_report.md",
+      "markdown_sha256": "8a56ed42fb209deceee0cc9b813b8a7a0b3062c501eaa4fdb6641181bd535d49"
+    },
+    "sha256": {
+      "json": "0417f1c173ffdb1f46936ce6ebc06bbc3f566a6560f76ba8ebde35c54ea639de",
+      "markdown": "110d2b87c454745b6976f67f98343ba54e2920cb6b41cba50167466e4443260a"
+    },
+    "version": 2,
+    "work_package_id": "evidence-acquisition-v2-20261016_d32e5b3157544eb4b9c0e1dca5a045d5"
+  },
+  "traceability": [
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-02",
+        "ACQ-11",
+        "ACQ-21",
+        "ACQ-22",
+        "ACQ-23",
+        "ACQ-24",
+        "ACQ-25",
+        "ACQ-26"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-01",
+      "evidence_result_id": "ER-EVD-01",
+      "planning_task_ids": [
+        "TASK-01",
+        "TASK-02"
+      ],
+      "request_template_ids": [
+        "STREQ-01",
+        "STREQ-10",
+        "STREQ-11",
+        "STREQ-12"
+      ],
+      "requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-04",
+        "ACQ-13",
+        "ACQ-20"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-08"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-02",
+      "evidence_result_id": "ER-EVD-02",
+      "planning_task_ids": [
+        "TASK-03"
+      ],
+      "request_template_ids": [
+        "STREQ-03"
+      ],
+      "requirement_ids": [
+        "OPS-08"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-06",
+        "ACQ-15",
+        "ACQ-20"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-08",
+        "DEC-OPS-11",
+        "DEC-OPS-12"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01"
+      ],
+      "evidence_gap_id": "EVD-03",
+      "evidence_result_id": "ER-EVD-03",
+      "planning_task_ids": [
+        "TASK-04"
+      ],
+      "request_template_ids": [
+        "STREQ-05"
+      ],
+      "requirement_ids": [
+        "OPS-08",
+        "OPS-11",
+        "OPS-12"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-02",
+        "ACQ-05",
+        "ACQ-11",
+        "ACQ-14",
+        "ACQ-21",
+        "ACQ-22",
+        "ACQ-23",
+        "ACQ-24",
+        "ACQ-25",
+        "ACQ-26"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-08",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-04",
+      "evidence_result_id": "ER-EVD-04",
+      "planning_task_ids": [
+        "TASK-02",
+        "TASK-05"
+      ],
+      "request_template_ids": [
+        "STREQ-04",
+        "STREQ-10",
+        "STREQ-11",
+        "STREQ-12"
+      ],
+      "requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-08",
+        "OPS-12",
+        "OPS-13"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-07",
+        "ACQ-16"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-05",
+        "DEC-OPS-06"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-05",
+      "evidence_result_id": "ER-EVD-05",
+      "planning_task_ids": [
+        "TASK-09",
+        "TASK-15"
+      ],
+      "request_template_ids": [
+        "STREQ-06"
+      ],
+      "requirement_ids": [
+        "OPS-05",
+        "OPS-06"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-08",
+        "ACQ-17"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-07",
+        "DEC-OPS-09"
+      ],
+      "downstream_decision_ids": [
+        "DEC-OPS-10"
+      ],
+      "downstream_requirement_dependency_ids": [
+        "OPS-10"
+      ],
+      "evidence_gap_id": "EVD-06",
+      "evidence_result_id": "ER-EVD-06",
+      "planning_task_ids": [
+        "TASK-10"
+      ],
+      "request_template_ids": [
+        "STREQ-07"
+      ],
+      "requirement_ids": [
+        "OPS-07",
+        "OPS-09"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-10",
+        "ACQ-19"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-11"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-07",
+      "evidence_result_id": "ER-EVD-07",
+      "planning_task_ids": [
+        "TASK-13"
+      ],
+      "request_template_ids": [
+        "STREQ-09"
+      ],
+      "requirement_ids": [
+        "OPS-11"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-05",
+        "ACQ-14"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-08",
+      "evidence_result_id": "ER-EVD-08",
+      "planning_task_ids": [
+        "TASK-05"
+      ],
+      "request_template_ids": [
+        "STREQ-04"
+      ],
+      "requirement_ids": [
+        "OPS-01",
+        "OPS-07",
+        "OPS-08",
+        "OPS-12",
+        "OPS-13"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-03",
+        "ACQ-04",
+        "ACQ-12",
+        "ACQ-13",
+        "ACQ-20",
+        "ACQ-27",
+        "ACQ-28"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-08",
+        "DEC-OPS-12"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04"
+      ],
+      "evidence_gap_id": "EVD-09",
+      "evidence_result_id": "ER-EVD-09",
+      "planning_task_ids": [
+        "TASK-03",
+        "TASK-07"
+      ],
+      "request_template_ids": [
+        "STREQ-03",
+        "STREQ-13"
+      ],
+      "requirement_ids": [
+        "OPS-08",
+        "OPS-12"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-10",
+        "DEC-OPS-11",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [],
+      "evidence_gap_id": "EVD-10",
+      "evidence_result_id": "ER-EVD-10",
+      "planning_task_ids": [],
+      "request_template_ids": [],
+      "requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-09",
+        "ACQ-18"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-10"
+      ],
+      "downstream_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-11",
+        "DEC-OPS-12",
+        "DEC-OPS-13"
+      ],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-11",
+        "OPS-12",
+        "OPS-13"
+      ],
+      "evidence_gap_id": "EVD-11",
+      "evidence_result_id": "ER-EVD-11",
+      "planning_task_ids": [
+        "TASK-12"
+      ],
+      "request_template_ids": [
+        "STREQ-08"
+      ],
+      "requirement_ids": [
+        "OPS-10"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-03",
+        "ACQ-06",
+        "ACQ-12",
+        "ACQ-15",
+        "ACQ-20",
+        "ACQ-27",
+        "ACQ-28"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-08",
+        "DEC-OPS-12"
+      ],
+      "downstream_decision_ids": [],
+      "downstream_requirement_dependency_ids": [
+        "OPS-01"
+      ],
+      "evidence_gap_id": "EVD-12",
+      "evidence_result_id": "ER-EVD-12",
+      "planning_task_ids": [
+        "TASK-04",
+        "TASK-07",
+        "TASK-14"
+      ],
+      "request_template_ids": [
+        "STREQ-02",
+        "STREQ-05",
+        "STREQ-13"
+      ],
+      "requirement_ids": [
+        "OPS-08",
+        "OPS-12"
+      ]
+    },
+    {
+      "acquisition_task_ids": [
+        "ACQ-01",
+        "ACQ-05",
+        "ACQ-14"
+      ],
+      "direct_decision_ids": [
+        "DEC-OPS-13"
+      ],
+      "downstream_decision_ids": [
+        "DEC-OPS-01",
+        "DEC-OPS-02",
+        "DEC-OPS-03",
+        "DEC-OPS-04",
+        "DEC-OPS-05",
+        "DEC-OPS-06",
+        "DEC-OPS-07",
+        "DEC-OPS-08",
+        "DEC-OPS-09",
+        "DEC-OPS-10",
+        "DEC-OPS-11",
+        "DEC-OPS-12"
+      ],
+      "downstream_requirement_dependency_ids": [
+        "OPS-05",
+        "OPS-06",
+        "OPS-07",
+        "OPS-08",
+        "OPS-09",
+        "OPS-10",
+        "OPS-11",
+        "OPS-12"
+      ],
+      "evidence_gap_id": "EVD-13",
+      "evidence_result_id": "ER-EVD-13",
+      "planning_task_ids": [
+        "TASK-05"
+      ],
+      "request_template_ids": [
+        "STREQ-04"
+      ],
+      "requirement_ids": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-13"
+      ]
+    }
+  ],
+  "version": 6,
+  "version_path": "reports/evidence_acquisition_v6/20261017_9d18b0dc3417481aa24d179c5afb5307",
+  "work_package_id": "evidence-acquisition-v6-20261017_9d18b0dc3417481aa24d179c5afb5307"
+}

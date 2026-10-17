@@ -1,0 +1,1470 @@
+{
+  "created_at_utc": "2026-10-14T21:28:25.614496+00:00",
+  "decision_register": {
+    "decisions": [
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "decision_id": "DEC-OPS-01",
+        "dependencies": [],
+        "evidence_needed_to_close": "Approved business objective from fraud/product stakeholders.",
+        "missing_evidence": "Approved business objective from fraud/product stakeholders.",
+        "question": "What operational outcome is primary: fraud capture, reduced loss, review prioritization, or another objective?",
+        "recommended_options_not_approved": [
+          "Fraud-capture objective",
+          "Loss-reduction objective",
+          "Review-prioritization objective",
+          "Another explicitly described objective"
+        ],
+        "related_requirement_ids": [
+          "OPS-01"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Fraud operations / product owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "A threshold and acceptance rule must optimize an explicitly selected outcome."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "decision_id": "DEC-OPS-02",
+        "dependencies": [
+          "DEC-OPS-01"
+        ],
+        "evidence_needed_to_close": "Risk appetite and documented fraud-loss policy.",
+        "missing_evidence": "Risk appetite and documented fraud-loss policy.",
+        "question": "What missed-fraud risk or recall constraint is acceptable?",
+        "recommended_options_not_approved": [
+          "Define an approved missed-fraud risk constraint",
+          "Document that no numeric constraint is currently approved"
+        ],
+        "related_requirement_ids": [
+          "OPS-02"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Fraud risk owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Defines the tolerated false-negative burden."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "decision_id": "DEC-OPS-03",
+        "dependencies": [
+          "DEC-OPS-01"
+        ],
+        "evidence_needed_to_close": "Approved review burden and customer-impact constraints.",
+        "missing_evidence": "Approved review burden and customer-impact constraints.",
+        "question": "What false-positive or precision constraint is acceptable?",
+        "recommended_options_not_approved": [
+          "Define a review/customer-friction constraint",
+          "Define a precision-oriented requirement",
+          "Document that no numeric constraint is currently approved"
+        ],
+        "related_requirement_ids": [
+          "OPS-03"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Fraud operations / customer experience owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Controls legitimate transactions routed for review or friction."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "decision_id": "DEC-OPS-04",
+        "dependencies": [
+          "DEC-OPS-01",
+          "DEC-OPS-03"
+        ],
+        "evidence_needed_to_close": "Queue staffing/capacity and transaction-volume evidence.",
+        "missing_evidence": "Queue staffing/capacity and transaction-volume evidence.",
+        "question": "What review capacity and alert-volume limits apply?",
+        "recommended_options_not_approved": [
+          "Document staffed review capacity and queue policy",
+          "Document that no capacity limit is currently approved"
+        ],
+        "related_requirement_ids": [
+          "OPS-04"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Fraud operations owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "A model can exceed operational capacity even with good ranking metrics."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "decision_id": "DEC-OPS-05",
+        "dependencies": [
+          "DEC-OPS-01"
+        ],
+        "evidence_needed_to_close": "Service-level requirements and controlled latency benchmarks.",
+        "missing_evidence": "Service-level requirements and controlled latency benchmarks.",
+        "question": "What inference latency and availability targets apply?",
+        "recommended_options_not_approved": [
+          "Specify service-level objectives after use mode is known",
+          "Defer numeric targets until a serving design exists"
+        ],
+        "related_requirement_ids": [
+          "OPS-05"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Platform / service owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Determines whether batch or inline inference is feasible."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "decision_id": "DEC-OPS-06",
+        "dependencies": [
+          "DEC-OPS-05"
+        ],
+        "evidence_needed_to_close": "Documented expected and peak traffic profile.",
+        "missing_evidence": "Documented expected and peak traffic profile.",
+        "question": "What transaction volume and peak patterns must be supported?",
+        "recommended_options_not_approved": [
+          "Provide measured expected/peak traffic profile",
+          "Record that no traffic profile is presently available"
+        ],
+        "related_requirement_ids": [
+          "OPS-06"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Data/platform owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Affects capacity, latency, and cost requirements."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "decision_id": "DEC-OPS-07",
+        "dependencies": [],
+        "evidence_needed_to_close": "Approved change/update policy.",
+        "missing_evidence": "Approved change/update policy.",
+        "question": "How often may the model be updated, and what triggers an update?",
+        "recommended_options_not_approved": [
+          "Define event-triggered update governance",
+          "Define a fixed review cadence",
+          "Defer cadence pending risk-owner decision"
+        ],
+        "related_requirement_ids": [
+          "OPS-07"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Model risk / product owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Defines model lifecycle and evidence cadence."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "decision_id": "DEC-OPS-08",
+        "dependencies": [],
+        "evidence_needed_to_close": "Label generation and adjudication process documentation.",
+        "missing_evidence": "Label generation and adjudication process documentation.",
+        "question": "What label-maturity delay and acceptable data delay apply?",
+        "recommended_options_not_approved": [
+          "Specify adjudication and label-maturity rules",
+          "Specify explicit treatment of unresolved labels"
+        ],
+        "related_requirement_ids": [
+          "OPS-08"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Fraud data / label operations owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Prevents evaluation against incomplete labels and defines evaluation timing."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "decision_id": "DEC-OPS-09",
+        "dependencies": [
+          "DEC-OPS-05",
+          "DEC-OPS-08"
+        ],
+        "evidence_needed_to_close": "Monitoring objective, data access, ownership, and response plan.",
+        "missing_evidence": "Monitoring objective, data access, ownership, and response plan.",
+        "question": "What production monitoring and alert-quality checks are required?",
+        "recommended_options_not_approved": [
+          "Define data/score/outcome monitoring and response ownership",
+          "Defer monitoring design until service context is selected"
+        ],
+        "related_requirement_ids": [
+          "OPS-09"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Model operations owner",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Defines detection of data, score, and outcome degradation."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "decision_id": "DEC-OPS-10",
+        "dependencies": [
+          "DEC-OPS-05"
+        ],
+        "evidence_needed_to_close": "Approved operational continuity and rollback requirements.",
+        "missing_evidence": "Approved operational continuity and rollback requirements.",
+        "question": "What failure, fallback, and rollback behavior is required?",
+        "recommended_options_not_approved": [
+          "Specify safe failure behavior and rollback authority",
+          "Defer implementation details until service architecture is chosen"
+        ],
+        "related_requirement_ids": [
+          "OPS-10"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Service owner / fraud operations",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Controls customer and fraud risk during outages or regressions."
+      },
+      {
+        "acceptance_condition": "A versioned decision record names the accountable owner role, records the decision and rationale, links supporting evidence, and states approval status; absent approval remains unresolved.",
+        "available_evidence": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "decision_id": "DEC-OPS-11",
+        "dependencies": [
+          "DEC-OPS-05"
+        ],
+        "evidence_needed_to_close": "Security/privacy review and applicable organizational policy.",
+        "missing_evidence": "Security/privacy review and applicable organizational policy.",
+        "question": "Which security, privacy, retention, and audit controls apply?",
+        "recommended_options_not_approved": [
+          "Provide applicable security/privacy/retention controls",
+          "Request formal security/privacy review"
+        ],
+        "related_requirement_ids": [
+          "OPS-11"
+        ],
+        "requires_stakeholder_input": true,
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "suggested_owner_role": "Security / privacy / compliance roles",
+        "tradeoffs": "Options affect the operational objective, evidence burden, or implementation scope. No option is approved by this plan; quantify tradeoffs only after owners provide applicable operational evidence.",
+        "why_it_matters": "Required to authorize use of transaction features and outcomes."
+      }
+    ],
+    "status_vocabulary": [
+      "VERIFIED_REQUIREMENT",
+      "DOCUMENTED_REQUIREMENT",
+      "PROPOSED_DECISION",
+      "STAKEHOLDER_DECISION_REQUIRED",
+      "EVIDENCE_REQUIRED",
+      "BLOCKED",
+      "UNKNOWN",
+      "RESOLVED"
+    ]
+  },
+  "dependency_and_execution_plan": {
+    "critical_blockers": [
+      "No approved objective/constraints",
+      "No verified mature-label policy or eligible independent cohort",
+      "M5 acceptance thresholds remain undefined",
+      "No frozen independent evaluation protocol for a qualifying cohort",
+      "Operational service and governance evidence absent"
+    ],
+    "deferred": [
+      "Threshold calibration until objective, constraints, and a suitable calibration cohort/method are approved.",
+      "Independent confirmation until a new eligible, mature-label cohort and frozen protocol are verified.",
+      "Production approval, registration promotion, deployment, and infrastructure implementation."
+    ],
+    "graph_type": "directed_acyclic_task_dependencies",
+    "parallel_workstreams": [
+      {
+        "can_progress_immediately": true,
+        "name": "Operational objective and constraints",
+        "task_ids": [
+          "TASK-01",
+          "TASK-02"
+        ],
+        "workstream_id": "STREAM-01"
+      },
+      {
+        "can_progress_immediately": true,
+        "name": "Label maturity and data provenance",
+        "task_ids": [
+          "TASK-03",
+          "TASK-04"
+        ],
+        "workstream_id": "STREAM-02"
+      },
+      {
+        "can_progress_immediately": true,
+        "name": "Service feasibility and governance requirements",
+        "task_ids": [
+          "TASK-09",
+          "TASK-10"
+        ],
+        "workstream_id": "STREAM-03"
+      },
+      {
+        "can_progress_immediately": false,
+        "name": "Acceptance/calibration and independent confirmation",
+        "task_ids": [
+          "TASK-05",
+          "TASK-06",
+          "TASK-07",
+          "TASK-08"
+        ],
+        "workstream_id": "STREAM-04"
+      }
+    ],
+    "tasks": [
+      {
+        "blocker": "Stakeholder decision; no objective/action policy is documented.",
+        "can_start_now": true,
+        "dependencies": [],
+        "name": "Resolve intended operational objective and action mode",
+        "related_decision_ids": [
+          "DEC-OPS-01"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-01"
+        ],
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "task_id": "TASK-01"
+      },
+      {
+        "blocker": "Requires operational objective and owner-provided risk/capacity evidence.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-01"
+        ],
+        "name": "Resolve missed-fraud, false-positive, and review-capacity constraints",
+        "related_decision_ids": [
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-01"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-02"
+      },
+      {
+        "blocker": "Data/label owner response and eligible data source are unknown.",
+        "can_start_now": true,
+        "dependencies": [],
+        "name": "Establish label maturity and candidate population availability",
+        "related_decision_ids": [
+          "DEC-OPS-08"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-02"
+        ],
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "task_id": "TASK-03"
+      },
+      {
+        "blocker": "Requires a candidate source and its lineage/availability evidence.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-03"
+        ],
+        "name": "Verify data provenance, point-in-time features, representativeness, and overlap rules",
+        "related_decision_ids": [
+          "DEC-OPS-08",
+          "DEC-OPS-11"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-03"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-04"
+      },
+      {
+        "blocker": "M5 thresholds are null; objective and label/cohort decisions precede numeric criteria.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-01",
+          "TASK-02",
+          "TASK-03"
+        ],
+        "name": "Define acceptance metric interpretation and any calibration protocol",
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-04"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-05"
+      },
+      {
+        "blocker": "Requires accepted objective, eligible population/provenance, and fixed protocol.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-01",
+          "TASK-03",
+          "TASK-04",
+          "TASK-05"
+        ],
+        "name": "Approve evaluation freeze manifest",
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-07",
+          "DEC-OPS-08"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-08"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-06"
+      },
+      {
+        "blocker": "New data availability is unknown; do not use prior test split as independent confirmation.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-03",
+          "TASK-04",
+          "TASK-06"
+        ],
+        "name": "Request and qualify a disjoint mature-label confirmation cohort",
+        "related_decision_ids": [
+          "DEC-OPS-08"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-09"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-07"
+      },
+      {
+        "blocker": "Requires approved policy, frozen protocol, and qualifying cohort; this plan performs none of these.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-05",
+          "TASK-06",
+          "TASK-07"
+        ],
+        "name": "Run controlled independent confirmation and record acceptance disposition",
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04",
+          "DEC-OPS-05",
+          "DEC-OPS-06",
+          "DEC-OPS-07",
+          "DEC-OPS-08",
+          "DEC-OPS-09",
+          "DEC-OPS-10",
+          "DEC-OPS-11"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-10"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-08"
+      },
+      {
+        "blocker": "No service mode, target, or workload is documented; measurement follows owner requirements.",
+        "can_start_now": true,
+        "dependencies": [
+          "TASK-01"
+        ],
+        "name": "Define workload/service profile and benchmark frozen candidates",
+        "related_decision_ids": [
+          "DEC-OPS-05",
+          "DEC-OPS-06"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-05"
+        ],
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "task_id": "TASK-09"
+      },
+      {
+        "blocker": "Owners and service/data context must provide requirements; no controls are assumed.",
+        "can_start_now": true,
+        "dependencies": [
+          "TASK-01",
+          "TASK-03"
+        ],
+        "name": "Specify update, monitoring, incident, fallback, rollback, and security controls",
+        "related_decision_ids": [
+          "DEC-OPS-07",
+          "DEC-OPS-09",
+          "DEC-OPS-10",
+          "DEC-OPS-11"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-06",
+          "EVD-07"
+        ],
+        "status": "STAKEHOLDER_DECISION_REQUIRED",
+        "task_id": "TASK-10"
+      },
+      {
+        "blocker": "Requires independent confirmation, operational feasibility, governance evidence, and authorized approval.",
+        "can_start_now": false,
+        "dependencies": [
+          "TASK-08",
+          "TASK-09",
+          "TASK-10"
+        ],
+        "name": "Production approval decision",
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04",
+          "DEC-OPS-05",
+          "DEC-OPS-06",
+          "DEC-OPS-07",
+          "DEC-OPS-08",
+          "DEC-OPS-09",
+          "DEC-OPS-10",
+          "DEC-OPS-11"
+        ],
+        "related_evidence_gap_ids": [
+          "EVD-10"
+        ],
+        "status": "BLOCKED",
+        "task_id": "TASK-11"
+      }
+    ]
+  },
+  "document_id": "bank-fraud-operational-planning-v1",
+  "document_version": "1",
+  "evidence_acquisition_plan": {
+    "evidence_status_vocabulary": [
+      "AVAILABLE",
+      "VERIFIED",
+      "REQUEST_REQUIRED",
+      "NOT_YET_AVAILABLE",
+      "UNKNOWN",
+      "NOT_APPLICABLE"
+    ],
+    "items": [
+      {
+        "acceptance_condition": "Owners and approval state are explicit; any numeric constraint has an approved rationale and source.",
+        "acquisition_method": "Request and record an owner-approved operational decision with evidence and rationale.",
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "can_complete_without_model_training": true,
+        "dependencies": [],
+        "evidence_currently_available": [
+          "Validation AP/ROC-AUC and exploratory precision-recall analyses; these are selection-conditioned and do not define business requirements."
+        ],
+        "evidence_gap_id": "EVD-01",
+        "exact_missing_evidence": "Approved objective, action policy, acceptable missed-fraud risk, false-positive/customer-impact constraints, and review capacity.",
+        "expected_output": "Versioned decision records for DEC-OPS-01 through DEC-OPS-04.",
+        "owner_role": "Fraud operations / product / risk owners",
+        "potential_source": "Fraud/product/risk and fraud-operations stakeholders.",
+        "priority": 1,
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04"
+        ],
+        "related_requirement_ids": [
+          "OPS-01",
+          "OPS-02",
+          "OPS-03",
+          "OPS-04"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": false,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "REQUEST_REQUIRED",
+        "why_necessary": "Required to translate ranking evidence into an acceptance objective and any operational threshold policy."
+      },
+      {
+        "acceptance_condition": "Label rules, maturity cutoff, unresolved-label handling, source, chronology, and custody are documented and approved.",
+        "acquisition_method": "Request label process documentation and a data-availability assessment before any cohort extraction.",
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-01"
+        ],
+        "evidence_currently_available": [
+          "Existing historical split/evaluation reports document the development cohort only; no qualifying new cohort is confirmed in M6."
+        ],
+        "evidence_gap_id": "EVD-02",
+        "exact_missing_evidence": "Label-generation/adjudication provenance, label-maturity delay, unresolved-label policy, and an eligible later or independently governed evaluation population.",
+        "expected_output": "Approved label-maturity specification and documented candidate cohort availability/provenance; no dataset is presumed available.",
+        "owner_role": "Fraud data / label operations owner",
+        "potential_source": "Data custodian and fraud-label operations; no source-system availability is established.",
+        "priority": 2,
+        "related_decision_ids": [
+          "DEC-OPS-08"
+        ],
+        "related_requirement_ids": [
+          "OPS-08"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": true,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "REQUEST_REQUIRED",
+        "why_necessary": "Prevents treating immature or unresolved labels as negatives and establishes valid evaluation timing/population."
+      },
+      {
+        "acceptance_condition": "Every feature has a documented source and scoring-time availability; population, exclusions, deduplication, and custody are specified.",
+        "acquisition_method": "Request source lineage, timestamps, extraction specification, and feature availability attestations; do not infer them from names.",
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-02"
+        ],
+        "evidence_currently_available": [
+          "Current inference contract, ordered features, scaler/sequence requirements, and prior validation data hashes are documented in existing artifacts."
+        ],
+        "evidence_gap_id": "EVD-03",
+        "exact_missing_evidence": "Point-in-time availability evidence for each feature, source/extraction provenance for a future cohort, duplicate/overlap rules, and representativeness criteria.",
+        "expected_output": "Versioned data provenance and feature availability assessment.",
+        "owner_role": "Data owner / security and privacy roles",
+        "potential_source": "Data owner/custodian and feature-source documentation; existence not verified.",
+        "priority": 3,
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-08",
+          "DEC-OPS-11"
+        ],
+        "related_requirement_ids": [
+          "OPS-01",
+          "OPS-08",
+          "OPS-11"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": true,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "UNKNOWN",
+        "why_necessary": "Needed to rule out post-outcome leakage and determine whether a future cohort represents the intended operating population."
+      },
+      {
+        "acceptance_condition": "Policy references approved objective, rationale, evidence, method, cohort separation, and authorized approval; M5 engine semantics remain unchanged.",
+        "acquisition_method": "After EVD-01 and EVD-02 decisions, specify the metric and calibration protocol; obtain separate calibration evidence if an operational threshold is needed.",
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-01",
+          "EVD-02"
+        ],
+        "evidence_currently_available": [
+          "M5 policy v2 and M6 independent evaluation design; all numerical thresholds are null."
+        ],
+        "evidence_gap_id": "EVD-04",
+        "exact_missing_evidence": "Approved acceptance metric interpretation, decision procedure, calibration need, calibration method/cohort (if required), and versioned acceptance criteria.",
+        "expected_output": "Policy proposal with evidence rationale and calibration protocol; no numeric value until supported and approved.",
+        "owner_role": "Risk/product stakeholders and data science/evaluation owner",
+        "potential_source": "Fraud/risk/product owners and evaluation owner; approved source is not currently present.",
+        "priority": 4,
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04",
+          "DEC-OPS-08"
+        ],
+        "related_requirement_ids": [
+          "OPS-01",
+          "OPS-02",
+          "OPS-03",
+          "OPS-04",
+          "OPS-08"
+        ],
+        "requires_future_controlled_experiment": true,
+        "requires_new_data": true,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "NOT_YET_AVAILABLE",
+        "why_necessary": "Required before threshold definition/calibration; supervised AP remains the project primary ranking measure while Autoencoder reconstruction MSE and anomaly-ranking AP have distinct meanings."
+      },
+      {
+        "acceptance_condition": "Targets and measurement method are approved and benchmark evidence covers specified workload; do not invent target values.",
+        "acquisition_method": "First obtain service/workload requirements, then benchmark frozen candidates on a documented representative workload with a reproducible harness.",
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-01"
+        ],
+        "evidence_currently_available": [
+          "Offline shared inference exists; no latency, throughput, memory, serving-cost, traffic, or availability measurements are recorded."
+        ],
+        "evidence_gap_id": "EVD-05",
+        "exact_missing_evidence": "Approved use mode and service targets, expected/peak traffic, and reproducible resource/latency measurements for frozen candidate configurations.",
+        "expected_output": "Approved service profile and benchmark report recording hardware/software/workload and measurements.",
+        "owner_role": "Platform / service owner and data/platform owner",
+        "potential_source": "Platform/service owner and traffic/data owner; no production service or workload is documented.",
+        "priority": 5,
+        "related_decision_ids": [
+          "DEC-OPS-05",
+          "DEC-OPS-06"
+        ],
+        "related_requirement_ids": [
+          "OPS-05",
+          "OPS-06"
+        ],
+        "requires_future_controlled_experiment": true,
+        "requires_new_data": false,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "NOT_YET_AVAILABLE",
+        "why_necessary": "Determines feasibility of batch/inline use and infrastructure sizing; cannot be inferred from validation ranking metrics."
+      },
+      {
+        "acceptance_condition": "Named owner roles, triggers, label-delay handling, escalation, rollback/fallback authority, and verification evidence are recorded and approved.",
+        "acquisition_method": "Stakeholder design review after intended service mode is known; document responsibilities and tested procedures before approval.",
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-01",
+          "EVD-02"
+        ],
+        "evidence_currently_available": [
+          "No production service, monitoring, incident, fallback, or rollback procedure is documented."
+        ],
+        "evidence_gap_id": "EVD-06",
+        "exact_missing_evidence": "Update triggers/approval, monitoring ownership and label-delay-aware measures, alerting/escalation, failure behavior, rollback criteria, and operational runbooks.",
+        "expected_output": "Versioned monitoring, incident, update, fallback, and rollback requirements/runbook.",
+        "owner_role": "Model operations / production operations / service owner",
+        "potential_source": "Model operations, service owner, fraud operations; no established process verified.",
+        "priority": 6,
+        "related_decision_ids": [
+          "DEC-OPS-07",
+          "DEC-OPS-09",
+          "DEC-OPS-10"
+        ],
+        "related_requirement_ids": [
+          "OPS-07",
+          "OPS-09",
+          "OPS-10"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": false,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "REQUEST_REQUIRED",
+        "why_necessary": "Required to manage lifecycle and respond to degraded data/model behavior or service failures."
+      },
+      {
+        "acceptance_condition": "Relevant controls are identified, owners and approval are documented, and any remaining risks have an explicit disposition.",
+        "acquisition_method": "Request the applicable organizational policy and formal review; do not create or assume controls in this plan.",
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-01"
+        ],
+        "evidence_currently_available": [
+          "No project-specific security/privacy approval or retention controls are recorded in M6."
+        ],
+        "evidence_gap_id": "EVD-07",
+        "exact_missing_evidence": "Applicable access control, privacy/legal basis, retention/deletion, auditability, incident handling, and sensitive-data constraints.",
+        "expected_output": "Applicable policy references and recorded review/approval status.",
+        "owner_role": "Security / privacy / compliance roles",
+        "potential_source": "Security, privacy, compliance, and data-governance roles; policy availability not verified.",
+        "priority": 7,
+        "related_decision_ids": [
+          "DEC-OPS-11"
+        ],
+        "related_requirement_ids": [
+          "OPS-11"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": false,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "REQUEST_REQUIRED",
+        "why_necessary": "Required before authorizing production use or moving transaction data into any new system."
+      },
+      {
+        "acceptance_condition": "Protocol is approved, artifacts and code are frozen and hashed, candidates/comparisons and exclusions are prespecified, and data access is governed.",
+        "acquisition_method": "Freeze a versioned protocol and verify hashes before confirmation data access; keep calibration and confirmation separate.",
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-01",
+          "EVD-02",
+          "EVD-03",
+          "EVD-04"
+        ],
+        "evidence_currently_available": [
+          "Canonical artifact hashes, metadata, lineage records, inference source, M5 policy, and existing validation report are referenced in M6."
+        ],
+        "evidence_gap_id": "EVD-08",
+        "exact_missing_evidence": "A frozen candidate set, source hashes/revisions, cohort rules, metric implementations, uncertainty method, acceptance policy, exclusions, and reporting/decision plan for independent confirmation.",
+        "expected_output": "Signed/versioned evaluation freeze manifest.",
+        "owner_role": "Model owner / evaluation owner / risk owner",
+        "potential_source": "Project model/evaluation owners and decision owners; protocol record must be created after upstream decisions.",
+        "priority": 8,
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-07",
+          "DEC-OPS-08"
+        ],
+        "related_requirement_ids": [
+          "OPS-01",
+          "OPS-07",
+          "OPS-08"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": false,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "NOT_YET_AVAILABLE",
+        "why_necessary": "Prevents post-hoc changes and candidate selection based on confirmation outcomes."
+      },
+      {
+        "acceptance_condition": "Disjointness, chronology, label maturity, source, feature availability, population definition, and custody meet the approved protocol.",
+        "acquisition_method": "After EVD-02/03 and protocol freeze, request a governed cohort extraction; verify eligibility and maturity before scoring.",
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-02",
+          "EVD-03",
+          "EVD-08"
+        ],
+        "evidence_currently_available": [
+          "Existing validation and historical test analyses are not qualifying independent confirmation; M6 found no fresh eligible cohort."
+        ],
+        "evidence_gap_id": "EVD-09",
+        "exact_missing_evidence": "An authorized, disjoint, later or independently governed population with mature labels and documented extraction/custody.",
+        "expected_output": "Cohort provenance manifest and eligibility approval; dataset contents are not part of this planning artifact.",
+        "owner_role": "Data custodian / fraud label operations / evaluation owner",
+        "potential_source": "Data custodian / label operations; future data availability is not established.",
+        "priority": 9,
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04",
+          "DEC-OPS-08"
+        ],
+        "related_requirement_ids": [
+          "OPS-01",
+          "OPS-02",
+          "OPS-03",
+          "OPS-04",
+          "OPS-08"
+        ],
+        "requires_future_controlled_experiment": false,
+        "requires_new_data": true,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "NOT_YET_AVAILABLE",
+        "why_necessary": "Only such evidence can support the prespecified independent confirmation; existing validation is selection-conditioned and prior test exposure precludes blind confirmation claims."
+      },
+      {
+        "acceptance_condition": "All evidence required by approved policy is linked, limitations are reported, and authorized decision-makers record disposition.",
+        "acquisition_method": "Execute only after required decisions, protocol freeze, and data/service evidence gates close; report failures and exclusions.",
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "can_complete_without_model_training": true,
+        "dependencies": [
+          "EVD-04",
+          "EVD-05",
+          "EVD-06",
+          "EVD-07",
+          "EVD-08",
+          "EVD-09"
+        ],
+        "evidence_currently_available": [
+          "M5 v2 acceptance policy, M4 validation-gate behavior, M6 model readiness assessment and independent-evaluation design."
+        ],
+        "evidence_gap_id": "EVD-10",
+        "exact_missing_evidence": "After upstream decisions and eligible data exist: frozen independent evaluation results, uncertainty summaries, operational benchmark evidence, and documented acceptance disposition.",
+        "expected_output": "Independent evaluation record, operational benchmark record, and explicit acceptance/production decision records.",
+        "owner_role": "Evaluation owner, risk owner, platform owner, production operations owner",
+        "potential_source": "Future controlled evaluation and benchmark owners; no qualifying cohort or operational workload is verified.",
+        "priority": 10,
+        "related_decision_ids": [
+          "DEC-OPS-01",
+          "DEC-OPS-02",
+          "DEC-OPS-03",
+          "DEC-OPS-04",
+          "DEC-OPS-05",
+          "DEC-OPS-06",
+          "DEC-OPS-07",
+          "DEC-OPS-08",
+          "DEC-OPS-09",
+          "DEC-OPS-10",
+          "DEC-OPS-11"
+        ],
+        "related_requirement_ids": [
+          "OPS-01",
+          "OPS-02",
+          "OPS-03",
+          "OPS-04",
+          "OPS-05",
+          "OPS-06",
+          "OPS-07",
+          "OPS-08",
+          "OPS-09",
+          "OPS-10",
+          "OPS-11"
+        ],
+        "requires_future_controlled_experiment": true,
+        "requires_new_data": true,
+        "requires_stakeholder_input": true,
+        "source_known_to_exist": "UNKNOWN",
+        "status": "NOT_YET_AVAILABLE",
+        "why_necessary": "Supports a separate acceptance decision; a planning record or validation result alone cannot approve a model."
+      }
+    ]
+  },
+  "independent_evaluation_readiness": {
+    "independent_confirmation_occurred": false,
+    "m6_design_status": "DESIGN_ONLY_NO_QUALIFYING_COHORT_CONFIRMED",
+    "prerequisites": [
+      {
+        "evidence_gap_ids": [
+          "EVD-01"
+        ],
+        "item": "Approved evaluation objective, action mode, and acceptance rationale.",
+        "prerequisite_id": "IND-01",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-02",
+          "EVD-03",
+          "EVD-09"
+        ],
+        "item": "Defined target population, chronological boundaries, and mature-label/unresolved-label policy.",
+        "prerequisite_id": "IND-02",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-03"
+        ],
+        "item": "Data provenance, point-in-time feature availability, deduplication/overlap, and representativeness rules.",
+        "prerequisite_id": "IND-03",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-08"
+        ],
+        "item": "Frozen canonical artifact/hash, metadata, lineage class, scaler, inference code, metric definitions, and policy.",
+        "prerequisite_id": "IND-04",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-08"
+        ],
+        "item": "Prespecified candidate/comparison/exclusion rules and uncertainty method.",
+        "prerequisite_id": "IND-05",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-02",
+          "EVD-09"
+        ],
+        "item": "Disjoint eligible cohort with mature labels and governed access.",
+        "prerequisite_id": "IND-06",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-04"
+        ],
+        "item": "If threshold decisions are required, separate calibration method/cohort and threshold freeze before confirmation.",
+        "prerequisite_id": "IND-07",
+        "status": "BLOCKED"
+      },
+      {
+        "evidence_gap_ids": [
+          "EVD-08",
+          "EVD-10"
+        ],
+        "item": "Validity criteria, reporting requirements, and explicit decision authority.",
+        "prerequisite_id": "IND-08",
+        "status": "BLOCKED"
+      }
+    ],
+    "protocol_reused": "M6 independent_evaluation_design; this record does not establish a competing protocol.",
+    "test_split_eligibility": "NOT_ELIGIBLE_AS_FRESH_BLIND_CONFIRMATION; prior analysis examined it."
+  },
+  "known_evidence_state": {
+    "documented_operational_requirements_count": 0,
+    "existing_validation": "Selection-conditioned descriptive evidence only; no new metrics calculated in this plan.",
+    "m6_registered_model_count_at_snapshot": 0,
+    "measured_operational_evidence_count": 0,
+    "missing_original_training_provenance": "XGBoost, Logistic Regression, and LightGBM import records do not recover original training runs; LightGBM historical AP-to-canonical-binary association remains unresolved.",
+    "open_requirement_count": 11,
+    "performance_measurements": "Latency, throughput, memory, serving cost, availability, transaction volume, and review burden are unmeasured or unspecified.",
+    "prior_test_split": "Previously examined; ineligible to describe as untouched/blind independent confirmation.",
+    "production_service": "Not documented.",
+    "qualifying_independent_cohort": "NOT_CONFIRMED"
+  },
+  "limitations": [
+    "Requirement and evidence status reflects inspected repository sources and the M6 snapshot, not stakeholder confirmation outside the repository.",
+    "Potential external evidence sources are roles or possible custodians; their existence and availability are UNKNOWN unless explicitly documented.",
+    "No calendar dates, cohort sizes, traffic volumes, costs, numeric service objectives, or acceptance cutoffs are proposed.",
+    "Existing validation evidence is selection-conditioned; prior test inspection prevents a fresh blind-holdout claim.",
+    "No source records new evidence as acquired; each plan item remains open.",
+    "Historical model provenance limitations remain, including imported XGBoost/Logistic Regression/LightGBM and unresolved LightGBM AP lineage."
+  ],
+  "operational_requirements_register": {
+    "context_facts": [
+      {
+        "classification": "DOCUMENTATION_ONLY",
+        "fact": "No production deployment or inference service is documented.",
+        "source": "README.md: Current Project Status"
+      },
+      {
+        "classification": "SOURCE_INSPECTION",
+        "fact": "Offline shared inference implementation exists; operational performance is not measured.",
+        "source": "src/inference.py"
+      },
+      {
+        "classification": "VERIFIED_POLICY_CONFIGURATION",
+        "fact": "M5 policy v2 has null numeric quality thresholds for all eight model families.",
+        "source": "configs/validation_policy_v2.json"
+      }
+    ],
+    "documented_requirements": [],
+    "measured_evidence": [],
+    "requirements": [
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "current_evidence": null,
+        "dimension": "fraud_detection_objective_and_action",
+        "evidence_needed_to_resolve": "Approved business objective from fraud/product stakeholders.",
+        "numeric_target": null,
+        "owner_role": "Fraud operations / product owner",
+        "question": "What operational outcome is primary: fraud capture, reduced loss, review prioritization, or another objective?",
+        "requirement_id": "OPS-01",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "current_evidence": null,
+        "dimension": "missed_fraud_risk",
+        "evidence_needed_to_resolve": "Risk appetite and documented fraud-loss policy.",
+        "numeric_target": null,
+        "owner_role": "Fraud risk owner",
+        "question": "What missed-fraud risk or recall constraint is acceptable?",
+        "requirement_id": "OPS-02",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "current_evidence": null,
+        "dimension": "false_positive_and_customer_impact",
+        "evidence_needed_to_resolve": "Approved review burden and customer-impact constraints.",
+        "numeric_target": null,
+        "owner_role": "Fraud operations / customer experience owner",
+        "question": "What false-positive or precision constraint is acceptable?",
+        "requirement_id": "OPS-03",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "current_evidence": null,
+        "dimension": "review_capacity",
+        "evidence_needed_to_resolve": "Queue staffing/capacity and transaction-volume evidence.",
+        "numeric_target": null,
+        "owner_role": "Fraud operations owner",
+        "question": "What review capacity and alert-volume limits apply?",
+        "requirement_id": "OPS-04",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "current_evidence": null,
+        "dimension": "latency_and_availability",
+        "evidence_needed_to_resolve": "Service-level requirements and controlled latency benchmarks.",
+        "numeric_target": null,
+        "owner_role": "Platform / service owner",
+        "question": "What inference latency and availability targets apply?",
+        "requirement_id": "OPS-05",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "current_evidence": null,
+        "dimension": "transaction_volume_and_peak_profile",
+        "evidence_needed_to_resolve": "Documented expected and peak traffic profile.",
+        "numeric_target": null,
+        "owner_role": "Data/platform owner",
+        "question": "What transaction volume and peak patterns must be supported?",
+        "requirement_id": "OPS-06",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "current_evidence": null,
+        "dimension": "model_update_lifecycle",
+        "evidence_needed_to_resolve": "Approved change/update policy.",
+        "numeric_target": null,
+        "owner_role": "Model risk / product owner",
+        "question": "How often may the model be updated, and what triggers an update?",
+        "requirement_id": "OPS-07",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": true,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": true,
+        "current_evidence": null,
+        "dimension": "label_maturity_and_data_delay",
+        "evidence_needed_to_resolve": "Label generation and adjudication process documentation.",
+        "numeric_target": null,
+        "owner_role": "Fraud data / label operations owner",
+        "question": "What label-maturity delay and acceptable data delay apply?",
+        "requirement_id": "OPS-08",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "current_evidence": null,
+        "dimension": "monitoring_and_response",
+        "evidence_needed_to_resolve": "Monitoring objective, data access, ownership, and response plan.",
+        "numeric_target": null,
+        "owner_role": "Model operations owner",
+        "question": "What production monitoring and alert-quality checks are required?",
+        "requirement_id": "OPS-09",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "current_evidence": null,
+        "dimension": "failure_fallback_and_rollback",
+        "evidence_needed_to_resolve": "Approved operational continuity and rollback requirements.",
+        "numeric_target": null,
+        "owner_role": "Service owner / fraud operations",
+        "question": "What failure, fallback, and rollback behavior is required?",
+        "requirement_id": "OPS-10",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      },
+      {
+        "approved_requirement": null,
+        "blocks_independent_confirmation": false,
+        "blocks_production_approval": true,
+        "blocks_threshold_definition": false,
+        "current_evidence": null,
+        "dimension": "security_privacy_retention_and_audit",
+        "evidence_needed_to_resolve": "Security/privacy review and applicable organizational policy.",
+        "numeric_target": null,
+        "owner_role": "Security / privacy / compliance roles",
+        "question": "Which security, privacy, retention, and audit controls apply?",
+        "requirement_id": "OPS-11",
+        "requires_stakeholder_input": true,
+        "resolution_condition": "An authorized owner records the answer, scope, rationale, evidence reference, approval state, and effective version; numeric constraints remain null unless explicitly justified and approved.",
+        "source_reference": "M6 operational_requirements_register.decision_questions",
+        "source_status": "UNKNOWN_NOT_DOCUMENTED",
+        "status": "UNKNOWN"
+      }
+    ],
+    "status_vocabulary": [
+      "VERIFIED_REQUIREMENT",
+      "DOCUMENTED_REQUIREMENT",
+      "PROPOSED_DECISION",
+      "STAKEHOLDER_DECISION_REQUIRED",
+      "EVIDENCE_REQUIRED",
+      "BLOCKED",
+      "UNKNOWN",
+      "RESOLVED"
+    ]
+  },
+  "plan_id": "20261014_79b5ae69bf1944fb94b9e4abc98c0a61",
+  "record_type": "operational_requirements_decisions_and_evidence_plan",
+  "schema_version": "1.0.0",
+  "scope": {
+    "branch_observed": "feature/tier2-deep-learning",
+    "model_families": [
+      "random_forest",
+      "xgboost",
+      "logistic_regression",
+      "lightgbm",
+      "mlp",
+      "autoencoder",
+      "lstm",
+      "gru"
+    ],
+    "non_claims": [
+      "No stakeholder approval is asserted.",
+      "No new evidence or data is claimed acquired.",
+      "No threshold is justified or defined.",
+      "No independent confirmation or production approval has occurred."
+    ],
+    "purpose": "Make unresolved operational requirements, stakeholder decisions, evidence gaps, thresholds, and independent-evaluation dependencies actionable.",
+    "repository": "Bank-Fraud-Detection"
+  },
+  "source_evidence": [
+    {
+      "classification": "existing_evidence_readiness_report",
+      "id": "SRC-M6",
+      "path": "reports/evidence_readiness_v1/62e68772501249cfb45ed3810758d365/evidence_readiness_report.json",
+      "used_for": "Latest M6 operational questions, six evidence-plan themes, M5 readiness reuse, and independent-evaluation design."
+    },
+    {
+      "classification": "existing_policy",
+      "id": "SRC-M5-POLICY",
+      "path": "configs/validation_policy_v2.json",
+      "used_for": "Metric semantics, null thresholds, and calibration/confirmation separation."
+    },
+    {
+      "classification": "existing_policy_analysis",
+      "id": "SRC-M5-REPORT",
+      "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+      "used_for": "Current M5 candidate decisions and threshold values."
+    },
+    {
+      "classification": "existing_policy",
+      "id": "SRC-M4",
+      "path": "configs/validation_policy_v1.json",
+      "used_for": "M4 baseline gate contract; remains unchanged."
+    },
+    {
+      "classification": "project_documentation",
+      "id": "SRC-README",
+      "path": "README.md",
+      "used_for": "Existing project state and documented absence of production service."
+    },
+    {
+      "classification": "source_inspection",
+      "id": "SRC-INFERENCE",
+      "path": "src/inference.py",
+      "used_for": "Offline inference exists; no operational performance measurement is asserted."
+    },
+    {
+      "classification": "read_only_registry_snapshot",
+      "id": "SRC-REGISTRY",
+      "path": "M6 source_manifest.registry_inspection",
+      "used_for": "M6 reported zero registered models at inspection time; not a claim about future state."
+    }
+  ],
+  "status": "PLANNING_COMPLETE_REQUIREMENTS_UNAPPROVED_EVIDENCE_NOT_ACQUIRED",
+  "threshold_definition_readiness": {
+    "all_numeric_thresholds_remain_null": true,
+    "m5_policy_analysis_reference": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+    "model_families": {
+      "autoencoder": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Reconstruction MSE is the checkpoint metric; anomaly-score AP is a separate ranking measure. Neither establishes a calibrated fraud probability or threshold.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "validation_reconstruction_mse",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "gru": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Length-10 global chronological sequences target the final row; cohort boundaries require fresh sequence construction with no cross-boundary windows.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "lightgbm": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Supervised fraud-probability ranking; AP is the M5 primary validation metric.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "logistic_regression": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Supervised fraud-probability ranking; AP is the M5 primary validation metric.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "lstm": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Length-10 global chronological sequences target the final row; cohort boundaries require fresh sequence construction with no cross-boundary windows.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "mlp": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Supervised fraud-probability ranking; AP is the M5 primary validation metric.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "random_forest": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Supervised fraud-probability ranking; AP is the M5 primary validation metric.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      },
+      "xgboost": {
+        "exploratory_comparison": "SUPPORTED_WITH_SELECTION_AND_PROVENANCE_CAVEATS",
+        "family_specific_note": "Supervised fraud-probability ranking; AP is the M5 primary validation metric.",
+        "independent_confirmation": "BLOCKED_NO_QUALIFYING_COHORT_CONFIRMED",
+        "m5_candidate_decision": "INSUFFICIENT_EVIDENCE",
+        "m5_policy_metric": "average_precision",
+        "m5_threshold_value": null,
+        "production_approval": "BLOCKED_INSUFFICIENT_OPERATIONAL_AND_INDEPENDENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE",
+        "threshold_definition": "BLOCKED_PENDING_OBJECTIVE_AND_APPROVED_ACCEPTANCE_REQUIREMENTS"
+      }
+    },
+    "overall_decision": "NO_THRESHOLD_DEFINITION_OR_PRODUCTION_APPROVAL",
+    "policy_modified": false,
+    "policy_reference": "configs/validation_policy_v2.json"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "applicable_model_families": [
+    "random_forest",
+    "xgboost",
+    "logistic_regression",
+    "lightgbm",
+    "mlp",
+    "autoencoder",
+    "lstm",
+    "gru"
+  ],
+  "calibration_and_evaluation_separation": {
+    "calibration": "A threshold requires a cited acceptance objective and evidence source; reuse of validation data must be disclosed.",
+    "candidate_evaluation": "Evaluate candidates against a fixed, versioned threshold without recalibrating it on the candidate evaluation observations.",
+    "independent_confirmation": "Use a distinct, pre-specified evaluation cohort for independent confirmation; this project validation evidence is selection-conditioned.",
+    "test_data": "Test-set evidence is excluded from calibration and acceptance-policy definition."
+  },
+  "decision_precedence": [
+    "FAIL",
+    "INSUFFICIENT_EVIDENCE",
+    "PASS"
+  ],
+  "effective_status": "incomplete",
+  "mandatory_gates": [
+    "artifact_integrity",
+    "artifact_compatibility",
+    "provenance_lineage",
+    "validation_metric",
+    "quality_threshold",
+    "policy_effectiveness"
+  ],
+  "missing_evidence_handling": {
+    "malformed_metric": "FAIL",
+    "required_lineage": "INSUFFICIENT_EVIDENCE",
+    "required_metric": "INSUFFICIENT_EVIDENCE",
+    "undefined_threshold": "INSUFFICIENT_EVIDENCE"
+  },
+  "optional_gates": [
+    "git_provenance",
+    "registry_lineage"
+  ],
+  "policy_id": "bank-fraud-validation-v2",
+  "quality_thresholds": {
+    "autoencoder": {
+      "metric": "validation_reconstruction_mse",
+      "operator": "maximum",
+      "value": null
+    },
+    "gru": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    },
+    "lightgbm": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    },
+    "logistic_regression": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    },
+    "lstm": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    },
+    "mlp": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    },
+    "random_forest": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    },
+    "xgboost": {
+      "metric": "average_precision",
+      "operator": "minimum",
+      "value": null
+    }
+  },
+  "require_quality_threshold": true,
+  "require_registry_registration": false,
+  "require_source_record": true,
+  "required_metrics": {
+    "autoencoder": "validation_reconstruction_mse",
+    "gru": "average_precision",
+    "lightgbm": "average_precision",
+    "logistic_regression": "average_precision",
+    "lstm": "average_precision",
+    "mlp": "average_precision",
+    "random_forest": "average_precision",
+    "xgboost": "average_precision"
+  },
+  "required_provenance": {
+    "artifact_metadata": true,
+    "source_record": true,
+    "validation_evaluation": true
+  },
+  "schema_version": "2.0.0",
+  "threshold_details": {
+    "autoencoder": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "gru": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "lightgbm": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "logistic_regression": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "lstm": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "mlp": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "random_forest": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    },
+    "xgboost": {
+      "calibration_evidence_reference": null,
+      "calibration_method": null,
+      "calibration_timestamp": null,
+      "rationale": "No documented business or technical acceptance requirement or independent validation evidence supports a numeric cutoff. The available validation observations were used for model or checkpoint selection and cannot provide independent confirmation of a cutoff calibrated on those same observations.",
+      "source": null,
+      "undefined_reason": "insufficient_supporting_acceptance_evidence"
+    }
+  },
+  "undefined_threshold_decision": "INSUFFICIENT_EVIDENCE",
+  "version": "2"
+}

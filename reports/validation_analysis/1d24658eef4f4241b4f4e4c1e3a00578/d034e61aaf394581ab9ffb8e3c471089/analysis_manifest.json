@@ -1,0 +1,275 @@
+{
+  "analysis_id": "d034e61aaf394581ab9ffb8e3c471089",
+  "cohort_counts": {
+    "common_fraud_cases": 56,
+    "common_observations": 42712,
+    "native_validation_observations": 42721
+  },
+  "created_at_utc": "2026-10-09T21:26:49.645722+00:00",
+  "curve_coordinates": {
+    "path": "precision_recall_curves.json",
+    "precision_recall_curve_implementation": "sklearn.metrics.precision_recall_curve",
+    "sha256": "95a726d64dc7da708515128b0deda1cd47856cf5115af0b1cc93aaf77031adce"
+  },
+  "evaluation_report": {
+    "evaluation_report_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "evaluation_report_path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+    "evaluation_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274",
+    "validation_features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+    "validation_labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6"
+  },
+  "figures": [
+    {
+      "path": "pr_common_supervised.png",
+      "sha256": "527be5781144f06569ea71d9f9f720c70ec233a94165a3d01763845e3931160d"
+    },
+    {
+      "path": "pr_common_supervised.svg",
+      "sha256": "3faa31a550ab490be4c1ef22dd98a6dfe46a2a3b591eb9e73e99b4816fdae3b8"
+    },
+    {
+      "path": "pr_common_autoencoder_anomaly.png",
+      "sha256": "0dd7006d6ea36cdbb82c3c8e4b65d4eeded30ee4b4c0d0f17514d26713acab6c"
+    },
+    {
+      "path": "pr_common_autoencoder_anomaly.svg",
+      "sha256": "16ef1d6516c7b7393eeabca6fd333e3a96642ae3bc44c2f2c32dad141bf2908f"
+    },
+    {
+      "path": "pr_native_supervised.png",
+      "sha256": "a7f86f6fd04a9d84d03f77c7a74526a87db8570f60cea7b138d9a37c7d9325c1"
+    },
+    {
+      "path": "pr_native_supervised.svg",
+      "sha256": "1d8aac80acd885936a3a02eb3acd2b294c417ab1939db5c8e216210a0714002b"
+    },
+    {
+      "path": "pr_native_autoencoder_anomaly.png",
+      "sha256": "66635626b382df3f77f59ad3237fe34184bf2779b6c28c0d2ecabf7c6ca57b98"
+    },
+    {
+      "path": "pr_native_autoencoder_anomaly.svg",
+      "sha256": "8fde099f6a8f926e6108027d33cbbd864d1f14b5c93ac7c4eda2052cfd42a31e"
+    }
+  ],
+  "models": {
+    "autoencoder": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/881087b271b240b192d2385e49c3251a/autoencoder_state_dict.pt",
+      "artifact_sha256": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+      "common_row_count": 42712,
+      "metadata_path": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json",
+      "metadata_sha256": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+      "native_row_count": 42721,
+      "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler_path": "data/processed/robust_scaler.joblib",
+      "scaler_sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067",
+      "score_column": "score_autoencoder",
+      "score_type": "anomaly_score",
+      "temporal_alignment": null,
+      "training_run_id": "9d337a314b6848dbb5b232ad46395673"
+    },
+    "gru": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/35a1905ea8634a169817e321ea9237b8/gru_state_dict.pt",
+      "artifact_sha256": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e",
+      "common_row_count": 42712,
+      "metadata_path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+      "metadata_sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab",
+      "native_row_count": 42712,
+      "pipeline_run_id": "35a1905ea8634a169817e321ea9237b8",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler_path": "data/processed/robust_scaler.joblib",
+      "scaler_sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067",
+      "score_column": "score_gru",
+      "score_type": "fraud_probability",
+      "temporal_alignment": {
+        "first_n_input_rows_without_prediction": 9,
+        "sequence_length": 10,
+        "target": "final row of each ordered sequence"
+      },
+      "training_run_id": "9410c67e5ad4493886cbe44d28735c32"
+    },
+    "lightgbm": {
+      "artifact_import_run_id": "11c360d936f04152b886480a74ba16c0",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm.joblib",
+      "artifact_sha256": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812",
+      "common_row_count": 42712,
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm_metadata.json",
+      "metadata_sha256": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd",
+      "native_row_count": 42721,
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "unscaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import. The root-level LightGBM binary differs by SHA-256. The aggregate binary is the forward canonical choice, but the historical validation AP is not conclusively linked to this binary.",
+      "score_column": "score_lightgbm",
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": null
+    },
+    "logistic_regression": {
+      "artifact_import_run_id": "1ae816295848406da9be50a8b62192c1",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression.joblib",
+      "artifact_sha256": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+      "common_row_count": 42712,
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression_metadata.json",
+      "metadata_sha256": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+      "native_row_count": 42721,
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "scaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+      "scaler_path": "data/processed/robust_scaler.joblib",
+      "scaler_sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067",
+      "score_column": "score_logistic_regression",
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": null
+    },
+    "lstm": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/136349275cab4fa482792ceef86d9ba2/lstm_state_dict.pt",
+      "artifact_sha256": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532",
+      "common_row_count": 42712,
+      "metadata_path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+      "metadata_sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0",
+      "native_row_count": 42712,
+      "pipeline_run_id": "136349275cab4fa482792ceef86d9ba2",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler_path": "data/processed/robust_scaler.joblib",
+      "scaler_sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067",
+      "score_column": "score_lstm",
+      "score_type": "fraud_probability",
+      "temporal_alignment": {
+        "first_n_input_rows_without_prediction": 9,
+        "sequence_length": 10,
+        "target": "final row of each ordered sequence"
+      },
+      "training_run_id": "e02d4e87207f400a90a14bddf3c124bc"
+    },
+    "mlp": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_state_dict.pt",
+      "artifact_sha256": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+      "common_row_count": 42712,
+      "metadata_path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+      "metadata_sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+      "native_row_count": 42721,
+      "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler_path": "data/processed/robust_scaler.joblib",
+      "scaler_sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067",
+      "score_column": "score_mlp",
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": "b7393416190340ad826a9f3ad25cd377"
+    },
+    "random_forest": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest.joblib",
+      "artifact_sha256": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+      "common_row_count": 42712,
+      "metadata_path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+      "metadata_sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+      "native_row_count": 42721,
+      "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+      "preprocessing": "unscaled",
+      "provenance_caveat": null,
+      "score_column": "score_random_forest",
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": "3f8608746b5b486cadd61a1f6331e5eb"
+    },
+    "xgboost": {
+      "artifact_import_run_id": "08edc67966a846158e472f4f71a0f83d",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost.joblib",
+      "artifact_sha256": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+      "common_row_count": 42712,
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost_metadata.json",
+      "metadata_sha256": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+      "native_row_count": 42721,
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "unscaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+      "score_column": "score_xgboost",
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": null
+    }
+  },
+  "record_type": "validation_precision_recall_analysis",
+  "score_semantics": {
+    "autoencoder": "reconstruction-error anomaly score; not a probability",
+    "supervised_models": "fraud probability for class 1"
+  },
+  "score_table": {
+    "common_cohort_column": "in_common_cohort",
+    "format": "wide Parquet; one row per validation observation",
+    "label_column": "true_label",
+    "model_score_columns": {
+      "autoencoder": "score_autoencoder",
+      "gru": "score_gru",
+      "lightgbm": "score_lightgbm",
+      "logistic_regression": "score_logistic_regression",
+      "lstm": "score_lstm",
+      "mlp": "score_mlp",
+      "random_forest": "score_random_forest",
+      "xgboost": "score_xgboost"
+    },
+    "observation_id_column": "observation_id (original validation DataFrame index)",
+    "path": "validation_scores.parquet",
+    "sha256": "d3af8746d40a687a6bce5f7b6219bf66e91b8a876444ed509d7d168bd367d945"
+  },
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "pyarrow": "23.0.1",
+    "scikit-learn": "1.9.0"
+  },
+  "threshold_policy": "No threshold selected; only continuous-score PR coordinates are saved.",
+  "validation_split": {
+    "feature_order": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26",
+      "V27",
+      "V28",
+      "Amount",
+      "Amount_log",
+      "Time",
+      "Time_hour"
+    ],
+    "feature_path": "data/processed/X_val.parquet",
+    "feature_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+    "identifier": "chronological_validation_split",
+    "label_path": "data/processed/y_val.parquet",
+    "label_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6"
+  }
+}

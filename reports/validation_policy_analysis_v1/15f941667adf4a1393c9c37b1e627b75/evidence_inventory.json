@@ -1,0 +1,1559 @@
+{
+  "analysis_sources": {
+    "m4_gate_reports": {
+      "directory": "reports/validation_gates",
+      "reports_are_m4_outputs": true
+    },
+    "paired_ap_uncertainty": {
+      "analysis_id": "ed15981caa484568a534d15c73d51715",
+      "limitations": [
+        "Validation observations were used for model/checkpoint selection.",
+        "The common validation cohort has only 56 fraud observations.",
+        "Temporal dependence may remain; block lengths are sensitivity anchors, not estimated dependence scales.",
+        "The test split has been examined previously and is not an independent blind holdout.",
+        "Intervals do not establish superiority or independent generalization performance."
+      ],
+      "method_count": 5,
+      "path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json",
+      "record_type": "paired_validation_ap_uncertainty",
+      "sha256": "12ba2b3d9794744f99607304f47bdadc91096b05452d0671e1b032ba57e4a134"
+    },
+    "per_observation_scores": {
+      "available": true,
+      "manifest_path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+      "manifest_sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17",
+      "note": "Existing validation-only score outputs are identified but not read or recalculated here."
+    },
+    "temporal_stability": {
+      "analysis_id": "99ea1c0797ab47d5b2c3f8b10f2a4de2",
+      "limitations": [
+        "The validation observations were used for model and checkpoint selection.",
+        "Only 56 fraud observations are available in the common cohort.",
+        "Segment metrics are descriptive and are not uncertainty intervals.",
+        "Temporal variation does not by itself demonstrate concept drift.",
+        "The test split was examined in prior project work and is not an untouched or blind holdout."
+      ],
+      "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json",
+      "record_type": "validation_temporal_stability_analysis",
+      "segmentation": {
+        "method": "Four contiguous equal-sized slices of the ordered common cohort.",
+        "segment_size": 10678,
+        "segments": [
+          {
+            "first_observation_id": 199373,
+            "fraud_count": 10,
+            "fraud_prevalence": 0.0009365049634763064,
+            "last_observation_id": 210050,
+            "legitimate_count": 10668,
+            "models": {
+              "autoencoder": {
+                "ap_rank": 8,
+                "average_precision": 0.2428753028580615,
+                "roc_auc": 0.9530933633295838,
+                "roc_auc_unavailable_reason": null
+              },
+              "gru": {
+                "ap_rank": 5,
+                "average_precision": 0.8822315757826299,
+                "roc_auc": 0.9773997000374953,
+                "roc_auc_unavailable_reason": null
+              },
+              "lightgbm": {
+                "ap_rank": 6,
+                "average_precision": 0.8007393272517257,
+                "roc_auc": 0.8870734908136484,
+                "roc_auc_unavailable_reason": null
+              },
+              "logistic_regression": {
+                "ap_rank": 7,
+                "average_precision": 0.7534724759819816,
+                "roc_auc": 0.9827334083239595,
+                "roc_auc_unavailable_reason": null
+              },
+              "lstm": {
+                "ap_rank": 2,
+                "average_precision": 0.9003594536304816,
+                "roc_auc": 0.974015748031496,
+                "roc_auc_unavailable_reason": null
+              },
+              "mlp": {
+                "ap_rank": 1,
+                "average_precision": 0.9006680026720107,
+                "roc_auc": 0.98606111736033,
+                "roc_auc_unavailable_reason": null
+              },
+              "random_forest": {
+                "ap_rank": 4,
+                "average_precision": 0.9000936504963476,
+                "roc_auc": 0.946822272215973,
+                "roc_auc_unavailable_reason": null
+              },
+              "xgboost": {
+                "ap_rank": 3,
+                "average_precision": 0.9002912904165452,
+                "roc_auc": 0.9679133858267717,
+                "roc_auc_unavailable_reason": null
+              }
+            },
+            "percentage_of_common_cohort_frauds": 17.857142857142858,
+            "row_count": 10678,
+            "row_end_in_common_cohort_exclusive": 10678,
+            "row_start_in_common_cohort": 0,
+            "segment": 1
+          },
+          {
+            "first_observation_id": 210051,
+            "fraud_count": 13,
+            "fraud_prevalence": 0.0012174564525191983,
+            "last_observation_id": 220728,
+            "legitimate_count": 10665,
+            "models": {
+              "autoencoder": {
+                "ap_rank": 8,
+                "average_precision": 0.24141752169733102,
+                "roc_auc": 0.9237116376356882,
+                "roc_auc_unavailable_reason": null
+              },
+              "gru": {
+                "ap_rank": 2,
+                "average_precision": 0.7399640071971457,
+                "roc_auc": 0.9427963503912871,
+                "roc_auc_unavailable_reason": null
+              },
+              "lightgbm": {
+                "ap_rank": 6,
+                "average_precision": 0.6620636938083748,
+                "roc_auc": 0.9709618089364925,
+                "roc_auc_unavailable_reason": null
+              },
+              "logistic_regression": {
+                "ap_rank": 7,
+                "average_precision": 0.5937809947193584,
+                "roc_auc": 0.9451404666594541,
+                "roc_auc_unavailable_reason": null
+              },
+              "lstm": {
+                "ap_rank": 4,
+                "average_precision": 0.7140109580680299,
+                "roc_auc": 0.9411590753362905,
+                "roc_auc_unavailable_reason": null
+              },
+              "mlp": {
+                "ap_rank": 3,
+                "average_precision": 0.7231582374342219,
+                "roc_auc": 0.9471528003173573,
+                "roc_auc_unavailable_reason": null
+              },
+              "random_forest": {
+                "ap_rank": 1,
+                "average_precision": 0.7480564365771005,
+                "roc_auc": 0.9173428540517148,
+                "roc_auc_unavailable_reason": null
+              },
+              "xgboost": {
+                "ap_rank": 5,
+                "average_precision": 0.7118385960181757,
+                "roc_auc": 0.9438566122110426,
+                "roc_auc_unavailable_reason": null
+              }
+            },
+            "percentage_of_common_cohort_frauds": 23.214285714285715,
+            "row_count": 10678,
+            "row_end_in_common_cohort_exclusive": 21356,
+            "row_start_in_common_cohort": 10678,
+            "segment": 2
+          },
+          {
+            "first_observation_id": 220729,
+            "fraud_count": 14,
+            "fraud_prevalence": 0.001311106948866829,
+            "last_observation_id": 231406,
+            "legitimate_count": 10664,
+            "models": {
+              "autoencoder": {
+                "ap_rank": 8,
+                "average_precision": 0.3301707426299274,
+                "roc_auc": 0.9794770121101704,
+                "roc_auc_unavailable_reason": null
+              },
+              "gru": {
+                "ap_rank": 3,
+                "average_precision": 0.8921534115186184,
+                "roc_auc": 0.9842393634122817,
+                "roc_auc_unavailable_reason": null
+              },
+              "lightgbm": {
+                "ap_rank": 7,
+                "average_precision": 0.8139400893352128,
+                "roc_auc": 0.9156440895938271,
+                "roc_auc_unavailable_reason": null
+              },
+              "logistic_regression": {
+                "ap_rank": 5,
+                "average_precision": 0.839910326813061,
+                "roc_auc": 0.9845340799485586,
+                "roc_auc_unavailable_reason": null
+              },
+              "lstm": {
+                "ap_rank": 4,
+                "average_precision": 0.8812973204404634,
+                "roc_auc": 0.9929201050262566,
+                "roc_auc_unavailable_reason": null
+              },
+              "mlp": {
+                "ap_rank": 2,
+                "average_precision": 0.9092733417828474,
+                "roc_auc": 0.9877290751259243,
+                "roc_auc_unavailable_reason": null
+              },
+              "random_forest": {
+                "ap_rank": 1,
+                "average_precision": 0.9204660587639311,
+                "roc_auc": 0.9967313256885652,
+                "roc_auc_unavailable_reason": null
+              },
+              "xgboost": {
+                "ap_rank": 6,
+                "average_precision": 0.8374544960383008,
+                "roc_auc": 0.9891892616011145,
+                "roc_auc_unavailable_reason": null
+              }
+            },
+            "percentage_of_common_cohort_frauds": 25.0,
+            "row_count": 10678,
+            "row_end_in_common_cohort_exclusive": 32034,
+            "row_start_in_common_cohort": 21356,
+            "segment": 3
+          },
+          {
+            "first_observation_id": 231407,
+            "fraud_count": 19,
+            "fraud_prevalence": 0.0017793594306049821,
+            "last_observation_id": 242084,
+            "legitimate_count": 10659,
+            "models": {
+              "autoencoder": {
+                "ap_rank": 8,
+                "average_precision": 0.4925317909651929,
+                "roc_auc": 0.9968052695769821,
+                "roc_auc_unavailable_reason": null
+              },
+              "gru": {
+                "ap_rank": 5,
+                "average_precision": 0.9055247090490804,
+                "roc_auc": 0.9980989625767204,
+                "roc_auc_unavailable_reason": null
+              },
+              "lightgbm": {
+                "ap_rank": 7,
+                "average_precision": 0.5322043959320504,
+                "roc_auc": 0.7779983310372751,
+                "roc_auc_unavailable_reason": null
+              },
+              "logistic_regression": {
+                "ap_rank": 1,
+                "average_precision": 0.92039433948899,
+                "roc_auc": 0.9996741078702949,
+                "roc_auc_unavailable_reason": null
+              },
+              "lstm": {
+                "ap_rank": 2,
+                "average_precision": 0.9168338141946399,
+                "roc_auc": 0.9989581327368519,
+                "roc_auc_unavailable_reason": null
+              },
+              "mlp": {
+                "ap_rank": 3,
+                "average_precision": 0.9149205697920679,
+                "roc_auc": 0.9995852281985572,
+                "roc_auc_unavailable_reason": null
+              },
+              "random_forest": {
+                "ap_rank": 6,
+                "average_precision": 0.8877712250058278,
+                "roc_auc": 0.9717017000706099,
+                "roc_auc_unavailable_reason": null
+              },
+              "xgboost": {
+                "ap_rank": 4,
+                "average_precision": 0.9128099303442552,
+                "roc_auc": 0.9977483816493105,
+                "roc_auc_unavailable_reason": null
+              }
+            },
+            "percentage_of_common_cohort_frauds": 33.92857142857143,
+            "row_count": 10678,
+            "row_end_in_common_cohort_exclusive": 42712,
+            "row_start_in_common_cohort": 32034,
+            "segment": 4
+          }
+        ]
+      },
+      "sha256": "82097a301ab7512761c75a46a965d50a190cb46f3afc64403cba4cd258456642",
+      "stability_summaries": {
+        "autoencoder": {
+          "aggregate_ap_rank": 8,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "segment_ap_max": 0.4925317909651929,
+          "segment_ap_min": 0.24141752169733102,
+          "segment_ap_range": 0.25111426926786184,
+          "segment_ap_rank_max": 8,
+          "segment_ap_rank_min": 8,
+          "segment_ap_ranks": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9968052695769821,
+          "segment_roc_auc_min": 0.9237116376356882,
+          "segment_roc_auc_range": 0.07309363194129392,
+          "segments_without_defined_roc_auc": []
+        },
+        "gru": {
+          "aggregate_ap_rank": 4,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "segment_ap_max": 0.9055247090490804,
+          "segment_ap_min": 0.7399640071971457,
+          "segment_ap_range": 0.16556070185193472,
+          "segment_ap_rank_max": 5,
+          "segment_ap_rank_min": 2,
+          "segment_ap_ranks": [
+            5,
+            2,
+            3,
+            5
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9980989625767204,
+          "segment_roc_auc_min": 0.9427963503912871,
+          "segment_roc_auc_range": 0.05530261218543331,
+          "segments_without_defined_roc_auc": []
+        },
+        "lightgbm": {
+          "aggregate_ap_rank": 7,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "segment_ap_max": 0.8139400893352128,
+          "segment_ap_min": 0.5322043959320504,
+          "segment_ap_range": 0.2817356934031624,
+          "segment_ap_rank_max": 7,
+          "segment_ap_rank_min": 6,
+          "segment_ap_ranks": [
+            6,
+            6,
+            7,
+            7
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9709618089364925,
+          "segment_roc_auc_min": 0.7779983310372751,
+          "segment_roc_auc_range": 0.19296347789921742,
+          "segments_without_defined_roc_auc": []
+        },
+        "logistic_regression": {
+          "aggregate_ap_rank": 6,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            false,
+            false,
+            true
+          ],
+          "segment_ap_max": 0.92039433948899,
+          "segment_ap_min": 0.5937809947193584,
+          "segment_ap_range": 0.32661334476963155,
+          "segment_ap_rank_max": 7,
+          "segment_ap_rank_min": 1,
+          "segment_ap_ranks": [
+            7,
+            7,
+            5,
+            1
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9996741078702949,
+          "segment_roc_auc_min": 0.9451404666594541,
+          "segment_roc_auc_range": 0.05453364121084081,
+          "segments_without_defined_roc_auc": []
+        },
+        "lstm": {
+          "aggregate_ap_rank": 3,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "segment_ap_max": 0.9168338141946399,
+          "segment_ap_min": 0.7140109580680299,
+          "segment_ap_range": 0.20282285612661,
+          "segment_ap_rank_max": 4,
+          "segment_ap_rank_min": 2,
+          "segment_ap_ranks": [
+            2,
+            4,
+            4,
+            2
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9989581327368519,
+          "segment_roc_auc_min": 0.9411590753362905,
+          "segment_roc_auc_range": 0.05779905740056135,
+          "segments_without_defined_roc_auc": []
+        },
+        "mlp": {
+          "aggregate_ap_rank": 2,
+          "aggregate_rank_is_segment_top_rank": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "segment_ap_max": 0.9149205697920679,
+          "segment_ap_min": 0.7231582374342219,
+          "segment_ap_range": 0.191762332357846,
+          "segment_ap_rank_max": 3,
+          "segment_ap_rank_min": 1,
+          "segment_ap_ranks": [
+            1,
+            3,
+            2,
+            3
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9995852281985572,
+          "segment_roc_auc_min": 0.9471528003173573,
+          "segment_roc_auc_range": 0.05243242788119995,
+          "segments_without_defined_roc_auc": []
+        },
+        "random_forest": {
+          "aggregate_ap_rank": 1,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            true,
+            true,
+            false
+          ],
+          "segment_ap_max": 0.9204660587639311,
+          "segment_ap_min": 0.7480564365771005,
+          "segment_ap_range": 0.17240962218683054,
+          "segment_ap_rank_max": 6,
+          "segment_ap_rank_min": 1,
+          "segment_ap_ranks": [
+            4,
+            1,
+            1,
+            6
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9967313256885652,
+          "segment_roc_auc_min": 0.9173428540517148,
+          "segment_roc_auc_range": 0.07938847163685037,
+          "segments_without_defined_roc_auc": []
+        },
+        "xgboost": {
+          "aggregate_ap_rank": 5,
+          "aggregate_rank_is_segment_top_rank": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "segment_ap_max": 0.9128099303442552,
+          "segment_ap_min": 0.7118385960181757,
+          "segment_ap_range": 0.2009713343260795,
+          "segment_ap_rank_max": 6,
+          "segment_ap_rank_min": 3,
+          "segment_ap_ranks": [
+            3,
+            5,
+            6,
+            4
+          ],
+          "segment_count": 4,
+          "segment_roc_auc_max": 0.9977483816493105,
+          "segment_roc_auc_min": 0.9438566122110426,
+          "segment_roc_auc_range": 0.0538917694382679,
+          "segments_without_defined_roc_auc": []
+        }
+      }
+    }
+  },
+  "created_at_utc": "2026-10-14T00:24:42.791568+00:00",
+  "environment": {
+    "mlflow": "3.17.1",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "python_version": "3.12.3",
+    "scikit_learn": "1.9.0"
+  },
+  "evaluation": {
+    "created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "holdout_disclosure": "This evaluation reads validation data only. The test split was used in prior analysis and is not an untouched or blind holdout.",
+    "metric_definitions": {
+      "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+      "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+    },
+    "metric_implementation_versions": {
+      "scikit-learn": "1.9.0"
+    },
+    "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+    "record_type": "validation_evaluation",
+    "sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274",
+    "split": {
+      "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+      "common_row_count": 42712,
+      "common_target_class_counts": {
+        "0": 42656,
+        "1": 56
+      },
+      "feature_count": 32,
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "features_path": "data/processed/X_val.parquet",
+      "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+      "identifier": "chronological_validation_split",
+      "labels_path": "data/processed/y_val.parquet",
+      "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+      "method": "chronological, using the existing 70/15/15 partition",
+      "native_row_count": 42721,
+      "native_target_class_counts": {
+        "0": 42665,
+        "1": 56
+      },
+      "train_fraction": 0.7,
+      "validation_end_fraction": 0.85,
+      "validation_fraction": 0.15
+    }
+  },
+  "inventory_id": "15f941667adf4a1393c9c37b1e627b75",
+  "limitations": [
+    "Validation metrics are conditional on the existing validation cohort and were used for model/checkpoint selection.",
+    "The validation cohort contains only 56 fraud observations; uncertainty summaries are exploratory and do not establish superiority.",
+    "The saved paired bootstrap uses repeated resamples of one validation cohort, not repeated independent model-training runs.",
+    "The test split was examined previously; it is not used or included in this inventory and is not an untouched blind holdout.",
+    "The Autoencoder is assessed with reconstruction MSE for checkpoint selection and anomaly-score AP as a separate ranking analysis; neither is a calibrated fraud probability.",
+    "Imported artifact records identify artifact registration/import and are not recovered model-training runs.",
+    "A LightGBM historical validation metric is not conclusively associated with the canonical binary."
+  ],
+  "models": {
+    "autoencoder": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/881087b271b240b192d2385e49c3251a/autoencoder_state_dict.pt",
+        "sha256_expected": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+        "sha256_observed": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.29260551932160483,
+          "roc_auc": 0.9675728083806666,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.autoencoder",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.2926054660686415,
+          "roc_auc": 0.9675737891547103,
+          "row_count": 42721,
+          "source_pointer": "native_cohort_results.models.autoencoder",
+          "target_class_counts": {
+            "0": 42665,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "validation reconstruction MSE; checkpoint-selection metric; not a fraud probability",
+          "name": "validation_reconstruction_mse",
+          "source": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json:configuration.best_validation_reconstruction_mse",
+          "value": 0.454889714717865
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_autoencoder_dabfd159ea9e4a4b95923c73be984da4.json",
+        "sha256": "57d5425060ac1de4fc22ec9de3a9d8f8783ed083b78c92a7184eb2ea4b789cd2"
+      },
+      "lineage": {
+        "artifact_import_run_id": null,
+        "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+        "provenance_limitation": null,
+        "record_type": "training_run",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "models/autoencoder/autoencoder_metadata.json",
+            "models/autoencoder/autoencoder_state_dict.pt"
+          ],
+          "ended_at_utc": "2026-10-09T01:11:11.039000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+          "record_id": "9d337a314b6848dbb5b232ad46395673",
+          "record_type": "training_run",
+          "recorded_metric_names": [
+            "autoencoder_validation_ap",
+            "autoencoder_validation_reconstruction_mse"
+          ],
+          "started_at_utc": "2026-10-09T01:10:26.263000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": "9d337a314b6848dbb5b232ad46395673"
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-09T01:11:11.010379+00:00",
+        "model_name": "autoencoder",
+        "path": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json",
+        "preprocessing": "scaled",
+        "recorded_validation_metric": "Average Precision (AP) from per-row reconstruction MSE",
+        "recorded_validation_value": 0.2926054660686415,
+        "sha256_expected": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+        "sha256_observed": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834"
+      },
+      "score_type": "anomaly_score"
+    },
+    "gru": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/35a1905ea8634a169817e321ea9237b8/gru_state_dict.pt",
+        "sha256_expected": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e",
+        "sha256_observed": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.8525546525963642,
+          "roc_auc": 0.9783316364805487,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.gru",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.8525546525963642,
+          "roc_auc": 0.9783316364805487,
+          "row_count": 42712,
+          "source_pointer": "native_cohort_results.models.gru",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.gru",
+          "value": 0.8525546525963642
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_gru_92839695e24941a2bdee769fbbc7ccb5.json",
+        "sha256": "237b1f7a5a0e48490669f1505f8e129167716262c1ea81d7432c6eaf76c32d73"
+      },
+      "lineage": {
+        "artifact_import_run_id": null,
+        "pipeline_run_id": "35a1905ea8634a169817e321ea9237b8",
+        "provenance_limitation": null,
+        "record_type": "training_run",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "models/gru/gru_metadata.json",
+            "models/gru/gru_state_dict.pt"
+          ],
+          "ended_at_utc": "2026-10-09T16:19:42.592000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": "35a1905ea8634a169817e321ea9237b8",
+          "record_id": "9410c67e5ad4493886cbe44d28735c32",
+          "record_type": "training_run",
+          "recorded_metric_names": [
+            "gru_validation_ap"
+          ],
+          "started_at_utc": "2026-10-09T16:18:43.093000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": "9410c67e5ad4493886cbe44d28735c32"
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-09T16:19:42.570717+00:00",
+        "model_name": "gru",
+        "path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+        "preprocessing": "scaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.8525546525963642,
+        "sha256_expected": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab",
+        "sha256_observed": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab"
+      },
+      "score_type": "fraud_probability"
+    },
+    "lightgbm": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm.joblib",
+        "sha256_expected": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812",
+        "sha256_observed": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.6813594035998941,
+          "roc_auc": 0.8767343900707321,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.lightgbm",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.6813562930957019,
+          "roc_auc": 0.876734024208535,
+          "row_count": 42721,
+          "source_pointer": "native_cohort_results.models.lightgbm",
+          "target_class_counts": {
+            "0": 42665,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.lightgbm",
+          "value": 0.6813594035998941
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_lightgbm_a84ad1c82aa84851b597a2c2d9cd093c.json",
+        "sha256": "cc2272a060a51523fe2fd35e803426cb4ad4fe3ccad2e244bd05b31864c5ced6"
+      },
+      "lineage": {
+        "artifact_import_run_id": "11c360d936f04152b886480a74ba16c0",
+        "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+        "provenance_limitation": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import. The root-level LightGBM binary differs by SHA-256. The aggregate binary is the forward canonical choice, but the historical validation AP is not conclusively linked to this binary.",
+        "record_type": "artifact_import",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "imported/lightgbm/artifact_import_manifest.json",
+            "imported/lightgbm/lightgbm.joblib",
+            "imported/lightgbm/lightgbm_metadata.json"
+          ],
+          "ended_at_utc": "2026-10-09T18:11:46.404000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": null,
+          "record_id": "11c360d936f04152b886480a74ba16c0",
+          "record_type": "artifact_import",
+          "recorded_metric_names": [],
+          "started_at_utc": "2026-10-09T18:11:46.382000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": null
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-07T22:54:08.506170+00:00",
+        "model_name": "lightgbm",
+        "path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm_metadata.json",
+        "preprocessing": "unscaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.6813562930957019,
+        "sha256_expected": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd",
+        "sha256_observed": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd"
+      },
+      "score_type": "fraud_probability"
+    },
+    "logistic_regression": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression.joblib",
+        "sha256_expected": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+        "sha256_observed": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.7849098369703812,
+          "roc_auc": 0.9800484440306505,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.logistic_regression",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.7849097686859338,
+          "roc_auc": 0.9800484672950395,
+          "row_count": 42721,
+          "source_pointer": "native_cohort_results.models.logistic_regression",
+          "target_class_counts": {
+            "0": 42665,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.logistic_regression",
+          "value": 0.7849098369703812
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_logistic_regression_eea33861a8624383aa481398fce15332.json",
+        "sha256": "fb284d476c259aa07fb010198c58e384a9d3ae8906efa7c98c4c8197864153f8"
+      },
+      "lineage": {
+        "artifact_import_run_id": "1ae816295848406da9be50a8b62192c1",
+        "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+        "provenance_limitation": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+        "record_type": "artifact_import",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "imported/logistic_regression/artifact_import_manifest.json",
+            "imported/logistic_regression/logistic_regression.joblib",
+            "imported/logistic_regression/logistic_regression_metadata.json"
+          ],
+          "ended_at_utc": "2026-10-09T18:11:46.374000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": null,
+          "record_id": "1ae816295848406da9be50a8b62192c1",
+          "record_type": "artifact_import",
+          "recorded_metric_names": [],
+          "started_at_utc": "2026-10-09T18:11:46.351000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": null
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-07T22:54:07.021306+00:00",
+        "model_name": "logistic_regression",
+        "path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression_metadata.json",
+        "preprocessing": "scaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.7849097686859338,
+        "sha256_expected": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+        "sha256_observed": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c"
+      },
+      "score_type": "fraud_probability"
+    },
+    "lstm": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/136349275cab4fa482792ceef86d9ba2/lstm_state_dict.pt",
+        "sha256_expected": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532",
+        "sha256_observed": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.8538918557190249,
+          "roc_auc": 0.9798127545279176,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.lstm",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.8538918557190249,
+          "roc_auc": 0.9798127545279176,
+          "row_count": 42712,
+          "source_pointer": "native_cohort_results.models.lstm",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.lstm",
+          "value": 0.8538918557190249
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_lstm_3d6c8fda98054ed18124a866edc92ad5.json",
+        "sha256": "566aaa188b8f0a239ecec6c6c2d0863049bf84e2501512b9760745791fdc1378"
+      },
+      "lineage": {
+        "artifact_import_run_id": null,
+        "pipeline_run_id": "136349275cab4fa482792ceef86d9ba2",
+        "provenance_limitation": null,
+        "record_type": "training_run",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "models/lstm/lstm_metadata.json",
+            "models/lstm/lstm_state_dict.pt"
+          ],
+          "ended_at_utc": "2026-10-09T01:14:58.669000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": "136349275cab4fa482792ceef86d9ba2",
+          "record_id": "e02d4e87207f400a90a14bddf3c124bc",
+          "record_type": "training_run",
+          "recorded_metric_names": [
+            "lstm_validation_ap"
+          ],
+          "started_at_utc": "2026-10-09T01:14:01.415000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": "e02d4e87207f400a90a14bddf3c124bc"
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-09T01:14:58.645833+00:00",
+        "model_name": "lstm",
+        "path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+        "preprocessing": "scaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.8538918557190249,
+        "sha256_expected": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0",
+        "sha256_observed": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0"
+      },
+      "score_type": "fraud_probability"
+    },
+    "mlp": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_state_dict.pt",
+        "sha256_expected": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+        "sha256_observed": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.8551814320480421,
+          "roc_auc": 0.9827507099989283,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.mlp",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.8551813692570064,
+          "roc_auc": 0.9827501632318227,
+          "row_count": 42721,
+          "source_pointer": "native_cohort_results.models.mlp",
+          "target_class_counts": {
+            "0": 42665,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.mlp",
+          "value": 0.8551814320480421
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_mlp_5a44986911cc4dc6ab1c883d8247ae30.json",
+        "sha256": "b24b1a947baca68ef904220e32d94836b7e18a5b8ea7ab6118fde7418595f6f4"
+      },
+      "lineage": {
+        "artifact_import_run_id": null,
+        "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+        "provenance_limitation": null,
+        "record_type": "training_run",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "models/mlp/mlp_metadata.json",
+            "models/mlp/mlp_state_dict.pt"
+          ],
+          "ended_at_utc": "2026-10-09T01:00:08.392000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+          "record_id": "b7393416190340ad826a9f3ad25cd377",
+          "record_type": "training_run",
+          "recorded_metric_names": [
+            "mlp_validation_ap"
+          ],
+          "started_at_utc": "2026-10-09T00:59:42.064000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": "b7393416190340ad826a9f3ad25cd377"
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-09T01:00:08.368021+00:00",
+        "model_name": "mlp",
+        "path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+        "preprocessing": "scaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.8551813692570064,
+        "sha256_expected": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+        "sha256_observed": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98"
+      },
+      "score_type": "fraud_probability"
+    },
+    "random_forest": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest.joblib",
+        "sha256_expected": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+        "sha256_observed": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.8579663875394855,
+          "roc_auc": 0.9609113355347766,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.random_forest",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.857966367810208,
+          "roc_auc": 0.9609120473455994,
+          "row_count": 42721,
+          "source_pointer": "native_cohort_results.models.random_forest",
+          "target_class_counts": {
+            "0": 42665,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.random_forest",
+          "value": 0.8579663875394855
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_random_forest_feaa9ba51bb944eda8c734a51a2ddfdc.json",
+        "sha256": "c50d9f6f30dd568844dfcab04a7a74e465693fee5168c40cff4545eab691f0a4"
+      },
+      "lineage": {
+        "artifact_import_run_id": null,
+        "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+        "provenance_limitation": null,
+        "record_type": "training_run",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "models/random_forest/random_forest.joblib",
+            "models/random_forest/random_forest_metadata.json"
+          ],
+          "ended_at_utc": "2026-10-09T00:55:07.146000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+          "record_id": "3f8608746b5b486cadd61a1f6331e5eb",
+          "record_type": "training_run",
+          "recorded_metric_names": [
+            "random_forest_validation_ap"
+          ],
+          "started_at_utc": "2026-10-09T00:54:32.792000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": "3f8608746b5b486cadd61a1f6331e5eb"
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-09T00:55:07.112397+00:00",
+        "model_name": "random_forest",
+        "path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+        "preprocessing": "unscaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.857966367810208,
+        "sha256_expected": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+        "sha256_observed": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db"
+      },
+      "score_type": "fraud_probability"
+    },
+    "xgboost": {
+      "canonical_artifact": {
+        "exists": true,
+        "path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost.joblib",
+        "sha256_expected": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+        "sha256_observed": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041"
+      },
+      "empirical_validation_metrics": {
+        "common_cohort": {
+          "average_precision": 0.8284467052068584,
+          "roc_auc": 0.9780205933179723,
+          "row_count": 42712,
+          "source_pointer": "common_cohort_results.models.xgboost",
+          "target_class_counts": {
+            "0": 42656,
+            "1": 56
+          }
+        },
+        "native_cohort": {
+          "average_precision": 0.8284466654340668,
+          "roc_auc": 0.9780218814351007,
+          "row_count": 42721,
+          "source_pointer": "native_cohort_results.models.xgboost",
+          "target_class_counts": {
+            "0": 42665,
+            "1": 56
+          }
+        },
+        "quality_metric_for_policy": {
+          "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+          "name": "average_precision",
+          "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.xgboost",
+          "value": 0.8284467052068584
+        },
+        "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "source_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "evidence_classification": "persisted_empirical_validation_tied_to_canonical_artifact",
+      "existing_m4_gate_report": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "matches_canonical_artifact_and_evaluation": true,
+        "note": "M4 report evaluates structure, lineage, and metric availability; its undefined threshold is preserved.",
+        "path": "reports/validation_gates/validation_xgboost_3e4c92718f364e958fb741370a10a771.json",
+        "sha256": "eb4f87f6094f8501ab873134a94dabdc336c8b241bc28aaf19704f01cbcc739f"
+      },
+      "lineage": {
+        "artifact_import_run_id": "08edc67966a846158e472f4f71a0f83d",
+        "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+        "provenance_limitation": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+        "record_type": "artifact_import",
+        "source_record": {
+          "artifact_listing_error": null,
+          "artifact_paths": [
+            "imported/xgboost/artifact_import_manifest.json",
+            "imported/xgboost/xgboost.joblib",
+            "imported/xgboost/xgboost_metadata.json"
+          ],
+          "ended_at_utc": "2026-10-09T18:11:46.341000+00:00",
+          "git_branch": null,
+          "git_commit": null,
+          "pipeline_run_id": null,
+          "record_id": "08edc67966a846158e472f4f71a0f83d",
+          "record_type": "artifact_import",
+          "recorded_metric_names": [],
+          "started_at_utc": "2026-10-09T18:11:46.315000+00:00",
+          "status": "FINISHED"
+        },
+        "training_run_id": null
+      },
+      "metadata": {
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount",
+          "Amount_log",
+          "Time",
+          "Time_hour"
+        ],
+        "file_modified_at_utc": "2026-10-07T22:54:04.567492+00:00",
+        "model_name": "xgboost",
+        "path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost_metadata.json",
+        "preprocessing": "unscaled",
+        "recorded_validation_metric": "Average Precision (AP)",
+        "recorded_validation_value": 0.8284466654340668,
+        "sha256_expected": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+        "sha256_observed": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275"
+      },
+      "score_type": "fraud_probability"
+    }
+  },
+  "non_empirical_evidence": {
+    "documentation_search": {
+      "finding": "No approved numerical business or technical model-acceptance thresholds were found. Existing operating-point summaries are descriptive and explicitly do not select a threshold.",
+      "locations": [
+        "README.md",
+        "configs/",
+        "reports/validation_analysis/operational_feasibility_v1/"
+      ]
+    },
+    "missing_evidence": [
+      "Approved business objective and acceptance requirement",
+      "Operational constraints or documented cost/benefit assumptions",
+      "Independent confirmation cohort for any threshold calibrated from validation data",
+      "Recovered original training provenance for imported XGBoost, Logistic Regression, and LightGBM artifacts"
+    ],
+    "synthetic_test_fixtures": [
+      {
+        "classification": "synthetic_unit_test_only",
+        "not_empirical_model_evidence": true,
+        "path": "tests/test_validation_gates.py"
+      }
+    ]
+  },
+  "policy": {
+    "effective_status": "incomplete",
+    "numerical_thresholds_defined": false,
+    "path": "configs/validation_policy_v2.json",
+    "policy_id": "bank-fraud-validation-v2",
+    "sha256": "a0d1fb0431c2888b4ac48cd862c526ee8fe0ef81370cc77d96141fe6f7a9f54d",
+    "version": "2"
+  },
+  "record_type": "validation_evidence_inventory",
+  "schema_version": "1.0.0",
+  "scope": "Existing validation evidence only; no datasets or model predictions are loaded by this inventory.",
+  "tracking_and_registry": {
+    "experiment_name": "Bank-Fraud-Detection",
+    "read_only_inspection": true,
+    "registry": {
+      "names": [],
+      "registered_model_count": 0,
+      "status": "available"
+    },
+    "tracking_uri": "sqlite:///mlflow.db"
+  }
+}

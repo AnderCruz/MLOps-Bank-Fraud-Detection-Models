@@ -1,0 +1,102 @@
+{
+  "artifacts": {
+    "artifact_sha256": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+    "metadata_sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+    "metadata_uri": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+    "model_uri": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_state_dict.pt",
+    "validation_evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "validation_evaluation_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  },
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "decision_reasons": [
+    "Mandatory quality threshold for mlp is undefined in policy bank-fraud-validation-v1"
+  ],
+  "failure_reasons": [],
+  "gates": [
+    {
+      "name": "artifact_integrity",
+      "reason": "Artifact and required metadata are present and consistent",
+      "status": "PASS"
+    },
+    {
+      "name": "artifact_compatibility",
+      "reason": "Canonical inference loader verified artifact compatibility",
+      "status": "PASS"
+    },
+    {
+      "name": "provenance_lineage",
+      "reason": "Source record and pipeline lineage are verified",
+      "record_type": "training_run",
+      "source_record_id": "b7393416190340ad826a9f3ad25cd377",
+      "status": "PASS"
+    },
+    {
+      "name": "git_provenance",
+      "reason": "Optional Git provenance is unavailable",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "name": "registry_lineage",
+      "reason": "Candidate validation does not require Registry registration",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "metric": "average_precision",
+      "name": "validation_metric",
+      "reason": "Required model-appropriate validation metric is present and finite",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.mlp",
+      "status": "PASS",
+      "value": 0.8551814320480421
+    },
+    {
+      "metric": "average_precision",
+      "name": "quality_threshold",
+      "reason": "Mandatory quality threshold for mlp is undefined in policy bank-fraud-validation-v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "threshold": null,
+      "value": 0.8551814320480421
+    }
+  ],
+  "limitations": [
+    "Validation decision is not production approval or deployment authorization",
+    "No test-set metrics are included"
+  ],
+  "lineage": {
+    "artifact_import_run_id": null,
+    "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+    "registered_model_name": null,
+    "registered_model_version": null,
+    "training_run_id": "b7393416190340ad826a9f3ad25cd377"
+  },
+  "metrics": [
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "name": "average_precision",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.mlp",
+      "value": 0.8551814320480421
+    }
+  ],
+  "missing_evidence": [
+    "Mandatory quality threshold for mlp is undefined in policy bank-fraud-validation-v1"
+  ],
+  "model_family": "mlp",
+  "policy": {
+    "policy_id": "bank-fraud-validation-v1",
+    "version": "1"
+  },
+  "production_approval": false,
+  "provenance": {
+    "git_branch": null,
+    "git_commit": null
+  },
+  "report_id": "5a44986911cc4dc6ab1c883d8247ae30",
+  "report_type": "model_validation_gates",
+  "schema_version": "1.0.0",
+  "score_type": "fraud_probability",
+  "validated_at_utc": "2026-10-13T15:00:10.630539+00:00",
+  "validation_evaluation": {
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  }
+}

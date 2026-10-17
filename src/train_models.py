@@ -30,6 +30,7 @@ from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
+from src.model_registry import register_logged_models
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -252,7 +253,7 @@ def log_model_artifacts(
     model_name: str,
     model_dir: Path,
     config: RunConfig,
-) -> None:
+) -> tuple[Path, Path]:
     """Log a trained model and its metadata to the active MLflow run."""
     # Identify the artifact format used by the selected model family.
     if model_name in {"random_forest", "xgboost", "logistic_regression", "lightgbm"}:
@@ -278,6 +279,7 @@ def log_model_artifacts(
             str(artifact_file),
             artifact_path=f"models/{model_name}",
         )
+    return artifact_files
 
 
 
@@ -613,10 +615,17 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
     if mlflow_run is None:
         raise RuntimeError("Training must run inside an active MLflow run.")
 
-    # Link the internal pipeline identifier to the MLflow run.
+    # Collect provenance before registering MLflow run tags.
+    provenance = collect_provenance(config, selected_models, run_id)
+    git_info = provenance["git"]
+
+    # Link the pipeline, project, and Git identifiers to the MLflow run.
     mlflow.set_tags({
+        "project": "Bank-Fraud-Detection",
         "pipeline_run_id": run_id,
         "model_count": str(len(selected_models)),
+        "git_commit": git_info["commit"] or "unknown",
+        "git_branch": git_info["branch"] or "unknown",
     })
 
     # Record shared training settings and the selected models' configurations.
@@ -639,7 +648,6 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
 
     logger.info("Training run started")
     logger.info("Selected models: %s", selected_models)
-    provenance = collect_provenance(config, selected_models, run_id)
     logger.info("Runtime and run provenance collected")
     if config.output.artifact_formats["sklearn"] != "joblib":
         raise ValueError("The current scikit-learn artifact format must remain joblib")
@@ -647,6 +655,7 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
         raise ValueError("The current PyTorch artifact format must remain state_dict")
     model_dir = ROOT / config.output.model_dir / run_id
     model_dir.mkdir(parents=True, exist_ok=True)
+    registry_artifacts: list[dict[str, Any]] = []
     logger.info("Run ID: %s", run_id)
     logger.info("Run output directory configured")
     set_seed(config.run.seed)
@@ -706,8 +715,13 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
             float(ap), provenance=provenance, output_dir=model_dir,
         )
 
-        # Register the model and its metadata in MLflow.
-        log_model_artifacts(name, model_dir, config)
+        # Log the existing artifact files and queue this model for Registry.
+        model_artifact, model_metadata = log_model_artifacts(name, model_dir, config)
+        registry_artifacts.append({
+            "model_name": name,
+            "artifact_path": model_artifact,
+            "metadata_path": model_metadata,
+        })
 
         mlflow.log_metric(f"{name}_validation_ap", ap)
         logger.info("%s validation AP=%.6f (reference AP=%.6f)", name, ap,
@@ -786,8 +800,13 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
         }, config.training.validation_metric, mlp_ap, mlp_epoch,
             provenance=provenance, output_dir=model_dir)
 
-        # Register the MLP weights and metadata in MLflow.
-        log_model_artifacts("mlp", model_dir, config)
+        # Log the existing artifact files and queue MLP for Registry.
+        model_artifact, model_metadata = log_model_artifacts("mlp", model_dir, config)
+        registry_artifacts.append({
+            "model_name": "mlp",
+            "artifact_path": model_artifact,
+            "metadata_path": model_metadata,
+        })
         mlflow.log_metric("mlp_validation_ap", mlp_ap)
         logger.info("mlp validation AP=%.6f (reference AP=%.6f)", mlp_ap,
                     config.output.reference_validation_ap["mlp"])
@@ -878,8 +897,15 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
         }, "Average Precision (AP) from per-row reconstruction MSE", ae_ap,
             best_ae_epoch, provenance=provenance, output_dir=model_dir)
 
-        # Register the Autoencoder weights and metadata in MLflow.
-        log_model_artifacts("autoencoder", model_dir, config)
+        # Log the existing artifact files and queue Autoencoder for Registry.
+        model_artifact, model_metadata = log_model_artifacts(
+            "autoencoder", model_dir, config
+        )
+        registry_artifacts.append({
+            "model_name": "autoencoder",
+            "artifact_path": model_artifact,
+            "metadata_path": model_metadata,
+        })
 
         # Log anomaly-ranking AP and the MSE used for checkpoint selection.
         mlflow.log_metric("autoencoder_validation_ap", ae_ap)
@@ -951,12 +977,24 @@ def _run_training(config: RunConfig = DEFAULT_CONFIG) -> None:
         }, config.training.validation_metric, ap, epoch,
             provenance=provenance, output_dir=model_dir)
 
-        # Register the current temporal model and its metadata in MLflow.
-        log_model_artifacts(name, model_dir, config)
+        # Log the existing artifact files and queue this model for Registry.
+        model_artifact, model_metadata = log_model_artifacts(name, model_dir, config)
+        registry_artifacts.append({
+            "model_name": name,
+            "artifact_path": model_artifact,
+            "metadata_path": model_metadata,
+        })
         mlflow.log_metric(f"{name}_validation_ap", ap)
         logger.info("%s validation AP=%.6f (reference AP=%.6f)", name, ap,
                     config.output.reference_validation_ap[name])
 
+    # Register only models selected and fully produced in this pipeline run.
+    # Registry failures are summarized without rolling back successful versions.
+    registration_summary = register_logged_models(registry_artifacts, run_id)
+    logger.info(
+        "MLflow Registry registered %d model version(s)",
+        len(registration_summary["models"]),
+    )
     logger.info("Training run completed successfully.")
 
 

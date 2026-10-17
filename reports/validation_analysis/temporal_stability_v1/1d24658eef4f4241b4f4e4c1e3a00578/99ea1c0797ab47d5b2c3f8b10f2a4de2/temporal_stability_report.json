@@ -1,0 +1,670 @@
+{
+  "aggregate_common_cohort_metrics": {
+    "autoencoder": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 8,
+      "average_precision": 0.29260551932160483,
+      "preprocessing": "scaled",
+      "roc_auc": 0.9675728083806666,
+      "score_type": "anomaly_score"
+    },
+    "gru": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 4,
+      "average_precision": 0.8525546525963642,
+      "preprocessing": "scaled",
+      "roc_auc": 0.9783316364805487,
+      "score_type": "fraud_probability"
+    },
+    "lightgbm": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 7,
+      "average_precision": 0.6813594035998941,
+      "preprocessing": "unscaled",
+      "roc_auc": 0.8767343900707321,
+      "score_type": "fraud_probability"
+    },
+    "logistic_regression": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 6,
+      "average_precision": 0.7849098369703812,
+      "preprocessing": "scaled",
+      "roc_auc": 0.9800484440306505,
+      "score_type": "fraud_probability"
+    },
+    "lstm": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 3,
+      "average_precision": 0.8538918557190249,
+      "preprocessing": "scaled",
+      "roc_auc": 0.9798127545279176,
+      "score_type": "fraud_probability"
+    },
+    "mlp": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 2,
+      "average_precision": 0.8551814320480421,
+      "preprocessing": "scaled",
+      "roc_auc": 0.9827507099989283,
+      "score_type": "fraud_probability"
+    },
+    "random_forest": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 1,
+      "average_precision": 0.8579663875394855,
+      "preprocessing": "unscaled",
+      "roc_auc": 0.9609113355347766,
+      "score_type": "fraud_probability"
+    },
+    "xgboost": {
+      "aggregate_ap_report_difference": 0.0,
+      "aggregate_roc_auc_report_difference": 0.0,
+      "ap_rank": 5,
+      "average_precision": 0.8284467052068584,
+      "preprocessing": "unscaled",
+      "roc_auc": 0.9780205933179723,
+      "score_type": "fraud_probability"
+    }
+  },
+  "analysis_id": "99ea1c0797ab47d5b2c3f8b10f2a4de2",
+  "cohort": {
+    "class_counts": {
+      "0": 42656,
+      "1": 56
+    },
+    "definition": "Rows in the saved common cohort with scores from all eight models.",
+    "first_observation_id": 199373,
+    "last_observation_id": 242084,
+    "observation_count": 42712,
+    "ordering": "Original observation ID order; no shuffling or stratification."
+  },
+  "created_at_utc": "2026-10-09T22:19:28.800840+00:00",
+  "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+  "input_hashes": {
+    "evaluation_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274",
+    "score_table_sha256": "d3af8746d40a687a6bce5f7b6219bf66e91b8a876444ed509d7d168bd367d945",
+    "source_analysis_manifest_sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17"
+  },
+  "interpretation": {
+    "aggregate_rank_persistence": "Segment ranks are descriptive; rank changes do not establish model superiority.",
+    "small_positive_counts": "Only 56 frauds are distributed across four segments; segment-level metrics are sensitive to a small number of positive examples.",
+    "temporal_model_semantics": "LSTM and GRU windows follow global chronological transaction order. No customer/account/merchant/device identifiers are available to define entity histories.",
+    "temporal_variation": "Segment differences alone do not establish concept drift or statistical significance.",
+    "test_set_disclosure": "This evaluation reads validation data only. The test split was used in prior analysis and is not an untouched or blind holdout."
+  },
+  "limitations": [
+    "The validation observations were used for model and checkpoint selection.",
+    "Only 56 fraud observations are available in the common cohort.",
+    "Segment metrics are descriptive and are not uncertainty intervals.",
+    "Temporal variation does not by itself demonstrate concept drift.",
+    "The test split was examined in prior project work and is not an untouched or blind holdout."
+  ],
+  "metric_definitions": {
+    "average_precision": "sklearn.metrics.average_precision_score on continuous saved scores and binary labels.",
+    "ranking": "Descending AP; deterministic model-name tie-break if values tie.",
+    "roc_auc": "sklearn.metrics.roc_auc_score on continuous saved scores when both classes are present; otherwise null."
+  },
+  "provenance_classification": {
+    "autoencoder": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/881087b271b240b192d2385e49c3251a/autoencoder_state_dict.pt",
+      "artifact_sha256": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+      "metadata_path": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json",
+      "metadata_sha256": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+      "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "score_type": "anomaly_score",
+      "training_run_id": "9d337a314b6848dbb5b232ad46395673"
+    },
+    "gru": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/35a1905ea8634a169817e321ea9237b8/gru_state_dict.pt",
+      "artifact_sha256": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e",
+      "metadata_path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+      "metadata_sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab",
+      "pipeline_run_id": "35a1905ea8634a169817e321ea9237b8",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "score_type": "fraud_probability",
+      "training_run_id": "9410c67e5ad4493886cbe44d28735c32"
+    },
+    "lightgbm": {
+      "artifact_import_run_id": "11c360d936f04152b886480a74ba16c0",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm.joblib",
+      "artifact_sha256": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812",
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm_metadata.json",
+      "metadata_sha256": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd",
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "unscaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import. The root-level LightGBM binary differs by SHA-256. The aggregate binary is the forward canonical choice, but the historical validation AP is not conclusively linked to this binary.",
+      "score_type": "fraud_probability",
+      "training_run_id": null
+    },
+    "logistic_regression": {
+      "artifact_import_run_id": "1ae816295848406da9be50a8b62192c1",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression.joblib",
+      "artifact_sha256": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression_metadata.json",
+      "metadata_sha256": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "scaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+      "score_type": "fraud_probability",
+      "training_run_id": null
+    },
+    "lstm": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/136349275cab4fa482792ceef86d9ba2/lstm_state_dict.pt",
+      "artifact_sha256": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532",
+      "metadata_path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+      "metadata_sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0",
+      "pipeline_run_id": "136349275cab4fa482792ceef86d9ba2",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "score_type": "fraud_probability",
+      "training_run_id": "e02d4e87207f400a90a14bddf3c124bc"
+    },
+    "mlp": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_state_dict.pt",
+      "artifact_sha256": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+      "metadata_path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+      "metadata_sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+      "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "score_type": "fraud_probability",
+      "training_run_id": "b7393416190340ad826a9f3ad25cd377"
+    },
+    "random_forest": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest.joblib",
+      "artifact_sha256": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+      "metadata_path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+      "metadata_sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+      "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+      "preprocessing": "unscaled",
+      "provenance_caveat": null,
+      "score_type": "fraud_probability",
+      "training_run_id": "3f8608746b5b486cadd61a1f6331e5eb"
+    },
+    "xgboost": {
+      "artifact_import_run_id": "08edc67966a846158e472f4f71a0f83d",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost.joblib",
+      "artifact_sha256": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost_metadata.json",
+      "metadata_sha256": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "unscaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+      "score_type": "fraud_probability",
+      "training_run_id": null
+    }
+  },
+  "record_type": "validation_temporal_stability_analysis",
+  "segmentation": {
+    "method": "Four contiguous equal-sized slices of the ordered common cohort.",
+    "segment_size": 10678,
+    "segments": [
+      {
+        "first_observation_id": 199373,
+        "fraud_count": 10,
+        "fraud_prevalence": 0.0009365049634763064,
+        "last_observation_id": 210050,
+        "legitimate_count": 10668,
+        "models": {
+          "autoencoder": {
+            "ap_rank": 8,
+            "average_precision": 0.2428753028580615,
+            "roc_auc": 0.9530933633295838,
+            "roc_auc_unavailable_reason": null
+          },
+          "gru": {
+            "ap_rank": 5,
+            "average_precision": 0.8822315757826299,
+            "roc_auc": 0.9773997000374953,
+            "roc_auc_unavailable_reason": null
+          },
+          "lightgbm": {
+            "ap_rank": 6,
+            "average_precision": 0.8007393272517257,
+            "roc_auc": 0.8870734908136484,
+            "roc_auc_unavailable_reason": null
+          },
+          "logistic_regression": {
+            "ap_rank": 7,
+            "average_precision": 0.7534724759819816,
+            "roc_auc": 0.9827334083239595,
+            "roc_auc_unavailable_reason": null
+          },
+          "lstm": {
+            "ap_rank": 2,
+            "average_precision": 0.9003594536304816,
+            "roc_auc": 0.974015748031496,
+            "roc_auc_unavailable_reason": null
+          },
+          "mlp": {
+            "ap_rank": 1,
+            "average_precision": 0.9006680026720107,
+            "roc_auc": 0.98606111736033,
+            "roc_auc_unavailable_reason": null
+          },
+          "random_forest": {
+            "ap_rank": 4,
+            "average_precision": 0.9000936504963476,
+            "roc_auc": 0.946822272215973,
+            "roc_auc_unavailable_reason": null
+          },
+          "xgboost": {
+            "ap_rank": 3,
+            "average_precision": 0.9002912904165452,
+            "roc_auc": 0.9679133858267717,
+            "roc_auc_unavailable_reason": null
+          }
+        },
+        "percentage_of_common_cohort_frauds": 17.857142857142858,
+        "row_count": 10678,
+        "row_end_in_common_cohort_exclusive": 10678,
+        "row_start_in_common_cohort": 0,
+        "segment": 1
+      },
+      {
+        "first_observation_id": 210051,
+        "fraud_count": 13,
+        "fraud_prevalence": 0.0012174564525191983,
+        "last_observation_id": 220728,
+        "legitimate_count": 10665,
+        "models": {
+          "autoencoder": {
+            "ap_rank": 8,
+            "average_precision": 0.24141752169733102,
+            "roc_auc": 0.9237116376356882,
+            "roc_auc_unavailable_reason": null
+          },
+          "gru": {
+            "ap_rank": 2,
+            "average_precision": 0.7399640071971457,
+            "roc_auc": 0.9427963503912871,
+            "roc_auc_unavailable_reason": null
+          },
+          "lightgbm": {
+            "ap_rank": 6,
+            "average_precision": 0.6620636938083748,
+            "roc_auc": 0.9709618089364925,
+            "roc_auc_unavailable_reason": null
+          },
+          "logistic_regression": {
+            "ap_rank": 7,
+            "average_precision": 0.5937809947193584,
+            "roc_auc": 0.9451404666594541,
+            "roc_auc_unavailable_reason": null
+          },
+          "lstm": {
+            "ap_rank": 4,
+            "average_precision": 0.7140109580680299,
+            "roc_auc": 0.9411590753362905,
+            "roc_auc_unavailable_reason": null
+          },
+          "mlp": {
+            "ap_rank": 3,
+            "average_precision": 0.7231582374342219,
+            "roc_auc": 0.9471528003173573,
+            "roc_auc_unavailable_reason": null
+          },
+          "random_forest": {
+            "ap_rank": 1,
+            "average_precision": 0.7480564365771005,
+            "roc_auc": 0.9173428540517148,
+            "roc_auc_unavailable_reason": null
+          },
+          "xgboost": {
+            "ap_rank": 5,
+            "average_precision": 0.7118385960181757,
+            "roc_auc": 0.9438566122110426,
+            "roc_auc_unavailable_reason": null
+          }
+        },
+        "percentage_of_common_cohort_frauds": 23.214285714285715,
+        "row_count": 10678,
+        "row_end_in_common_cohort_exclusive": 21356,
+        "row_start_in_common_cohort": 10678,
+        "segment": 2
+      },
+      {
+        "first_observation_id": 220729,
+        "fraud_count": 14,
+        "fraud_prevalence": 0.001311106948866829,
+        "last_observation_id": 231406,
+        "legitimate_count": 10664,
+        "models": {
+          "autoencoder": {
+            "ap_rank": 8,
+            "average_precision": 0.3301707426299274,
+            "roc_auc": 0.9794770121101704,
+            "roc_auc_unavailable_reason": null
+          },
+          "gru": {
+            "ap_rank": 3,
+            "average_precision": 0.8921534115186184,
+            "roc_auc": 0.9842393634122817,
+            "roc_auc_unavailable_reason": null
+          },
+          "lightgbm": {
+            "ap_rank": 7,
+            "average_precision": 0.8139400893352128,
+            "roc_auc": 0.9156440895938271,
+            "roc_auc_unavailable_reason": null
+          },
+          "logistic_regression": {
+            "ap_rank": 5,
+            "average_precision": 0.839910326813061,
+            "roc_auc": 0.9845340799485586,
+            "roc_auc_unavailable_reason": null
+          },
+          "lstm": {
+            "ap_rank": 4,
+            "average_precision": 0.8812973204404634,
+            "roc_auc": 0.9929201050262566,
+            "roc_auc_unavailable_reason": null
+          },
+          "mlp": {
+            "ap_rank": 2,
+            "average_precision": 0.9092733417828474,
+            "roc_auc": 0.9877290751259243,
+            "roc_auc_unavailable_reason": null
+          },
+          "random_forest": {
+            "ap_rank": 1,
+            "average_precision": 0.9204660587639311,
+            "roc_auc": 0.9967313256885652,
+            "roc_auc_unavailable_reason": null
+          },
+          "xgboost": {
+            "ap_rank": 6,
+            "average_precision": 0.8374544960383008,
+            "roc_auc": 0.9891892616011145,
+            "roc_auc_unavailable_reason": null
+          }
+        },
+        "percentage_of_common_cohort_frauds": 25.0,
+        "row_count": 10678,
+        "row_end_in_common_cohort_exclusive": 32034,
+        "row_start_in_common_cohort": 21356,
+        "segment": 3
+      },
+      {
+        "first_observation_id": 231407,
+        "fraud_count": 19,
+        "fraud_prevalence": 0.0017793594306049821,
+        "last_observation_id": 242084,
+        "legitimate_count": 10659,
+        "models": {
+          "autoencoder": {
+            "ap_rank": 8,
+            "average_precision": 0.4925317909651929,
+            "roc_auc": 0.9968052695769821,
+            "roc_auc_unavailable_reason": null
+          },
+          "gru": {
+            "ap_rank": 5,
+            "average_precision": 0.9055247090490804,
+            "roc_auc": 0.9980989625767204,
+            "roc_auc_unavailable_reason": null
+          },
+          "lightgbm": {
+            "ap_rank": 7,
+            "average_precision": 0.5322043959320504,
+            "roc_auc": 0.7779983310372751,
+            "roc_auc_unavailable_reason": null
+          },
+          "logistic_regression": {
+            "ap_rank": 1,
+            "average_precision": 0.92039433948899,
+            "roc_auc": 0.9996741078702949,
+            "roc_auc_unavailable_reason": null
+          },
+          "lstm": {
+            "ap_rank": 2,
+            "average_precision": 0.9168338141946399,
+            "roc_auc": 0.9989581327368519,
+            "roc_auc_unavailable_reason": null
+          },
+          "mlp": {
+            "ap_rank": 3,
+            "average_precision": 0.9149205697920679,
+            "roc_auc": 0.9995852281985572,
+            "roc_auc_unavailable_reason": null
+          },
+          "random_forest": {
+            "ap_rank": 6,
+            "average_precision": 0.8877712250058278,
+            "roc_auc": 0.9717017000706099,
+            "roc_auc_unavailable_reason": null
+          },
+          "xgboost": {
+            "ap_rank": 4,
+            "average_precision": 0.9128099303442552,
+            "roc_auc": 0.9977483816493105,
+            "roc_auc_unavailable_reason": null
+          }
+        },
+        "percentage_of_common_cohort_frauds": 33.92857142857143,
+        "row_count": 10678,
+        "row_end_in_common_cohort_exclusive": 42712,
+        "row_start_in_common_cohort": 32034,
+        "segment": 4
+      }
+    ]
+  },
+  "source_analysis_id": "d034e61aaf394581ab9ffb8e3c471089",
+  "stability_summaries": {
+    "autoencoder": {
+      "aggregate_ap_rank": 8,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "segment_ap_max": 0.4925317909651929,
+      "segment_ap_min": 0.24141752169733102,
+      "segment_ap_range": 0.25111426926786184,
+      "segment_ap_rank_max": 8,
+      "segment_ap_rank_min": 8,
+      "segment_ap_ranks": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9968052695769821,
+      "segment_roc_auc_min": 0.9237116376356882,
+      "segment_roc_auc_range": 0.07309363194129392,
+      "segments_without_defined_roc_auc": []
+    },
+    "gru": {
+      "aggregate_ap_rank": 4,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "segment_ap_max": 0.9055247090490804,
+      "segment_ap_min": 0.7399640071971457,
+      "segment_ap_range": 0.16556070185193472,
+      "segment_ap_rank_max": 5,
+      "segment_ap_rank_min": 2,
+      "segment_ap_ranks": [
+        5,
+        2,
+        3,
+        5
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9980989625767204,
+      "segment_roc_auc_min": 0.9427963503912871,
+      "segment_roc_auc_range": 0.05530261218543331,
+      "segments_without_defined_roc_auc": []
+    },
+    "lightgbm": {
+      "aggregate_ap_rank": 7,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "segment_ap_max": 0.8139400893352128,
+      "segment_ap_min": 0.5322043959320504,
+      "segment_ap_range": 0.2817356934031624,
+      "segment_ap_rank_max": 7,
+      "segment_ap_rank_min": 6,
+      "segment_ap_ranks": [
+        6,
+        6,
+        7,
+        7
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9709618089364925,
+      "segment_roc_auc_min": 0.7779983310372751,
+      "segment_roc_auc_range": 0.19296347789921742,
+      "segments_without_defined_roc_auc": []
+    },
+    "logistic_regression": {
+      "aggregate_ap_rank": 6,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "segment_ap_max": 0.92039433948899,
+      "segment_ap_min": 0.5937809947193584,
+      "segment_ap_range": 0.32661334476963155,
+      "segment_ap_rank_max": 7,
+      "segment_ap_rank_min": 1,
+      "segment_ap_ranks": [
+        7,
+        7,
+        5,
+        1
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9996741078702949,
+      "segment_roc_auc_min": 0.9451404666594541,
+      "segment_roc_auc_range": 0.05453364121084081,
+      "segments_without_defined_roc_auc": []
+    },
+    "lstm": {
+      "aggregate_ap_rank": 3,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "segment_ap_max": 0.9168338141946399,
+      "segment_ap_min": 0.7140109580680299,
+      "segment_ap_range": 0.20282285612661,
+      "segment_ap_rank_max": 4,
+      "segment_ap_rank_min": 2,
+      "segment_ap_ranks": [
+        2,
+        4,
+        4,
+        2
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9989581327368519,
+      "segment_roc_auc_min": 0.9411590753362905,
+      "segment_roc_auc_range": 0.05779905740056135,
+      "segments_without_defined_roc_auc": []
+    },
+    "mlp": {
+      "aggregate_ap_rank": 2,
+      "aggregate_rank_is_segment_top_rank": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "segment_ap_max": 0.9149205697920679,
+      "segment_ap_min": 0.7231582374342219,
+      "segment_ap_range": 0.191762332357846,
+      "segment_ap_rank_max": 3,
+      "segment_ap_rank_min": 1,
+      "segment_ap_ranks": [
+        1,
+        3,
+        2,
+        3
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9995852281985572,
+      "segment_roc_auc_min": 0.9471528003173573,
+      "segment_roc_auc_range": 0.05243242788119995,
+      "segments_without_defined_roc_auc": []
+    },
+    "random_forest": {
+      "aggregate_ap_rank": 1,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "segment_ap_max": 0.9204660587639311,
+      "segment_ap_min": 0.7480564365771005,
+      "segment_ap_range": 0.17240962218683054,
+      "segment_ap_rank_max": 6,
+      "segment_ap_rank_min": 1,
+      "segment_ap_ranks": [
+        4,
+        1,
+        1,
+        6
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9967313256885652,
+      "segment_roc_auc_min": 0.9173428540517148,
+      "segment_roc_auc_range": 0.07938847163685037,
+      "segments_without_defined_roc_auc": []
+    },
+    "xgboost": {
+      "aggregate_ap_rank": 5,
+      "aggregate_rank_is_segment_top_rank": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "segment_ap_max": 0.9128099303442552,
+      "segment_ap_min": 0.7118385960181757,
+      "segment_ap_range": 0.2009713343260795,
+      "segment_ap_rank_max": 6,
+      "segment_ap_rank_min": 3,
+      "segment_ap_ranks": [
+        3,
+        5,
+        6,
+        4
+      ],
+      "segment_count": 4,
+      "segment_roc_auc_max": 0.9977483816493105,
+      "segment_roc_auc_min": 0.9438566122110426,
+      "segment_roc_auc_range": 0.0538917694382679,
+      "segments_without_defined_roc_auc": []
+    }
+  }
+}

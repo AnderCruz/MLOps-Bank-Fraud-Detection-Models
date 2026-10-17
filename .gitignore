@@ -30,3 +30,6 @@ mlflow.db
 mlflow.db-shm
 mlflow.db-wal
 mlruns/
+
+# Local MLflow database backups
+/mlflow.backup*.db

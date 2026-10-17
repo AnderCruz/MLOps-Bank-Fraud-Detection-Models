@@ -1,0 +1,102 @@
+{
+  "artifacts": {
+    "artifact_sha256": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+    "metadata_sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+    "metadata_uri": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+    "model_uri": "models/917ec001800745a6bc3e81dd11d9a929/random_forest.joblib",
+    "validation_evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "validation_evaluation_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  },
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "decision_reasons": [
+    "Mandatory quality threshold for random_forest is undefined in policy bank-fraud-validation-v1"
+  ],
+  "failure_reasons": [],
+  "gates": [
+    {
+      "name": "artifact_integrity",
+      "reason": "Artifact and required metadata are present and consistent",
+      "status": "PASS"
+    },
+    {
+      "name": "artifact_compatibility",
+      "reason": "Canonical inference loader verified artifact compatibility",
+      "status": "PASS"
+    },
+    {
+      "name": "provenance_lineage",
+      "reason": "Source record and pipeline lineage are verified",
+      "record_type": "training_run",
+      "source_record_id": "3f8608746b5b486cadd61a1f6331e5eb",
+      "status": "PASS"
+    },
+    {
+      "name": "git_provenance",
+      "reason": "Optional Git provenance is unavailable",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "name": "registry_lineage",
+      "reason": "Candidate validation does not require Registry registration",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "metric": "average_precision",
+      "name": "validation_metric",
+      "reason": "Required model-appropriate validation metric is present and finite",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.random_forest",
+      "status": "PASS",
+      "value": 0.8579663875394855
+    },
+    {
+      "metric": "average_precision",
+      "name": "quality_threshold",
+      "reason": "Mandatory quality threshold for random_forest is undefined in policy bank-fraud-validation-v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "threshold": null,
+      "value": 0.8579663875394855
+    }
+  ],
+  "limitations": [
+    "Validation decision is not production approval or deployment authorization",
+    "No test-set metrics are included"
+  ],
+  "lineage": {
+    "artifact_import_run_id": null,
+    "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+    "registered_model_name": null,
+    "registered_model_version": null,
+    "training_run_id": "3f8608746b5b486cadd61a1f6331e5eb"
+  },
+  "metrics": [
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "name": "average_precision",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.random_forest",
+      "value": 0.8579663875394855
+    }
+  ],
+  "missing_evidence": [
+    "Mandatory quality threshold for random_forest is undefined in policy bank-fraud-validation-v1"
+  ],
+  "model_family": "random_forest",
+  "policy": {
+    "policy_id": "bank-fraud-validation-v1",
+    "version": "1"
+  },
+  "production_approval": false,
+  "provenance": {
+    "git_branch": null,
+    "git_commit": null
+  },
+  "report_id": "feaa9ba51bb944eda8c734a51a2ddfdc",
+  "report_type": "model_validation_gates",
+  "schema_version": "1.0.0",
+  "score_type": "fraud_probability",
+  "validated_at_utc": "2026-10-13T15:00:10.583295+00:00",
+  "validation_evaluation": {
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  }
+}

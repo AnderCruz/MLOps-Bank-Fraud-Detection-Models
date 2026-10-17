@@ -1,0 +1,53 @@
+{
+  "analysis_id": "99ea1c0797ab47d5b2c3f8b10f2a4de2",
+  "command": ".venv/bin/python src/analyze_temporal_stability_v1.py",
+  "created_at_utc": "2026-10-09T22:19:28.800840+00:00",
+  "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+  "git": {
+    "branch": "feature/tier2-deep-learning",
+    "dirty": true,
+    "revision": "5e26600ec911631e5b1b1d8d71707ac5a9e5acd9"
+  },
+  "inputs": {
+    "data_used": "Only the saved validation score table, its labels, and report/manifest metadata; no split files were loaded.",
+    "evaluation_report_path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+    "evaluation_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274",
+    "score_table_path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/validation_scores.parquet",
+    "score_table_sha256": "d3af8746d40a687a6bce5f7b6219bf66e91b8a876444ed509d7d168bd367d945",
+    "source_analysis_manifest_path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+    "source_analysis_manifest_sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17"
+  },
+  "method": {
+    "aggregate_metric_tolerance": 1e-12,
+    "ordering": "original observation_id ascending",
+    "segment_size": 10678,
+    "segments": 4,
+    "shuffle": false,
+    "stratification": false,
+    "threshold_selected": false
+  },
+  "outputs": {
+    "report_json": {
+      "path": "temporal_stability_report.json",
+      "sha256": "82097a301ab7512761c75a46a965d50a190cb46f3afc64403cba4cd258456642"
+    },
+    "report_markdown": {
+      "path": "temporal_stability_report.md",
+      "sha256": "6b20728d1747d4960c8c3a2e1ce27884dbaae1963e8fa5d05eabeb60a94c6c9b"
+    }
+  },
+  "record_type": "validation_temporal_stability_manifest",
+  "runtime": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "pyarrow": "23.0.1",
+    "python": "3.12.3",
+    "scikit_learn": "1.9.0"
+  },
+  "source": {
+    "path": "src/analyze_temporal_stability_v1.py",
+    "sha256": "aed546f6b81d7efaf400b6909ef3c4513c7c53c5221c320e836fcf9f04ad09c8"
+  },
+  "source_analysis_id": "d034e61aaf394581ab9ffb8e3c471089"
+}

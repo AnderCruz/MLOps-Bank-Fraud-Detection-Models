@@ -1,0 +1,727 @@
+{
+  "common_cohort_results": {
+    "definition": "validation rows targeted by both temporal models' complete length-10 windows",
+    "models": {
+      "autoencoder": {
+        "metrics": {
+          "average_precision": 0.29260551932160483,
+          "roc_auc": 0.9675728083806666,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "gru": {
+        "metrics": {
+          "average_precision": 0.8525546525963642,
+          "roc_auc": 0.9783316364805487,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "lightgbm": {
+        "metrics": {
+          "average_precision": 0.6813594035998941,
+          "roc_auc": 0.8767343900707321,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "logistic_regression": {
+        "metrics": {
+          "average_precision": 0.7849098369703812,
+          "roc_auc": 0.9800484440306505,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "lstm": {
+        "metrics": {
+          "average_precision": 0.8538918557190249,
+          "roc_auc": 0.9798127545279176,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "mlp": {
+        "metrics": {
+          "average_precision": 0.8551814320480421,
+          "roc_auc": 0.9827507099989283,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "random_forest": {
+        "metrics": {
+          "average_precision": 0.8579663875394855,
+          "roc_auc": 0.9609113355347766,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "xgboost": {
+        "metrics": {
+          "average_precision": 0.8284467052068584,
+          "roc_auc": 0.9780205933179723,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      }
+    },
+    "row_count": 42712,
+    "target_class_counts": {
+      "0": 42656,
+      "1": 56
+    }
+  },
+  "created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+  "environment": {
+    "architecture": "x86_64",
+    "dependencies": {
+      "lightgbm": "4.7.0",
+      "numpy": "2.5.3",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.9.0",
+      "torch": "2.14.1",
+      "xgboost": "3.4.1"
+    },
+    "git": {
+      "commit": "5e26600ec911631e5b1b1d8d71707ac5a9e5acd9",
+      "dirty": true
+    },
+    "platform": "Linux",
+    "python_version": "3.12.3"
+  },
+  "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+  "evaluation_split": {
+    "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+    "common_row_count": 42712,
+    "common_target_class_counts": {
+      "0": 42656,
+      "1": 56
+    },
+    "feature_count": 32,
+    "features": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26",
+      "V27",
+      "V28",
+      "Amount",
+      "Amount_log",
+      "Time",
+      "Time_hour"
+    ],
+    "features_path": "data/processed/X_val.parquet",
+    "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+    "identifier": "chronological_validation_split",
+    "labels_path": "data/processed/y_val.parquet",
+    "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+    "method": "chronological, using the existing 70/15/15 partition",
+    "native_row_count": 42721,
+    "native_target_class_counts": {
+      "0": 42665,
+      "1": 56
+    },
+    "train_fraction": 0.7,
+    "validation_end_fraction": 0.85,
+    "validation_fraction": 0.15
+  },
+  "holdout_disclosure": "This evaluation reads validation data only. The test split was used in prior analysis and is not an untouched or blind holdout.",
+  "metric_definitions": {
+    "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+    "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+  },
+  "metric_implementation_versions": {
+    "scikit-learn": "1.9.0"
+  },
+  "models": {
+    "autoencoder": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/881087b271b240b192d2385e49c3251a/autoencoder_state_dict.pt",
+      "artifact_sha256": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json",
+      "metadata_run_id": "881087b271b240b192d2385e49c3251a",
+      "metadata_sha256": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+      "model_name": "autoencoder",
+      "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler": {
+        "path": "data/processed/robust_scaler.joblib",
+        "sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067"
+      },
+      "score_type": "anomaly_score",
+      "temporal_alignment": null,
+      "training_run_id": "9d337a314b6848dbb5b232ad46395673"
+    },
+    "gru": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/35a1905ea8634a169817e321ea9237b8/gru_state_dict.pt",
+      "artifact_sha256": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+      "metadata_run_id": "35a1905ea8634a169817e321ea9237b8",
+      "metadata_sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab",
+      "model_name": "gru",
+      "pipeline_run_id": "35a1905ea8634a169817e321ea9237b8",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler": {
+        "path": "data/processed/robust_scaler.joblib",
+        "sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067"
+      },
+      "score_type": "fraud_probability",
+      "temporal_alignment": {
+        "first_n_input_rows_without_prediction": 9,
+        "first_target_row_index": 199373,
+        "last_target_row_index": 242084,
+        "sequence_length": 10,
+        "target": "final row of each ordered sequence"
+      },
+      "training_run_id": "9410c67e5ad4493886cbe44d28735c32"
+    },
+    "lightgbm": {
+      "artifact_import_run_id": "11c360d936f04152b886480a74ba16c0",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm.joblib",
+      "artifact_sha256": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm_metadata.json",
+      "metadata_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "metadata_sha256": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd",
+      "model_name": "lightgbm",
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "unscaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import. The root-level LightGBM binary differs by SHA-256. The aggregate binary is the forward canonical choice, but the historical validation AP is not conclusively linked to this binary.",
+      "scaler": null,
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": null
+    },
+    "logistic_regression": {
+      "artifact_import_run_id": "1ae816295848406da9be50a8b62192c1",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression.joblib",
+      "artifact_sha256": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression_metadata.json",
+      "metadata_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "metadata_sha256": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+      "model_name": "logistic_regression",
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "scaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+      "scaler": {
+        "path": "data/processed/robust_scaler.joblib",
+        "sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067"
+      },
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": null
+    },
+    "lstm": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/136349275cab4fa482792ceef86d9ba2/lstm_state_dict.pt",
+      "artifact_sha256": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+      "metadata_run_id": "136349275cab4fa482792ceef86d9ba2",
+      "metadata_sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0",
+      "model_name": "lstm",
+      "pipeline_run_id": "136349275cab4fa482792ceef86d9ba2",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler": {
+        "path": "data/processed/robust_scaler.joblib",
+        "sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067"
+      },
+      "score_type": "fraud_probability",
+      "temporal_alignment": {
+        "first_n_input_rows_without_prediction": 9,
+        "first_target_row_index": 199373,
+        "last_target_row_index": 242084,
+        "sequence_length": 10,
+        "target": "final row of each ordered sequence"
+      },
+      "training_run_id": "e02d4e87207f400a90a14bddf3c124bc"
+    },
+    "mlp": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_state_dict.pt",
+      "artifact_sha256": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+      "metadata_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+      "metadata_sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+      "model_name": "mlp",
+      "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+      "preprocessing": "scaled",
+      "provenance_caveat": null,
+      "scaler": {
+        "path": "data/processed/robust_scaler.joblib",
+        "sha256": "1e9363ad8f9f03f58ddcdb8532ab7d5a08e5ee20ebe7afdc8db941be52ec5067"
+      },
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": "b7393416190340ad826a9f3ad25cd377"
+    },
+    "random_forest": {
+      "artifact_import_run_id": null,
+      "artifact_path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest.joblib",
+      "artifact_sha256": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+      "metadata_run_id": "917ec001800745a6bc3e81dd11d9a929",
+      "metadata_sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+      "model_name": "random_forest",
+      "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+      "preprocessing": "unscaled",
+      "provenance_caveat": null,
+      "scaler": null,
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": "3f8608746b5b486cadd61a1f6331e5eb"
+    },
+    "xgboost": {
+      "artifact_import_run_id": "08edc67966a846158e472f4f71a0f83d",
+      "artifact_path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost.joblib",
+      "artifact_sha256": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "metadata_path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost_metadata.json",
+      "metadata_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "metadata_sha256": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+      "model_name": "xgboost",
+      "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+      "preprocessing": "unscaled",
+      "provenance_caveat": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+      "scaler": null,
+      "score_type": "fraud_probability",
+      "temporal_alignment": null,
+      "training_run_id": null
+    }
+  },
+  "native_cohort_results": {
+    "definition": "all validation rows supported by each model",
+    "models": {
+      "autoencoder": {
+        "metrics": {
+          "average_precision": 0.2926054660686415,
+          "roc_auc": 0.9675737891547103,
+          "undefined_reason": null
+        },
+        "row_count": 42721,
+        "target_class_counts": {
+          "0": 42665,
+          "1": 56
+        }
+      },
+      "gru": {
+        "metrics": {
+          "average_precision": 0.8525546525963642,
+          "roc_auc": 0.9783316364805487,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "lightgbm": {
+        "metrics": {
+          "average_precision": 0.6813562930957019,
+          "roc_auc": 0.876734024208535,
+          "undefined_reason": null
+        },
+        "row_count": 42721,
+        "target_class_counts": {
+          "0": 42665,
+          "1": 56
+        }
+      },
+      "logistic_regression": {
+        "metrics": {
+          "average_precision": 0.7849097686859338,
+          "roc_auc": 0.9800484672950395,
+          "undefined_reason": null
+        },
+        "row_count": 42721,
+        "target_class_counts": {
+          "0": 42665,
+          "1": 56
+        }
+      },
+      "lstm": {
+        "metrics": {
+          "average_precision": 0.8538918557190249,
+          "roc_auc": 0.9798127545279176,
+          "undefined_reason": null
+        },
+        "row_count": 42712,
+        "target_class_counts": {
+          "0": 42656,
+          "1": 56
+        }
+      },
+      "mlp": {
+        "metrics": {
+          "average_precision": 0.8551813692570064,
+          "roc_auc": 0.9827501632318227,
+          "undefined_reason": null
+        },
+        "row_count": 42721,
+        "target_class_counts": {
+          "0": 42665,
+          "1": 56
+        }
+      },
+      "random_forest": {
+        "metrics": {
+          "average_precision": 0.857966367810208,
+          "roc_auc": 0.9609120473455994,
+          "undefined_reason": null
+        },
+        "row_count": 42721,
+        "target_class_counts": {
+          "0": 42665,
+          "1": 56
+        }
+      },
+      "xgboost": {
+        "metrics": {
+          "average_precision": 0.8284466654340668,
+          "roc_auc": 0.9780218814351007,
+          "undefined_reason": null
+        },
+        "row_count": 42721,
+        "target_class_counts": {
+          "0": 42665,
+          "1": 56
+        }
+      }
+    }
+  },
+  "record_type": "validation_evaluation",
+  "score_interpretation": {
+    "autoencoder": "reconstruction-error anomaly score; not a calibrated fraud probability",
+    "supervised_models": "fraud probability for class 1"
+  }
+}

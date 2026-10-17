@@ -1,0 +1,5 @@
+# Include the main project dependencies.
+-r requirements.txt
+
+# Testing framework.
+pytest==8.4.2

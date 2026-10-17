@@ -1,0 +1,102 @@
+{
+  "artifacts": {
+    "artifact_sha256": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+    "metadata_sha256": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+    "metadata_uri": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json",
+    "model_uri": "models/881087b271b240b192d2385e49c3251a/autoencoder_state_dict.pt",
+    "validation_evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "validation_evaluation_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  },
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "decision_reasons": [
+    "Mandatory quality threshold for autoencoder is undefined in policy bank-fraud-validation-v1"
+  ],
+  "failure_reasons": [],
+  "gates": [
+    {
+      "name": "artifact_integrity",
+      "reason": "Artifact and required metadata are present and consistent",
+      "status": "PASS"
+    },
+    {
+      "name": "artifact_compatibility",
+      "reason": "Canonical inference loader verified artifact compatibility",
+      "status": "PASS"
+    },
+    {
+      "name": "provenance_lineage",
+      "reason": "Source record and pipeline lineage are verified",
+      "record_type": "training_run",
+      "source_record_id": "9d337a314b6848dbb5b232ad46395673",
+      "status": "PASS"
+    },
+    {
+      "name": "git_provenance",
+      "reason": "Optional Git provenance is unavailable",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "name": "registry_lineage",
+      "reason": "Candidate validation does not require Registry registration",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "interpretation": "validation reconstruction MSE; checkpoint-selection metric; not a fraud probability",
+      "metric": "validation_reconstruction_mse",
+      "name": "validation_metric",
+      "reason": "Required model-appropriate validation metric is present and finite",
+      "source": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json:configuration.best_validation_reconstruction_mse",
+      "status": "PASS",
+      "value": 0.454889714717865
+    },
+    {
+      "metric": "validation_reconstruction_mse",
+      "name": "quality_threshold",
+      "reason": "Mandatory quality threshold for autoencoder is undefined in policy bank-fraud-validation-v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "threshold": null,
+      "value": 0.454889714717865
+    }
+  ],
+  "limitations": [
+    "Validation decision is not production approval or deployment authorization",
+    "No test-set metrics are included"
+  ],
+  "lineage": {
+    "artifact_import_run_id": null,
+    "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+    "registered_model_name": null,
+    "registered_model_version": null,
+    "training_run_id": "9d337a314b6848dbb5b232ad46395673"
+  },
+  "metrics": [
+    {
+      "interpretation": "validation reconstruction MSE; checkpoint-selection metric; not a fraud probability",
+      "name": "validation_reconstruction_mse",
+      "source": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json:configuration.best_validation_reconstruction_mse",
+      "value": 0.454889714717865
+    }
+  ],
+  "missing_evidence": [
+    "Mandatory quality threshold for autoencoder is undefined in policy bank-fraud-validation-v1"
+  ],
+  "model_family": "autoencoder",
+  "policy": {
+    "policy_id": "bank-fraud-validation-v1",
+    "version": "1"
+  },
+  "production_approval": false,
+  "provenance": {
+    "git_branch": null,
+    "git_commit": null
+  },
+  "report_id": "dabfd159ea9e4a4b95923c73be984da4",
+  "report_type": "model_validation_gates",
+  "schema_version": "1.0.0",
+  "score_type": "anomaly_score",
+  "validated_at_utc": "2026-10-13T15:00:10.639424+00:00",
+  "validation_evaluation": {
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  }
+}

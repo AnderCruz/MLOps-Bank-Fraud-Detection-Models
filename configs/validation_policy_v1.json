@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "bank-fraud-validation-v1",
+  "version": "1",
+  "require_quality_threshold": true,
+  "require_source_record": true,
+  "require_registry_registration": false,
+  "quality_thresholds": {
+    "random_forest": {"metric": "average_precision", "operator": "minimum", "value": null},
+    "xgboost": {"metric": "average_precision", "operator": "minimum", "value": null},
+    "logistic_regression": {"metric": "average_precision", "operator": "minimum", "value": null},
+    "lightgbm": {"metric": "average_precision", "operator": "minimum", "value": null},
+    "mlp": {"metric": "average_precision", "operator": "minimum", "value": null},
+    "autoencoder": {"metric": "validation_reconstruction_mse", "operator": "maximum", "value": null},
+    "lstm": {"metric": "average_precision", "operator": "minimum", "value": null},
+    "gru": {"metric": "average_precision", "operator": "minimum", "value": null}
+  }
+}
