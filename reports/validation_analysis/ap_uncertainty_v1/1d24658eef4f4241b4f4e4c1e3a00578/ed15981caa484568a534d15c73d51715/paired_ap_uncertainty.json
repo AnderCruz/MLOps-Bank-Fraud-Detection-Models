@@ -1,0 +1,346 @@
+{
+  "analysis_id": "ed15981caa484568a534d15c73d51715",
+  "cohort": {
+    "definition": "saved common cohort: rows with scores from both length-10 temporal models",
+    "first_observation_id": 199373,
+    "fraud_count": 56,
+    "last_observation_id": 242084,
+    "non_fraud_count": 42656,
+    "observation_count": 42712
+  },
+  "created_at_utc": "2026-10-09T21:47:50.683677+00:00",
+  "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+  "interval": {
+    "confidence_level": 0.95,
+    "interpretation": "Exploratory resampling summary, conditional on this validation cohort.",
+    "type": "percentile"
+  },
+  "limitations": [
+    "Validation observations were used for model/checkpoint selection.",
+    "The common validation cohort has only 56 fraud observations.",
+    "Temporal dependence may remain; block lengths are sensitivity anchors, not estimated dependence scales.",
+    "The test split has been examined previously and is not an independent blind holdout.",
+    "Intervals do not establish superiority or independent generalization performance."
+  ],
+  "metric": "sklearn.metrics.average_precision_score",
+  "provenance": {
+    "analysis_source": {
+      "git_dirty": true,
+      "git_revision": "5e26600ec911631e5b1b1d8d71707ac5a9e5acd9",
+      "path": "src/analyze_ap_uncertainty.py",
+      "sha256": "b5a4c9087682418b7538afc1bafed47fc6b8755ca60b1439ea27a1b6c8242e9a"
+    },
+    "comparisons": [
+      {
+        "definition": "AP(first) - AP(second)",
+        "first": "random_forest",
+        "second": "mlp"
+      },
+      {
+        "definition": "AP(first) - AP(second)",
+        "first": "random_forest",
+        "second": "lstm"
+      },
+      {
+        "definition": "AP(first) - AP(second)",
+        "first": "random_forest",
+        "second": "gru"
+      },
+      {
+        "definition": "AP(first) - AP(second)",
+        "first": "mlp",
+        "second": "lstm"
+      },
+      {
+        "definition": "AP(first) - AP(second)",
+        "first": "random_forest",
+        "second": "xgboost"
+      }
+    ],
+    "confidence_level": 0.95,
+    "input_hashes": {
+      "analysis_manifest_sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17",
+      "evaluation_report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274",
+      "score_table_sha256": "d3af8746d40a687a6bce5f7b6219bf66e91b8a876444ed509d7d168bd367d945"
+    },
+    "interpretation": "Exploratory percentile intervals conditional on the existing validation cohort and selected models; not independent generalization estimates.",
+    "random_seed": 20261009,
+    "requested_replicates_per_method": 1000,
+    "sampling": {
+      "class_stratified": "positive and negative indices sampled separately with replacement; conditions on the observed class counts",
+      "invalid_replicate_policy": "A replicate is valid only when both binary classes are represented; invalid replicates are counted by reason and are not silently omitted.",
+      "moving_block": {
+        "algorithm": "sample contiguous non-circular blocks by choosing each start uniformly from 0..n-L; concatenate until at least n rows, then truncate to exactly n; use the resulting indices jointly for all models",
+        "block_lengths_rows": [
+          10,
+          68,
+          372
+        ],
+        "invalid_replicate": "exclude from interval calculation and count explicitly if the replicate contains no positive or no negative labels",
+        "ordering": "chronological order of the common-cohort score table"
+      },
+      "paired": true,
+      "row": "n row indices sampled uniformly with replacement"
+    },
+    "software": {
+      "numpy": "2.5.3",
+      "pandas": "2.3.3",
+      "python": "3.12.3",
+      "scikit_learn": "1.9.0"
+    }
+  },
+  "record_type": "paired_validation_ap_uncertainty",
+  "results": [
+    {
+      "block_length_rows": null,
+      "comparisons": {
+        "mlp_vs_lstm": {
+          "observed_ap_difference": 0.0012895763290171613,
+          "percentile_interval": [
+            -0.01694042260984079,
+            0.02018025177646828
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_gru": {
+          "observed_ap_difference": 0.005411734943121305,
+          "percentile_interval": [
+            -0.030905243370261817,
+            0.04010918422993019
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_lstm": {
+          "observed_ap_difference": 0.004074531820460581,
+          "percentile_interval": [
+            -0.025205073696788052,
+            0.03665253066839828
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_mlp": {
+          "observed_ap_difference": 0.0027849554914434194,
+          "percentile_interval": [
+            -0.024063638197532204,
+            0.032958865574287025
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_xgboost": {
+          "observed_ap_difference": 0.02951968233262714,
+          "percentile_interval": [
+            -0.0230592663574823,
+            0.09791342553018012
+          ],
+          "valid_replicates": 1000
+        }
+      },
+      "invalid_replicates": 0,
+      "invalid_replicates_by_reason": {},
+      "method": "paired_row",
+      "requested_replicates": 1000,
+      "valid_replicates": 1000
+    },
+    {
+      "block_length_rows": null,
+      "comparisons": {
+        "mlp_vs_lstm": {
+          "observed_ap_difference": 0.0012895763290171613,
+          "percentile_interval": [
+            -0.016483029890218586,
+            0.0169942266420312
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_gru": {
+          "observed_ap_difference": 0.005411734943121305,
+          "percentile_interval": [
+            -0.028272418054930394,
+            0.0385849239768295
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_lstm": {
+          "observed_ap_difference": 0.004074531820460581,
+          "percentile_interval": [
+            -0.0264789447001054,
+            0.03177532156736368
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_mlp": {
+          "observed_ap_difference": 0.0027849554914434194,
+          "percentile_interval": [
+            -0.02421795120166948,
+            0.031605182655916636
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_xgboost": {
+          "observed_ap_difference": 0.02951968233262714,
+          "percentile_interval": [
+            -0.02167407645055638,
+            0.09360898093229629
+          ],
+          "valid_replicates": 1000
+        }
+      },
+      "invalid_replicates": 0,
+      "invalid_replicates_by_reason": {},
+      "method": "paired_class_stratified_row",
+      "requested_replicates": 1000,
+      "valid_replicates": 1000
+    },
+    {
+      "block_length_rows": 10,
+      "comparisons": {
+        "mlp_vs_lstm": {
+          "observed_ap_difference": 0.0012895763290171613,
+          "percentile_interval": [
+            -0.015586036805613565,
+            0.019134905738684965
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_gru": {
+          "observed_ap_difference": 0.005411734943121305,
+          "percentile_interval": [
+            -0.030071669907302343,
+            0.04004742877365696
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_lstm": {
+          "observed_ap_difference": 0.004074531820460581,
+          "percentile_interval": [
+            -0.02582052150520777,
+            0.03586681626799845
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_mlp": {
+          "observed_ap_difference": 0.0027849554914434194,
+          "percentile_interval": [
+            -0.025060167165802713,
+            0.03196006762565804
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_xgboost": {
+          "observed_ap_difference": 0.02951968233262714,
+          "percentile_interval": [
+            -0.02227840143169263,
+            0.10347819380406698
+          ],
+          "valid_replicates": 1000
+        }
+      },
+      "invalid_replicates": 0,
+      "invalid_replicates_by_reason": {},
+      "method": "paired_moving_block",
+      "requested_replicates": 1000,
+      "valid_replicates": 1000
+    },
+    {
+      "block_length_rows": 68,
+      "comparisons": {
+        "mlp_vs_lstm": {
+          "observed_ap_difference": 0.0012895763290171613,
+          "percentile_interval": [
+            -0.017683216073188443,
+            0.018275701156958424
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_gru": {
+          "observed_ap_difference": 0.005411734943121305,
+          "percentile_interval": [
+            -0.03019995213991141,
+            0.039215335543510595
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_lstm": {
+          "observed_ap_difference": 0.004074531820460581,
+          "percentile_interval": [
+            -0.022175057540572224,
+            0.03490505139400728
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_mlp": {
+          "observed_ap_difference": 0.0027849554914434194,
+          "percentile_interval": [
+            -0.023858737452733373,
+            0.03351344489832337
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_xgboost": {
+          "observed_ap_difference": 0.02951968233262714,
+          "percentile_interval": [
+            -0.024158150401333837,
+            0.11195940347889607
+          ],
+          "valid_replicates": 1000
+        }
+      },
+      "invalid_replicates": 0,
+      "invalid_replicates_by_reason": {},
+      "method": "paired_moving_block",
+      "requested_replicates": 1000,
+      "valid_replicates": 1000
+    },
+    {
+      "block_length_rows": 372,
+      "comparisons": {
+        "mlp_vs_lstm": {
+          "observed_ap_difference": 0.0012895763290171613,
+          "percentile_interval": [
+            -0.018127825611600673,
+            0.018836480886972342
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_gru": {
+          "observed_ap_difference": 0.005411734943121305,
+          "percentile_interval": [
+            -0.02874561583277705,
+            0.04197467564103089
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_lstm": {
+          "observed_ap_difference": 0.004074531820460581,
+          "percentile_interval": [
+            -0.0230214452477317,
+            0.035145215987584785
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_mlp": {
+          "observed_ap_difference": 0.0027849554914434194,
+          "percentile_interval": [
+            -0.023862033532553537,
+            0.03467304408831752
+          ],
+          "valid_replicates": 1000
+        },
+        "random_forest_vs_xgboost": {
+          "observed_ap_difference": 0.02951968233262714,
+          "percentile_interval": [
+            -0.02422952977066547,
+            0.10638724707174892
+          ],
+          "valid_replicates": 1000
+        }
+      },
+      "invalid_replicates": 0,
+      "invalid_replicates_by_reason": {},
+      "method": "paired_moving_block",
+      "requested_replicates": 1000,
+      "valid_replicates": 1000
+    }
+  ],
+  "source_analysis_id": "d034e61aaf394581ab9ffb8e3c471089"
+}

@@ -1,0 +1,102 @@
+{
+  "artifacts": {
+    "artifact_sha256": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+    "metadata_sha256": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+    "metadata_uri": "models/3fb3fda08f984b899e99498798ba83ce/xgboost_metadata.json",
+    "model_uri": "models/3fb3fda08f984b899e99498798ba83ce/xgboost.joblib",
+    "validation_evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "validation_evaluation_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  },
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "decision_reasons": [
+    "Mandatory quality threshold for xgboost is undefined in policy bank-fraud-validation-v1"
+  ],
+  "failure_reasons": [],
+  "gates": [
+    {
+      "name": "artifact_integrity",
+      "reason": "Artifact and required metadata are present and consistent",
+      "status": "PASS"
+    },
+    {
+      "name": "artifact_compatibility",
+      "reason": "Canonical inference loader verified artifact compatibility",
+      "status": "PASS"
+    },
+    {
+      "name": "provenance_lineage",
+      "reason": "Source record and pipeline lineage are verified",
+      "record_type": "artifact_import",
+      "source_record_id": "08edc67966a846158e472f4f71a0f83d",
+      "status": "PASS"
+    },
+    {
+      "name": "git_provenance",
+      "reason": "Optional Git provenance is unavailable",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "name": "registry_lineage",
+      "reason": "Candidate validation does not require Registry registration",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "metric": "average_precision",
+      "name": "validation_metric",
+      "reason": "Required model-appropriate validation metric is present and finite",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.xgboost",
+      "status": "PASS",
+      "value": 0.8284467052068584
+    },
+    {
+      "metric": "average_precision",
+      "name": "quality_threshold",
+      "reason": "Mandatory quality threshold for xgboost is undefined in policy bank-fraud-validation-v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "threshold": null,
+      "value": 0.8284467052068584
+    }
+  ],
+  "limitations": [
+    "Validation decision is not production approval or deployment authorization",
+    "No test-set metrics are included"
+  ],
+  "lineage": {
+    "artifact_import_run_id": "08edc67966a846158e472f4f71a0f83d",
+    "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+    "registered_model_name": null,
+    "registered_model_version": null,
+    "training_run_id": null
+  },
+  "metrics": [
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "name": "average_precision",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.xgboost",
+      "value": 0.8284467052068584
+    }
+  ],
+  "missing_evidence": [
+    "Mandatory quality threshold for xgboost is undefined in policy bank-fraud-validation-v1"
+  ],
+  "model_family": "xgboost",
+  "policy": {
+    "policy_id": "bank-fraud-validation-v1",
+    "version": "1"
+  },
+  "production_approval": false,
+  "provenance": {
+    "git_branch": null,
+    "git_commit": null
+  },
+  "report_id": "3e4c92718f364e958fb741370a10a771",
+  "report_type": "model_validation_gates",
+  "schema_version": "1.0.0",
+  "score_type": "fraud_probability",
+  "validated_at_utc": "2026-10-13T15:00:10.598814+00:00",
+  "validation_evaluation": {
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  }
+}

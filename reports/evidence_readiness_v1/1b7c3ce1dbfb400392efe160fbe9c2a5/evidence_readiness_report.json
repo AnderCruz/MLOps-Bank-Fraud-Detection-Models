@@ -1,0 +1,2569 @@
+{
+  "created_at_utc": "2026-10-14T00:49:48.091295+00:00",
+  "evidence_acquisition_plan": [
+    {
+      "acceptance_condition": "Signed/versioned objective and constraints with rationale and owner.",
+      "blocking_decisions": "Threshold definition and production approval.",
+      "blocks_independent_confirmation": false,
+      "blocks_production_approval": true,
+      "blocks_threshold_definition": true,
+      "current_gap": "No approved objective, missed-fraud limit, false-positive/review constraint, or alert capacity is documented.",
+      "dependencies": "Operational decisions and evidence availability must be established before downstream confirmation.",
+      "item": "Operational objective and constraints",
+      "priority": 1,
+      "required_source_or_decision": "Fraud operations, risk, product, and compliance decision roles.",
+      "requires_future_controlled_experiment": false,
+      "requires_new_data": false,
+      "requires_stakeholder_input": true,
+      "resolvable_without_model_training": true,
+      "status": "NOT_ACQUIRED_OR_RESOLVED"
+    },
+    {
+      "acceptance_condition": "Documented population, later chronological window, source provenance, label maturity, and disjointness from development/calibration.",
+      "blocking_decisions": "Independent confirmation and production approval.",
+      "blocks_independent_confirmation": true,
+      "blocks_production_approval": true,
+      "blocks_threshold_definition": false,
+      "current_gap": "No qualifying unseen cohort and mature-label policy are evidenced; existing validation was selected on and test was previously examined.",
+      "dependencies": "Operational decisions and evidence availability must be established before downstream confirmation.",
+      "item": "Independent evaluation population and label maturity",
+      "priority": 2,
+      "required_source_or_decision": "Data custodian and fraud-label operations.",
+      "requires_future_controlled_experiment": false,
+      "requires_new_data": true,
+      "requires_stakeholder_input": true,
+      "resolvable_without_model_training": true,
+      "status": "NOT_ACQUIRED_OR_RESOLVED"
+    },
+    {
+      "acceptance_condition": "Hashes and versions for selected candidates, metadata, features, scaler, inference, metrics, policy, cohort rules, and decision rules recorded before confirmation access.",
+      "blocking_decisions": "Independent confirmation and production approval.",
+      "blocks_independent_confirmation": true,
+      "blocks_production_approval": true,
+      "blocks_threshold_definition": false,
+      "current_gap": "No approved acceptance threshold or frozen confirmation protocol exists; current policy thresholds are null.",
+      "dependencies": "Operational decisions and evidence availability must be established before downstream confirmation.",
+      "item": "Candidate and policy freeze",
+      "priority": 3,
+      "required_source_or_decision": "Model owner, risk owner, and evaluation owner.",
+      "requires_future_controlled_experiment": false,
+      "requires_new_data": false,
+      "requires_stakeholder_input": true,
+      "resolvable_without_model_training": true,
+      "status": "NOT_ACQUIRED_OR_RESOLVED"
+    },
+    {
+      "acceptance_condition": "Prespecified method, rationale, cohort, versioned threshold, and explicit freeze before independent confirmation.",
+      "blocking_decisions": "Numerical threshold definition and independent confirmation under a threshold.",
+      "blocks_independent_confirmation": true,
+      "blocks_production_approval": true,
+      "blocks_threshold_definition": true,
+      "current_gap": "No objective-backed calibration procedure or calibration cohort is documented.",
+      "dependencies": "Operational decisions and evidence availability must be established before downstream confirmation.",
+      "item": "Calibration evidence and procedure",
+      "priority": 4,
+      "required_source_or_decision": "Risk/product stakeholders plus evaluation owner; requires a dedicated calibration cohort or approved development procedure.",
+      "requires_future_controlled_experiment": true,
+      "requires_new_data": true,
+      "requires_stakeholder_input": true,
+      "resolvable_without_model_training": true,
+      "status": "NOT_ACQUIRED_OR_RESOLVED"
+    },
+    {
+      "acceptance_condition": "Approved service and capacity targets plus measured inference/resource/alert burden for frozen candidates.",
+      "blocking_decisions": "Production approval; not a substitute for quality evidence.",
+      "blocks_independent_confirmation": false,
+      "blocks_production_approval": true,
+      "blocks_threshold_definition": false,
+      "current_gap": "Latency, throughput, memory, volume, cost, and human review burden are unmeasured.",
+      "dependencies": "Operational decisions and evidence availability must be established before downstream confirmation.",
+      "item": "Serving feasibility and operational burden",
+      "priority": 5,
+      "required_source_or_decision": "Platform/service owner and fraud operations; future controlled benchmarks.",
+      "requires_future_controlled_experiment": true,
+      "requires_new_data": false,
+      "requires_stakeholder_input": true,
+      "resolvable_without_model_training": true,
+      "status": "NOT_ACQUIRED_OR_RESOLVED"
+    },
+    {
+      "acceptance_condition": "Approved monitoring and response responsibilities, rollback/fallback procedure, audit trail, and security/privacy review.",
+      "blocking_decisions": "Production approval.",
+      "blocks_independent_confirmation": false,
+      "blocks_production_approval": true,
+      "blocks_threshold_definition": false,
+      "current_gap": "No project-specific acceptance evidence for monitoring, failure behavior, rollback, privacy, or audit controls.",
+      "dependencies": "Operational decisions and evidence availability must be established before downstream confirmation.",
+      "item": "Monitoring, failure, rollback, and governance",
+      "priority": 6,
+      "required_source_or_decision": "Model operations, security/privacy/compliance, and service owner.",
+      "requires_future_controlled_experiment": false,
+      "requires_new_data": false,
+      "requires_stakeholder_input": true,
+      "resolvable_without_model_training": true,
+      "status": "NOT_ACQUIRED_OR_RESOLVED"
+    }
+  ],
+  "evidence_provenance_audit": {
+    "classification_definitions": {
+      "ARTIFACT_IMPORT_EVIDENCE": "A recorded import/registration event; it does not establish original model training history.",
+      "DERIVED_ANALYSIS": "A calculation over already persisted validation evidence.",
+      "DOCUMENTATION_ONLY": "A statement recorded in source or project documentation, not independently observed data.",
+      "EMPIRICAL_TRAINING_EVIDENCE": "A completed recorded model-training run and its logged outputs; not independent validation.",
+      "EMPIRICAL_VALIDATION_EVIDENCE": "Observed validation scores or metrics from a recorded evaluation; selection-conditioned unless stated otherwise.",
+      "MISSING": "Required evidence is not present in inspected repository sources.",
+      "SYNTHETIC_TEST_EVIDENCE": "Synthetic unit-test fixtures only; never empirical model evidence.",
+      "UNVERIFIED": "A claim whose source, lineage, or independent corroboration is absent or insufficient."
+    },
+    "derived_analyses": [
+      {
+        "evidence_classification": "DERIVED_ANALYSIS",
+        "limitations": [
+          "Resamples one selected validation cohort; not independent training runs or independent generalization."
+        ],
+        "name": "Paired AP uncertainty analysis",
+        "path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json"
+      },
+      {
+        "evidence_classification": "DERIVED_ANALYSIS",
+        "limitations": [
+          "Descriptive validation segments; temporal differences do not alone prove drift."
+        ],
+        "name": "Temporal stability analysis",
+        "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json"
+      }
+    ],
+    "missing_or_unverified_evidence": [
+      {
+        "claim": "Original training runs for XGBoost, Logistic Regression, and LightGBM",
+        "classification": "UNVERIFIED",
+        "reason": "Only artifact-import records were recovered; the import records have no training metrics."
+      },
+      {
+        "claim": "Historical LightGBM validation AP associated with its canonical binary",
+        "classification": "UNVERIFIED",
+        "reason": "The root-level and canonical binary differ and no recovered training record links the historical metric to the canonical bytes."
+      },
+      {
+        "claim": "Fresh independent evaluation cohort with mature labels",
+        "classification": "MISSING",
+        "reason": "No qualifying, unseen confirmation cohort is identified in inspected repository evidence."
+      },
+      {
+        "claim": "Verified Git revision for existing training runs",
+        "classification": "UNVERIFIED",
+        "reason": "Current source MLflow records do not provide both commit and branch tags; metadata fields are not independent tag evidence."
+      },
+      {
+        "claim": "Operational acceptance objective and numerical cutoffs",
+        "classification": "MISSING",
+        "reason": "Policy v2 thresholds remain null and no approved operational constraints were located."
+      }
+    ],
+    "models": {
+      "autoencoder": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+          "hash_matches": true,
+          "observed_sha256": "403cf1e980e9b4b26f5a54148847d6b6612b062289e185361a129653621615b6",
+          "path": "models/881087b271b240b192d2385e49c3251a/autoencoder_state_dict.pt"
+        },
+        "historical_metric_provenance": {
+          "caveat": "The linked MLflow record is a training run; validation remains selection-conditioned, not independent confirmation.",
+          "historical_metric_to_current_artifact_linked": true,
+          "metadata_recorded_validation_value": 0.2926054660686415
+        },
+        "lineage": {
+          "artifact_import_run_id": null,
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": null,
+          "original_training_recovered": true,
+          "pipeline_run_id": "881087b271b240b192d2385e49c3251a",
+          "record_type": "training_run",
+          "tracking_record": {
+            "artifact_paths": [
+              "models/autoencoder/autoencoder_metadata.json",
+              "models/autoencoder/autoencoder_state_dict.pt"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/1/9d337a314b6848dbb5b232ad46395673/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T01:11:11.039000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {
+              "autoencoder_validation_ap": 0.2926054660686415,
+              "autoencoder_validation_reconstruction_mse": 0.454889714717865
+            },
+            "model_name_tag": null,
+            "parameters": {
+              "features.count": "32",
+              "features.names": "[\"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\", \"V7\", \"V8\", \"V9\", \"V10\", \"V11\", \"V12\", \"V13\", \"V14\", \"V15\", \"V16\", \"V17\", \"V18\", \"V19\", \"V20\", \"V21\", \"V22\", \"V23\", \"V24\", \"V25\", \"V26\", \"V27\", \"V28\", \"Amount\", \"Amount_log\", \"Time\", \"Time_hour\"]",
+              "models.autoencoder.checkpoint_metric": "validation reconstruction MSE",
+              "models.autoencoder.input_representation": "scaled",
+              "models.autoencoder.loss": "MSELoss",
+              "models.autoencoder.parameters.dimensions": "[32, 16, 8, 16, 32]",
+              "models.autoencoder.parameters.hidden_activation": "ReLU",
+              "models.autoencoder.positive_class_weighted": "False",
+              "models.autoencoder.shuffle_training_batches": "True",
+              "models.autoencoder.training_rows": "legitimate training transactions only",
+              "run.device": "auto",
+              "run.seed": "42",
+              "run.selected_models": "[\"autoencoder\"]",
+              "training.autoencoder_checkpoint_metric": "validation reconstruction MSE",
+              "training.batch_size": "1024",
+              "training.early_stopping_patience": "7",
+              "training.learning_rate": "0.001",
+              "training.max_epochs": "50",
+              "training.optimizer": "Adam",
+              "training.sequence_length": "10",
+              "training.validation_metric": "Average Precision (AP)"
+            },
+            "pipeline_run_id_tag": "881087b271b240b192d2385e49c3251a",
+            "record_id": "9d337a314b6848dbb5b232ad46395673",
+            "record_type_tag": null,
+            "started_at_utc": "2026-10-09T01:10:26.263000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": null
+          },
+          "tracking_record_classification": "VERIFIED_TRAINING_RUN_RECORD",
+          "training_provenance_classification": "EMPIRICAL_TRAINING_EVIDENCE",
+          "training_run_id": "9d337a314b6848dbb5b232ad46395673"
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "architecture": [
+              32,
+              16,
+              8,
+              16,
+              32
+            ],
+            "batch_size": 1024,
+            "best_validation_reconstruction_mse": 0.454889714717865,
+            "checkpoint_selection_metric": "validation reconstruction MSE",
+            "early_stopping_patience": 7,
+            "hidden_activation": "ReLU",
+            "input": "scaled features",
+            "learning_rate": 0.001,
+            "loss": "mean squared error",
+            "max_epochs": 50,
+            "optimizer": "Adam",
+            "training_batches_shuffled": true,
+            "training_rows": "legitimate training transactions only"
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+          "hash_matches": true,
+          "model_name": "autoencoder",
+          "observed_sha256": "3d44162f99c3bdecf1e7c076669b393d9df3705778b44cb91ccf7c32e5b9e834",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/881087b271b240b192d2385e49c3251a/autoencoder_metadata.json",
+          "preprocessing": "scaled",
+          "recorded_file_modified_at_utc": "2026-10-09T01:11:11.010379+00:00"
+        },
+        "model_family": "autoencoder",
+        "score_type": "anomaly_score",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": "validation reconstruction MSE",
+          "checkpoint_selection_use": "Validation reconstruction MSE selected the Autoencoder checkpoint. AP is a separate anomaly-ranking result.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.29260551932160483,
+              "roc_auc": 0.9675728083806666,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over per-row reconstruction-error anomaly scores; not a probability",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.2926054660686415,
+              "roc_auc": 0.9675737891547103,
+              "undefined_reason": null
+            },
+            "row_count": 42721,
+            "target_class_counts": {
+              "0": 42665,
+              "1": 56
+            }
+          },
+          "score_type": "anomaly_score",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "gru": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e",
+          "hash_matches": true,
+          "observed_sha256": "91e48688ebe1c86c1e334fdf6d273b9c0b6a7fe11d4eb38842a438ca58e8057e",
+          "path": "models/35a1905ea8634a169817e321ea9237b8/gru_state_dict.pt"
+        },
+        "historical_metric_provenance": {
+          "caveat": "The linked MLflow record is a training run; validation remains selection-conditioned, not independent confirmation.",
+          "historical_metric_to_current_artifact_linked": true,
+          "metadata_recorded_validation_value": 0.8525546525963642
+        },
+        "lineage": {
+          "artifact_import_run_id": null,
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": null,
+          "original_training_recovered": true,
+          "pipeline_run_id": "35a1905ea8634a169817e321ea9237b8",
+          "record_type": "training_run",
+          "tracking_record": {
+            "artifact_paths": [
+              "models/gru/gru_metadata.json",
+              "models/gru/gru_state_dict.pt"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/1/9410c67e5ad4493886cbe44d28735c32/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T16:19:42.592000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {
+              "gru_validation_ap": 0.8525546525963642
+            },
+            "model_name_tag": null,
+            "parameters": {
+              "features.count": "32",
+              "features.names": "[\"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\", \"V7\", \"V8\", \"V9\", \"V10\", \"V11\", \"V12\", \"V13\", \"V14\", \"V15\", \"V16\", \"V17\", \"V18\", \"V19\", \"V20\", \"V21\", \"V22\", \"V23\", \"V24\", \"V25\", \"V26\", \"V27\", \"V28\", \"Amount\", \"Amount_log\", \"Time\", \"Time_hour\"]",
+              "models.gru.checkpoint_metric": "Average Precision (AP)",
+              "models.gru.input_representation": "scaled",
+              "models.gru.loss": "BCEWithLogitsLoss",
+              "models.gru.parameters.batch_first": "True",
+              "models.gru.parameters.bidirectional": "False",
+              "models.gru.parameters.hidden_size": "64",
+              "models.gru.parameters.input_size": "32",
+              "models.gru.parameters.num_layers": "1",
+              "models.gru.positive_class_weighted": "True",
+              "models.gru.shuffle_training_batches": "False",
+              "models.gru.training_rows": "None",
+              "run.device": "auto",
+              "run.seed": "42",
+              "run.selected_models": "[\"gru\"]",
+              "training.autoencoder_checkpoint_metric": "validation reconstruction MSE",
+              "training.batch_size": "1024",
+              "training.early_stopping_patience": "7",
+              "training.learning_rate": "0.001",
+              "training.max_epochs": "50",
+              "training.optimizer": "Adam",
+              "training.sequence_length": "10",
+              "training.validation_metric": "Average Precision (AP)"
+            },
+            "pipeline_run_id_tag": "35a1905ea8634a169817e321ea9237b8",
+            "record_id": "9410c67e5ad4493886cbe44d28735c32",
+            "record_type_tag": null,
+            "started_at_utc": "2026-10-09T16:18:43.093000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": null
+          },
+          "tracking_record_classification": "VERIFIED_TRAINING_RUN_RECORD",
+          "training_provenance_classification": "EMPIRICAL_TRAINING_EVIDENCE",
+          "training_run_id": "9410c67e5ad4493886cbe44d28735c32"
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "architecture": {
+              "batch_first": true,
+              "bidirectional": false,
+              "hidden_size": 64,
+              "input_size": 32,
+              "num_layers": 1,
+              "output": "single linear logit"
+            },
+            "batch_size": 1024,
+            "early_stopping_patience": 7,
+            "input": "scaled features",
+            "learning_rate": 0.001,
+            "loss": "BCEWithLogitsLoss",
+            "max_epochs": 50,
+            "optimizer": "Adam",
+            "positive_class_weight": "training sequence negatives / positives",
+            "sequence_length": 10,
+            "sequence_splits": "constructed independently per split",
+            "sequence_target": "Class of final transaction",
+            "training_batches_shuffled": false
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab",
+          "hash_matches": true,
+          "model_name": "gru",
+          "observed_sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+          "preprocessing": "scaled",
+          "recorded_file_modified_at_utc": "2026-10-09T16:19:42.570717+00:00"
+        },
+        "model_family": "gru",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": "Average Precision (AP)",
+          "checkpoint_selection_use": "Validation AP selected neural checkpoints where configured; validation results also informed project model comparison.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.8525546525963642,
+              "roc_auc": 0.9783316364805487,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.8525546525963642,
+              "roc_auc": 0.9783316364805487,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "lightgbm": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812",
+          "hash_matches": true,
+          "observed_sha256": "1c54a4254b8500c5529c2f35b5255bae1c5a57cfc748eb61161c3e8c9077b812",
+          "path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm.joblib"
+        },
+        "historical_metric_provenance": {
+          "caveat": "A historical validation AP cannot be conclusively associated with the canonical LightGBM binary.",
+          "historical_metric_to_current_artifact_linked": false,
+          "metadata_recorded_validation_value": 0.6813562930957019
+        },
+        "lineage": {
+          "artifact_import_run_id": "11c360d936f04152b886480a74ba16c0",
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import. The root-level LightGBM binary differs by SHA-256. The aggregate binary is the forward canonical choice, but the historical validation AP is not conclusively linked to this binary.",
+          "original_training_recovered": false,
+          "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+          "record_type": "artifact_import",
+          "tracking_record": {
+            "artifact_paths": [
+              "imported/lightgbm/artifact_import_manifest.json",
+              "imported/lightgbm/lightgbm.joblib",
+              "imported/lightgbm/lightgbm_metadata.json"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/2/11c360d936f04152b886480a74ba16c0/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T18:11:46.404000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {},
+            "model_name_tag": "lightgbm",
+            "parameters": {},
+            "pipeline_run_id_tag": null,
+            "record_id": "11c360d936f04152b886480a74ba16c0",
+            "record_type_tag": "artifact_import",
+            "started_at_utc": "2026-10-09T18:11:46.382000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": "false"
+          },
+          "tracking_record_classification": "VERIFIED_ARTIFACT_IMPORT_EVENT",
+          "training_provenance_classification": "UNVERIFIED",
+          "training_run_id": null
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "class_weight": null,
+            "colsample_bytree": 0.8,
+            "learning_rate": 0.1,
+            "max_depth": -1,
+            "min_child_samples": 100,
+            "n_estimators": 200,
+            "n_jobs": -1,
+            "num_leaves": 31,
+            "objective": "binary",
+            "random_state": 42,
+            "verbosity": -1
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd",
+          "hash_matches": true,
+          "model_name": "lightgbm",
+          "observed_sha256": "d6e3093a61e2dd2b4dfbef3dddf5106a2dfd0a1ad0faa0da3984c78a4b9549fd",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/3fb3fda08f984b899e99498798ba83ce/lightgbm_metadata.json",
+          "preprocessing": "unscaled",
+          "recorded_file_modified_at_utc": "2026-10-07T22:54:08.506170+00:00"
+        },
+        "model_family": "lightgbm",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": null,
+          "checkpoint_selection_use": "Validation AP informed project-level model comparison; a distinct per-model checkpoint metric is not recorded here.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.6813594035998941,
+              "roc_auc": 0.8767343900707321,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.6813562930957019,
+              "roc_auc": 0.876734024208535,
+              "undefined_reason": null
+            },
+            "row_count": 42721,
+            "target_class_counts": {
+              "0": 42665,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "logistic_regression": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+          "hash_matches": true,
+          "observed_sha256": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+          "path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression.joblib"
+        },
+        "historical_metric_provenance": {
+          "caveat": "Imported artifact training history was not recovered; current persisted validation results are separate evidence.",
+          "historical_metric_to_current_artifact_linked": false,
+          "metadata_recorded_validation_value": 0.7849097686859338
+        },
+        "lineage": {
+          "artifact_import_run_id": "1ae816295848406da9be50a8b62192c1",
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+          "original_training_recovered": false,
+          "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+          "record_type": "artifact_import",
+          "tracking_record": {
+            "artifact_paths": [
+              "imported/logistic_regression/artifact_import_manifest.json",
+              "imported/logistic_regression/logistic_regression.joblib",
+              "imported/logistic_regression/logistic_regression_metadata.json"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/2/1ae816295848406da9be50a8b62192c1/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T18:11:46.374000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {},
+            "model_name_tag": "logistic_regression",
+            "parameters": {},
+            "pipeline_run_id_tag": null,
+            "record_id": "1ae816295848406da9be50a8b62192c1",
+            "record_type_tag": "artifact_import",
+            "started_at_utc": "2026-10-09T18:11:46.351000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": "false"
+          },
+          "tracking_record_classification": "VERIFIED_ARTIFACT_IMPORT_EVENT",
+          "training_provenance_classification": "UNVERIFIED",
+          "training_run_id": null
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "class_weight": null,
+            "input": "scaled features",
+            "max_iter": 1000,
+            "random_state": 42
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+          "hash_matches": true,
+          "model_name": "logistic_regression",
+          "observed_sha256": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression_metadata.json",
+          "preprocessing": "scaled",
+          "recorded_file_modified_at_utc": "2026-10-07T22:54:07.021306+00:00"
+        },
+        "model_family": "logistic_regression",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": null,
+          "checkpoint_selection_use": "Validation AP informed project-level model comparison; a distinct per-model checkpoint metric is not recorded here.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.7849098369703812,
+              "roc_auc": 0.9800484440306505,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.7849097686859338,
+              "roc_auc": 0.9800484672950395,
+              "undefined_reason": null
+            },
+            "row_count": 42721,
+            "target_class_counts": {
+              "0": 42665,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "lstm": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532",
+          "hash_matches": true,
+          "observed_sha256": "090fc43d7541880c542a16783962e8f32470d3f382008db054553ecddaeee532",
+          "path": "models/136349275cab4fa482792ceef86d9ba2/lstm_state_dict.pt"
+        },
+        "historical_metric_provenance": {
+          "caveat": "The linked MLflow record is a training run; validation remains selection-conditioned, not independent confirmation.",
+          "historical_metric_to_current_artifact_linked": true,
+          "metadata_recorded_validation_value": 0.8538918557190249
+        },
+        "lineage": {
+          "artifact_import_run_id": null,
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": null,
+          "original_training_recovered": true,
+          "pipeline_run_id": "136349275cab4fa482792ceef86d9ba2",
+          "record_type": "training_run",
+          "tracking_record": {
+            "artifact_paths": [
+              "models/lstm/lstm_metadata.json",
+              "models/lstm/lstm_state_dict.pt"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/1/e02d4e87207f400a90a14bddf3c124bc/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T01:14:58.669000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {
+              "lstm_validation_ap": 0.8538918557190249
+            },
+            "model_name_tag": null,
+            "parameters": {
+              "features.count": "32",
+              "features.names": "[\"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\", \"V7\", \"V8\", \"V9\", \"V10\", \"V11\", \"V12\", \"V13\", \"V14\", \"V15\", \"V16\", \"V17\", \"V18\", \"V19\", \"V20\", \"V21\", \"V22\", \"V23\", \"V24\", \"V25\", \"V26\", \"V27\", \"V28\", \"Amount\", \"Amount_log\", \"Time\", \"Time_hour\"]",
+              "models.lstm.checkpoint_metric": "Average Precision (AP)",
+              "models.lstm.input_representation": "scaled",
+              "models.lstm.loss": "BCEWithLogitsLoss",
+              "models.lstm.parameters.batch_first": "True",
+              "models.lstm.parameters.bidirectional": "False",
+              "models.lstm.parameters.hidden_size": "64",
+              "models.lstm.parameters.input_size": "32",
+              "models.lstm.parameters.num_layers": "1",
+              "models.lstm.positive_class_weighted": "True",
+              "models.lstm.shuffle_training_batches": "False",
+              "models.lstm.training_rows": "None",
+              "run.device": "auto",
+              "run.seed": "42",
+              "run.selected_models": "[\"lstm\"]",
+              "training.autoencoder_checkpoint_metric": "validation reconstruction MSE",
+              "training.batch_size": "1024",
+              "training.early_stopping_patience": "7",
+              "training.learning_rate": "0.001",
+              "training.max_epochs": "50",
+              "training.optimizer": "Adam",
+              "training.sequence_length": "10",
+              "training.validation_metric": "Average Precision (AP)"
+            },
+            "pipeline_run_id_tag": "136349275cab4fa482792ceef86d9ba2",
+            "record_id": "e02d4e87207f400a90a14bddf3c124bc",
+            "record_type_tag": null,
+            "started_at_utc": "2026-10-09T01:14:01.415000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": null
+          },
+          "tracking_record_classification": "VERIFIED_TRAINING_RUN_RECORD",
+          "training_provenance_classification": "EMPIRICAL_TRAINING_EVIDENCE",
+          "training_run_id": "e02d4e87207f400a90a14bddf3c124bc"
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "architecture": {
+              "batch_first": true,
+              "bidirectional": false,
+              "hidden_size": 64,
+              "input_size": 32,
+              "num_layers": 1,
+              "output": "single linear logit"
+            },
+            "batch_size": 1024,
+            "early_stopping_patience": 7,
+            "input": "scaled features",
+            "learning_rate": 0.001,
+            "loss": "BCEWithLogitsLoss",
+            "max_epochs": 50,
+            "optimizer": "Adam",
+            "positive_class_weight": "training sequence negatives / positives",
+            "sequence_length": 10,
+            "sequence_splits": "constructed independently per split",
+            "sequence_target": "Class of final transaction",
+            "training_batches_shuffled": false
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0",
+          "hash_matches": true,
+          "model_name": "lstm",
+          "observed_sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+          "preprocessing": "scaled",
+          "recorded_file_modified_at_utc": "2026-10-09T01:14:58.645833+00:00"
+        },
+        "model_family": "lstm",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": "Average Precision (AP)",
+          "checkpoint_selection_use": "Validation AP selected neural checkpoints where configured; validation results also informed project model comparison.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.8538918557190249,
+              "roc_auc": 0.9798127545279176,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.8538918557190249,
+              "roc_auc": 0.9798127545279176,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "mlp": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+          "hash_matches": true,
+          "observed_sha256": "6642bf6c9b6431e37df7cc3310e3136325d9fd3a9045b193f29ba328f4a3855c",
+          "path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_state_dict.pt"
+        },
+        "historical_metric_provenance": {
+          "caveat": "The linked MLflow record is a training run; validation remains selection-conditioned, not independent confirmation.",
+          "historical_metric_to_current_artifact_linked": true,
+          "metadata_recorded_validation_value": 0.8551813692570064
+        },
+        "lineage": {
+          "artifact_import_run_id": null,
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": null,
+          "original_training_recovered": true,
+          "pipeline_run_id": "05e4fc0601b34589b84053e1b3f8c683",
+          "record_type": "training_run",
+          "tracking_record": {
+            "artifact_paths": [
+              "models/mlp/mlp_metadata.json",
+              "models/mlp/mlp_state_dict.pt"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/1/b7393416190340ad826a9f3ad25cd377/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T01:00:08.392000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {
+              "mlp_validation_ap": 0.8551813692570064
+            },
+            "model_name_tag": null,
+            "parameters": {
+              "features.count": "32",
+              "features.names": "[\"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\", \"V7\", \"V8\", \"V9\", \"V10\", \"V11\", \"V12\", \"V13\", \"V14\", \"V15\", \"V16\", \"V17\", \"V18\", \"V19\", \"V20\", \"V21\", \"V22\", \"V23\", \"V24\", \"V25\", \"V26\", \"V27\", \"V28\", \"Amount\", \"Amount_log\", \"Time\", \"Time_hour\"]",
+              "models.mlp.checkpoint_metric": "Average Precision (AP)",
+              "models.mlp.input_representation": "scaled",
+              "models.mlp.loss": "BCEWithLogitsLoss",
+              "models.mlp.parameters.activation": "ReLU",
+              "models.mlp.parameters.dimensions": "[32, 64, 32, 1]",
+              "models.mlp.parameters.dropout": "0.2",
+              "models.mlp.positive_class_weighted": "True",
+              "models.mlp.shuffle_training_batches": "True",
+              "models.mlp.training_rows": "None",
+              "run.device": "auto",
+              "run.seed": "42",
+              "run.selected_models": "[\"mlp\"]",
+              "training.autoencoder_checkpoint_metric": "validation reconstruction MSE",
+              "training.batch_size": "1024",
+              "training.early_stopping_patience": "7",
+              "training.learning_rate": "0.001",
+              "training.max_epochs": "50",
+              "training.optimizer": "Adam",
+              "training.sequence_length": "10",
+              "training.validation_metric": "Average Precision (AP)"
+            },
+            "pipeline_run_id_tag": "05e4fc0601b34589b84053e1b3f8c683",
+            "record_id": "b7393416190340ad826a9f3ad25cd377",
+            "record_type_tag": null,
+            "started_at_utc": "2026-10-09T00:59:42.064000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": null
+          },
+          "tracking_record_classification": "VERIFIED_TRAINING_RUN_RECORD",
+          "training_provenance_classification": "EMPIRICAL_TRAINING_EVIDENCE",
+          "training_run_id": "b7393416190340ad826a9f3ad25cd377"
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "activation": "ReLU",
+            "architecture": [
+              32,
+              64,
+              32,
+              1
+            ],
+            "batch_size": 1024,
+            "dropout": 0.2,
+            "early_stopping_patience": 7,
+            "input": "scaled features",
+            "learning_rate": 0.001,
+            "loss": "BCEWithLogitsLoss",
+            "max_epochs": 50,
+            "optimizer": "Adam",
+            "positive_class_weight": "training negatives / positives",
+            "training_batches_shuffled": true
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+          "hash_matches": true,
+          "model_name": "mlp",
+          "observed_sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+          "preprocessing": "scaled",
+          "recorded_file_modified_at_utc": "2026-10-09T01:00:08.368021+00:00"
+        },
+        "model_family": "mlp",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": "Average Precision (AP)",
+          "checkpoint_selection_use": "Validation AP selected neural checkpoints where configured; validation results also informed project model comparison.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.8551814320480421,
+              "roc_auc": 0.9827507099989283,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.8551813692570064,
+              "roc_auc": 0.9827501632318227,
+              "undefined_reason": null
+            },
+            "row_count": 42721,
+            "target_class_counts": {
+              "0": 42665,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "random_forest": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+          "hash_matches": true,
+          "observed_sha256": "59fb399c9833c8b95550ed4be825dcae7e433418cdf9f76c9daa55501365fcc6",
+          "path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest.joblib"
+        },
+        "historical_metric_provenance": {
+          "caveat": "The linked MLflow record is a training run; validation remains selection-conditioned, not independent confirmation.",
+          "historical_metric_to_current_artifact_linked": true,
+          "metadata_recorded_validation_value": 0.857966367810208
+        },
+        "lineage": {
+          "artifact_import_run_id": null,
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": null,
+          "original_training_recovered": true,
+          "pipeline_run_id": "917ec001800745a6bc3e81dd11d9a929",
+          "record_type": "training_run",
+          "tracking_record": {
+            "artifact_paths": [
+              "models/random_forest/random_forest.joblib",
+              "models/random_forest/random_forest_metadata.json"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/1/3f8608746b5b486cadd61a1f6331e5eb/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T00:55:07.146000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {
+              "random_forest_validation_ap": 0.857966367810208
+            },
+            "model_name_tag": null,
+            "parameters": {
+              "features.count": "32",
+              "features.names": "[\"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\", \"V7\", \"V8\", \"V9\", \"V10\", \"V11\", \"V12\", \"V13\", \"V14\", \"V15\", \"V16\", \"V17\", \"V18\", \"V19\", \"V20\", \"V21\", \"V22\", \"V23\", \"V24\", \"V25\", \"V26\", \"V27\", \"V28\", \"Amount\", \"Amount_log\", \"Time\", \"Time_hour\"]",
+              "models.random_forest.checkpoint_metric": "None",
+              "models.random_forest.input_representation": "unscaled",
+              "models.random_forest.loss": "None",
+              "models.random_forest.parameters.n_estimators": "200",
+              "models.random_forest.parameters.n_jobs": "-1",
+              "models.random_forest.positive_class_weighted": "False",
+              "models.random_forest.shuffle_training_batches": "None",
+              "models.random_forest.training_rows": "None",
+              "run.device": "auto",
+              "run.seed": "42",
+              "run.selected_models": "[\"random_forest\"]",
+              "training.autoencoder_checkpoint_metric": "validation reconstruction MSE",
+              "training.batch_size": "1024",
+              "training.early_stopping_patience": "7",
+              "training.learning_rate": "0.001",
+              "training.max_epochs": "50",
+              "training.optimizer": "Adam",
+              "training.sequence_length": "10",
+              "training.validation_metric": "Average Precision (AP)"
+            },
+            "pipeline_run_id_tag": "917ec001800745a6bc3e81dd11d9a929",
+            "record_id": "3f8608746b5b486cadd61a1f6331e5eb",
+            "record_type_tag": null,
+            "started_at_utc": "2026-10-09T00:54:32.792000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": null
+          },
+          "tracking_record_classification": "VERIFIED_TRAINING_RUN_RECORD",
+          "training_provenance_classification": "EMPIRICAL_TRAINING_EVIDENCE",
+          "training_run_id": "3f8608746b5b486cadd61a1f6331e5eb"
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "class_weight": null,
+            "n_estimators": 200,
+            "n_jobs": -1,
+            "random_state": 42
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+          "hash_matches": true,
+          "model_name": "random_forest",
+          "observed_sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+          "preprocessing": "unscaled",
+          "recorded_file_modified_at_utc": "2026-10-09T00:55:07.112397+00:00"
+        },
+        "model_family": "random_forest",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": null,
+          "checkpoint_selection_use": "Validation AP informed project-level model comparison; a distinct per-model checkpoint metric is not recorded here.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.8579663875394855,
+              "roc_auc": 0.9609113355347766,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.857966367810208,
+              "roc_auc": 0.9609120473455994,
+              "undefined_reason": null
+            },
+            "row_count": 42721,
+            "target_class_counts": {
+              "0": 42665,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      },
+      "xgboost": {
+        "artifact": {
+          "evidence_classification": "VERIFIED_ARTIFACT_BYTES",
+          "expected_sha256": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+          "hash_matches": true,
+          "observed_sha256": "eb122352abcf9c1bf2ca5ae4f2637fb94ba02f7926363512c6c701b76694f041",
+          "path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost.joblib"
+        },
+        "historical_metric_provenance": {
+          "caveat": "Imported artifact training history was not recovered; current persisted validation results are separate evidence.",
+          "historical_metric_to_current_artifact_linked": false,
+          "metadata_recorded_validation_value": 0.8284466654340668
+        },
+        "lineage": {
+          "artifact_import_run_id": "08edc67966a846158e472f4f71a0f83d",
+          "git_provenance": {
+            "metadata_git_fields_are_independent_evidence": false,
+            "mlflow_branch_tag": null,
+            "mlflow_commit_tag": null,
+            "status": "UNVERIFIED"
+          },
+          "known_limitation": "No original training MLflow run was recovered. Validation AP is a pre-existing metadata value and was not recomputed during import.",
+          "original_training_recovered": false,
+          "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+          "record_type": "artifact_import",
+          "tracking_record": {
+            "artifact_paths": [
+              "imported/xgboost/artifact_import_manifest.json",
+              "imported/xgboost/xgboost.joblib",
+              "imported/xgboost/xgboost_metadata.json"
+            ],
+            "artifact_uri_scheme": "/home/anderjcruz/projects/Bank-Fraud-Detection/mlruns/2/08edc67966a846158e472f4f71a0f83d/artifacts",
+            "available": true,
+            "ended_at_utc": "2026-10-09T18:11:46.341000+00:00",
+            "git_branch_tag": null,
+            "git_commit_tag": null,
+            "metric_values": {},
+            "model_name_tag": "xgboost",
+            "parameters": {},
+            "pipeline_run_id_tag": null,
+            "record_id": "08edc67966a846158e472f4f71a0f83d",
+            "record_type_tag": "artifact_import",
+            "started_at_utc": "2026-10-09T18:11:46.315000+00:00",
+            "status": "FINISHED",
+            "training_run_recovered_tag": "false"
+          },
+          "tracking_record_classification": "VERIFIED_ARTIFACT_IMPORT_EVENT",
+          "training_provenance_classification": "UNVERIFIED",
+          "training_run_id": null
+        },
+        "metadata": {
+          "caveat": "Metadata claims are not treated as independent MLflow tags or proof of original training history.",
+          "configuration_summary": {
+            "class_weight": null,
+            "colsample_bytree": 0.8,
+            "eval_metric": "logloss",
+            "learning_rate": 0.1,
+            "max_depth": 6,
+            "n_estimators": 200,
+            "n_jobs": -1,
+            "objective": "binary:logistic",
+            "random_state": 42,
+            "subsample": 0.8
+          },
+          "evidence_classification": "DOCUMENTATION_ONLY",
+          "expected_sha256": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+          "hash_matches": true,
+          "model_name": "xgboost",
+          "observed_sha256": "e775d2df6fc688846ff8d68fa28d080f5d023245cabb9c1acea2f0771e3e2275",
+          "ordered_features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Amount_log",
+            "Time",
+            "Time_hour"
+          ],
+          "path": "models/3fb3fda08f984b899e99498798ba83ce/xgboost_metadata.json",
+          "preprocessing": "unscaled",
+          "recorded_file_modified_at_utc": "2026-10-07T22:54:04.567492+00:00"
+        },
+        "model_family": "xgboost",
+        "score_type": "fraud_probability",
+        "validation_evidence": {
+          "artifact_linkage_verified_by_hash_and_report_fields": true,
+          "checkpoint_selection_metric": null,
+          "checkpoint_selection_use": "Validation AP informed project-level model comparison; a distinct per-model checkpoint metric is not recorded here.",
+          "common_cohort": {
+            "metrics": {
+              "average_precision": 0.8284467052068584,
+              "roc_auc": 0.9780205933179723,
+              "undefined_reason": null
+            },
+            "row_count": 42712,
+            "target_class_counts": {
+              "0": 42656,
+              "1": 56
+            }
+          },
+          "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+          "evaluation_method": {
+            "metric_definitions": {
+              "average_precision": "sklearn.metrics.average_precision_score over continuous scores; this is not trapezoidal area under the precision-recall curve",
+              "roc_auc": "sklearn.metrics.roc_auc_score over continuous scores; undefined when the cohort contains only one target class"
+            },
+            "metric_implementation_versions": {
+              "scikit-learn": "1.9.0"
+            },
+            "split": {
+              "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+              "common_row_count": 42712,
+              "common_target_class_counts": {
+                "0": 42656,
+                "1": 56
+              },
+              "feature_count": 32,
+              "features": [
+                "V1",
+                "V2",
+                "V3",
+                "V4",
+                "V5",
+                "V6",
+                "V7",
+                "V8",
+                "V9",
+                "V10",
+                "V11",
+                "V12",
+                "V13",
+                "V14",
+                "V15",
+                "V16",
+                "V17",
+                "V18",
+                "V19",
+                "V20",
+                "V21",
+                "V22",
+                "V23",
+                "V24",
+                "V25",
+                "V26",
+                "V27",
+                "V28",
+                "Amount",
+                "Amount_log",
+                "Time",
+                "Time_hour"
+              ],
+              "features_path": "data/processed/X_val.parquet",
+              "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+              "identifier": "chronological_validation_split",
+              "labels_path": "data/processed/y_val.parquet",
+              "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+              "method": "chronological, using the existing 70/15/15 partition",
+              "native_row_count": 42721,
+              "native_target_class_counts": {
+                "0": 42665,
+                "1": 56
+              },
+              "train_fraction": 0.7,
+              "validation_end_fraction": 0.85,
+              "validation_fraction": 0.15
+            },
+            "split_hashes_status": "Recorded in the evaluation report; source dataset bytes were not reread or rehashed during this audit."
+          },
+          "evidence_classification": "EMPIRICAL_VALIDATION_EVIDENCE",
+          "independence_limitation": "Validation was used for model/checkpoint selection and prior exploratory analysis; the test split was examined previously.",
+          "independent_confirmation": false,
+          "metric_semantics": "Average Precision over continuous fraud-probability scores",
+          "native_cohort": {
+            "metrics": {
+              "average_precision": 0.8284466654340668,
+              "roc_auc": 0.9780218814351007,
+              "undefined_reason": null
+            },
+            "row_count": 42721,
+            "target_class_counts": {
+              "0": 42665,
+              "1": 56
+            }
+          },
+          "score_type": "fraud_probability",
+          "source_record_created_at_utc": "2026-10-09T21:21:29.078430+00:00",
+          "source_report": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+          "used_for_prior_exploratory_comparison": true,
+          "validation_used_for_project_model_comparison": true
+        }
+      }
+    },
+    "synthetic_evidence": [
+      {
+        "evidence_classification": "SYNTHETIC_TEST_EVIDENCE",
+        "meaning": "Test fixtures exercise software behavior only and provide no empirical model evidence.",
+        "path": "tests/"
+      }
+    ]
+  },
+  "historical_evaluation_independence": {
+    "interpretation": "Existing validation results support descriptive exploratory comparisons of the saved canonical artifacts. They are conditional on a cohort used for model/checkpoint selection and repeated exploration.",
+    "model_assessments": {
+      "autoencoder": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "gru": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "lightgbm": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "logistic_regression": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "lstm": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "mlp": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "random_forest": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "xgboost": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      }
+    },
+    "previous_test_use": "The test split was examined in prior project work. It is not a fresh blind holdout and must not be used to calibrate thresholds or claim independent confirmation.",
+    "repeated_comparison_risk": "Repeated candidate comparisons and temporal/operating-point exploration can increase selection bias; the saved bootstrap intervals are conditional on the same cohort and do not remove that bias.",
+    "validation_disclosure": "This evaluation reads validation data only. The test split was used in prior analysis and is not an untouched or blind holdout.",
+    "validation_split": {
+      "common_cohort_definition": "validation rows targeted by complete length-10 temporal windows",
+      "common_row_count": 42712,
+      "common_target_class_counts": {
+        "0": 42656,
+        "1": 56
+      },
+      "feature_count": 32,
+      "features": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "Amount_log",
+        "Time",
+        "Time_hour"
+      ],
+      "features_path": "data/processed/X_val.parquet",
+      "features_sha256": "ea8e3601957566c764640f90f126a848ac871b185445861080cfaa11fb48a26a",
+      "identifier": "chronological_validation_split",
+      "labels_path": "data/processed/y_val.parquet",
+      "labels_sha256": "ece1cfd336794062a834901fdfb979175845f6e9e2e778cff523384df3d1d3f6",
+      "method": "chronological, using the existing 70/15/15 partition",
+      "native_row_count": 42721,
+      "native_target_class_counts": {
+        "0": 42665,
+        "1": 56
+      },
+      "train_fraction": 0.7,
+      "validation_end_fraction": 0.85,
+      "validation_fraction": 0.15
+    }
+  },
+  "independent_evaluation_design": {
+    "limitations": [
+      "No future observation period or new mature-label dataset has been verified; no boundary, sample size, or date is proposed.",
+      "The previously examined test split is not eligible as a fresh independent confirmation set.",
+      "No customer/account identifiers are available, and temporal dependence structure may not be fully identified."
+    ],
+    "model_freeze": [
+      "Exact canonical model artifact bytes and SHA-256.",
+      "Metadata, lineage class, and source run or import record IDs.",
+      "Ordered 32-feature contract and feature availability rules.",
+      "Preprocessing/scaler bytes and transformation behavior.",
+      "Shared inference source revision/hash, including temporal sequence length and row alignment.",
+      "Evaluation source revision/hash, metric names/definitions/library versions, cohort rules, and uncertainty method.",
+      "Acceptance-policy version and rationale; freeze any threshold only after operational decisions and a separate calibration procedure.",
+      "Candidate set, comparison plan, exclusion rules, and decision procedure before accessing confirmation labels."
+    ],
+    "population_requirements": {
+      "chronology": "Use a later, prespecified chronological interval relative to model freeze; do not choose dates or boundaries until an eligible source and label-maturity process are confirmed.",
+      "duplicates_and_overlap": "Document transaction identity/deduplication where available. Ensure calibration and confirmation cohorts are disjoint in target observations and temporal windows; length-10 sequences must not cross cohort boundaries.",
+      "label_maturity": "Define a label-maturity window and censor/incomplete-label policy before cohort extraction; unresolved labels must not be treated as legitimate.",
+      "prediction_time_features": "Require proof that each feature and transformation is available at the actual scoring time; prohibit post-outcome or adjudication leakage.",
+      "provenance": "Record source system, extraction query/version, timestamps, dataset content hash, label policy/version, and custody/access history.",
+      "quality_and_drift": "Predefine missingness, schema, label delay, temporal drift and exclusion reporting; retain chronological ordering.",
+      "representativeness": "Compare the target population and fraud prevalence to the intended operating population using documented covariates, without post-hoc cohort selection."
+    },
+    "protocol": {
+      "candidate_identification": "Choose and freeze the candidate set using evidence permitted for development; do not select candidates on confirmation outcomes.",
+      "independent_confirmation": "Evaluate the frozen candidate and frozen policy once on a separate, later or otherwise independently governed cohort that was not used for fitting, checkpoint/model selection, threshold tuning, or candidate choice.",
+      "metrics": "Report AP (sklearn average_precision_score) and ROC-AUC as ranking measures, plus policy-relevant threshold measures only at a threshold frozen before confirmation. Report denominators, prevalence, confusion counts, and missing-label handling.",
+      "missing_labels": "Specify the label-maturity cutoff and report excluded/unresolved rows. Do not impute unresolved outcomes as non-fraud.",
+      "multiple_comparisons": "Prespecify candidate comparisons and distinguish exploratory ranking from confirmatory claims; account for the planned family of comparisons or limit confirmatory claims to a prespecified primary comparison.",
+      "reproducibility": "Persist cohort definition, row/class counts, source and label hashes, artifact/scaler/metadata/source hashes, Git revision and dirty status, software versions, seeds, metrics, and protocol/policy versions.",
+      "score_semantics": "Report supervised fraud probabilities separately from Autoencoder reconstruction-error anomaly scores; do not call anomaly scores probabilities or compare calibration without a separate calibration study.",
+      "temporal_alignment": "For LSTM/GRU, independently form length-10 windows within each cohort; assign scores to the final row only and omit the first nine rows in each cohort. No window may cross train/calibration/confirmation boundaries.",
+      "threshold_calibration": "If an operational decision requires a threshold, calibrate it on a designated calibration cohort after objective/capacity constraints are approved, then freeze threshold and policy before confirmation.",
+      "uncertainty": "Prespecify the resampling unit and temporal dependence assumptions. If transaction dependence is plausible, use justified temporal blocks/sensitivity and report event counts; do not treat row bootstrap as resolving temporal or selection bias."
+    },
+    "status": "DESIGN_ONLY_NO_QUALIFYING_COHORT_CONFIRMED"
+  },
+  "known_limitations": [
+    "The validation common cohort contains 56 fraud observations; uncertainty and subgroup estimates are fragile.",
+    "Temporal model targets are generated from overlapping length-10 windows and do not represent customer/account histories.",
+    "No customer, account, merchant, or device identifiers are available for grouped leakage analysis or entity-level resampling.",
+    "The Autoencoder score is reconstruction error (anomaly score), not a calibrated fraud probability; reconstruction MSE and AP have different meanings.",
+    "Imported model provenance is incomplete, and LightGBM historical metric lineage is unresolved.",
+    "Latency, throughput, memory, transaction volume, alert capacity, serving costs, monitoring, and rollback behavior have not been measured or specified.",
+    "Previously examined test results cannot serve as independent confirmation."
+  ],
+  "operational_requirements_register": [
+    {
+      "blocks_numeric_threshold_definition": true,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Fraud operations / product owner",
+      "evidence_or_decision_needed": "Approved business objective from fraud/product stakeholders.",
+      "question": "What operational outcome is primary: fraud capture, reduced loss, review prioritization, or another objective?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-01",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "A threshold and acceptance rule must optimize an explicitly selected outcome."
+    },
+    {
+      "blocks_numeric_threshold_definition": true,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Fraud risk owner",
+      "evidence_or_decision_needed": "Risk appetite and documented fraud-loss policy.",
+      "question": "What missed-fraud risk or recall constraint is acceptable?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-02",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Defines the tolerated false-negative burden."
+    },
+    {
+      "blocks_numeric_threshold_definition": true,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Fraud operations / customer experience owner",
+      "evidence_or_decision_needed": "Approved review burden and customer-impact constraints.",
+      "question": "What false-positive or precision constraint is acceptable?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-03",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Controls legitimate transactions routed for review or friction."
+    },
+    {
+      "blocks_numeric_threshold_definition": true,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Fraud operations owner",
+      "evidence_or_decision_needed": "Queue staffing/capacity and transaction-volume evidence.",
+      "question": "What review capacity and alert-volume limits apply?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-04",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "A model can exceed operational capacity even with good ranking metrics."
+    },
+    {
+      "blocks_numeric_threshold_definition": false,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Platform / service owner",
+      "evidence_or_decision_needed": "Service-level requirements and controlled latency benchmarks.",
+      "question": "What inference latency and availability targets apply?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-05",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Determines whether batch or inline inference is feasible."
+    },
+    {
+      "blocks_numeric_threshold_definition": false,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Data/platform owner",
+      "evidence_or_decision_needed": "Documented expected and peak traffic profile.",
+      "question": "What transaction volume and peak patterns must be supported?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-06",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Affects capacity, latency, and cost requirements."
+    },
+    {
+      "blocks_numeric_threshold_definition": false,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Model risk / product owner",
+      "evidence_or_decision_needed": "Approved change/update policy.",
+      "question": "How often may the model be updated, and what triggers an update?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-07",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Defines model lifecycle and evidence cadence."
+    },
+    {
+      "blocks_numeric_threshold_definition": true,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Fraud data / label operations owner",
+      "evidence_or_decision_needed": "Label generation and adjudication process documentation.",
+      "question": "What label-maturity delay and acceptable data delay apply?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-08",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Prevents evaluation against incomplete labels and defines evaluation timing."
+    },
+    {
+      "blocks_numeric_threshold_definition": false,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Model operations owner",
+      "evidence_or_decision_needed": "Monitoring objective, data access, ownership, and response plan.",
+      "question": "What production monitoring and alert-quality checks are required?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-09",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Defines detection of data, score, and outcome degradation."
+    },
+    {
+      "blocks_numeric_threshold_definition": false,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Service owner / fraud operations",
+      "evidence_or_decision_needed": "Approved operational continuity and rollback requirements.",
+      "question": "What failure, fallback, and rollback behavior is required?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-10",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Controls customer and fraud risk during outages or regressions."
+    },
+    {
+      "blocks_numeric_threshold_definition": false,
+      "blocks_production_approval": true,
+      "decision_owner_role": "Security / privacy / compliance roles",
+      "evidence_or_decision_needed": "Security/privacy review and applicable organizational policy.",
+      "question": "Which security, privacy, retention, and audit controls apply?",
+      "repository_evidence": null,
+      "requirement_id": "OPS-11",
+      "status": "UNKNOWN_NOT_DOCUMENTED",
+      "why_it_matters": "Required to authorize use of transaction features and outcomes."
+    }
+  ],
+  "record_type": "evidence_acquisition_and_independent_validation_design",
+  "report_id": "1b7c3ce1dbfb400392efe160fbe9c2a5",
+  "schema_version": "1.0.0",
+  "scope": {
+    "actions_not_performed": [
+      "model training or retraining",
+      "inference or scoring",
+      "dataset loading",
+      "test-set metric calculation",
+      "threshold selection",
+      "policy threshold modification"
+    ],
+    "model_families": [
+      "random_forest",
+      "xgboost",
+      "logistic_regression",
+      "lightgbm",
+      "mlp",
+      "autoencoder",
+      "lstm",
+      "gru"
+    ],
+    "purpose": "Audit existing evidence, register missing operational decisions, and specify an independent chronological evaluation design."
+  },
+  "source_manifest": {
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "m5_analysis_id": "8f76ffc6bfb6420dbbe90b4a37de1579",
+    "m5_inventory_id": "8f76ffc6bfb6420dbbe90b4a37de1579",
+    "policy_id": "bank-fraud-validation-v2",
+    "registry_inspection": {
+      "inspection": "read_only",
+      "registered_model_count": 0,
+      "registered_model_names": []
+    },
+    "source_references": {
+      "acceptance_policy": {
+        "path": "configs/validation_policy_v2.json",
+        "sha256": "a0d1fb0431c2888b4ac48cd862c526ee8fe0ef81370cc77d96141fe6f7a9f54d"
+      },
+      "analysis_source": {
+        "classification": "DOCUMENTATION_ONLY",
+        "path": "src/evidence_readiness.py",
+        "sha256": "ebaffa729c67eb7e36dc3ce69ccddb78a65e07dfbae1dc352ffc9846657442f6"
+      },
+      "evaluation_report": {
+        "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+        "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+        "sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+      },
+      "m5_inventory": {
+        "inventory_id": "8f76ffc6bfb6420dbbe90b4a37de1579",
+        "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/evidence_inventory.json",
+        "sha256": "fc3f11b9476b25eca161b8a3eda42b01dd1ba8d4466a745745d51e0cd0178141"
+      },
+      "m5_policy_analysis": {
+        "analysis_id": "8f76ffc6bfb6420dbbe90b4a37de1579",
+        "path": "reports/validation_policy_analysis_v1/8f76ffc6bfb6420dbbe90b4a37de1579/policy_analysis.json",
+        "sha256": "2a31a7ac022cf82d2296993106eee57e0e326d6633fca9f7ce789ac0b214203b"
+      },
+      "operational_feasibility_report": {
+        "classification": "DOCUMENTATION_ONLY",
+        "path": "reports/validation_analysis/operational_feasibility_v1/1d24658eef4f4241b4f4e4c1e3a00578/a3d9952ae0f44206a6b4f1e20c372a5d/operational_feasibility_report.md",
+        "sha256": "42b5e29fdcdbe4e7b15bad2d752380f8ad0924a4f78b4c3ffffe12519c2b59fb"
+      },
+      "paired_ap_uncertainty": {
+        "limitations": [
+          "Validation observations were used for model/checkpoint selection.",
+          "The common validation cohort has only 56 fraud observations.",
+          "Temporal dependence may remain; block lengths are sensitivity anchors, not estimated dependence scales.",
+          "The test split has been examined previously and is not an independent blind holdout.",
+          "Intervals do not establish superiority or independent generalization performance."
+        ],
+        "path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json",
+        "record_type": "paired_validation_ap_uncertainty",
+        "sha256": "12ba2b3d9794744f99607304f47bdadc91096b05452d0671e1b032ba57e4a134"
+      },
+      "project_documentation": {
+        "classification": "DOCUMENTATION_ONLY",
+        "path": "README.md",
+        "sha256": "0d9f2a83af15762eb1cba2303e46f7a20bd2c8e877b5488daf3ba960239bba36"
+      },
+      "temporal_stability": {
+        "limitations": [
+          "The validation observations were used for model and checkpoint selection.",
+          "Only 56 fraud observations are available in the common cohort.",
+          "Segment metrics are descriptive and are not uncertainty intervals.",
+          "Temporal variation does not by itself demonstrate concept drift.",
+          "The test split was examined in prior project work and is not an untouched or blind holdout."
+        ],
+        "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json",
+        "record_type": "validation_temporal_stability_analysis",
+        "sha256": "82097a301ab7512761c75a46a965d50a190cb46f3afc64403cba4cd258456642"
+      }
+    }
+  },
+  "status": "DESIGN_COMPLETE_INDEPENDENT_EVIDENCE_NOT_YET_ACQUIRED",
+  "superseded_prior_report_ids": [
+    "196568fd4507488ca3896b9d7df9eb00",
+    "c125413837214b53b78b010e64d9da65"
+  ],
+  "threshold_readiness": {
+    "all_numeric_thresholds_remain_undefined": true,
+    "decision": "NO_THRESHOLD_DEFINITION_OR_PRODUCTION_APPROVAL",
+    "effective_status": "incomplete",
+    "models": {
+      "autoencoder": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "gru": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "lightgbm": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "logistic_regression": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "lstm": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "mlp": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "random_forest": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      },
+      "xgboost": {
+        "basis": [
+          "Persisted validation scores and aggregate metrics exist for the canonical artifact.",
+          "The validation cohort was used for model/checkpoint selection and repeated exploratory analysis.",
+          "No approved operational objective, numeric threshold rationale, or fresh independent cohort is documented."
+        ],
+        "exploratory_comparison": "SUITABLE_FOR_EXPLORATORY_ANALYSIS",
+        "independent_confirmation": "NOT_INDEPENDENT_FOR_CONFIRMATION",
+        "production_approval": "INSUFFICIENT_EVIDENCE",
+        "threshold_calibration": "INSUFFICIENT_EVIDENCE"
+      }
+    },
+    "policy_path": "configs/validation_policy_v2.json"
+  }
+}

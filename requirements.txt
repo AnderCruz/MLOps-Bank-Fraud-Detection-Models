@@ -1,13 +1,16 @@
 # Direct project dependencies; pinned to the reviewed notebook environment.
 numpy==2.5.3
-pandas==3.0.5
+pandas==2.3.3
 scikit-learn==1.9.0
 matplotlib==3.11.1
 seaborn==0.13.2
-pyarrow==25.0.1
+pyarrow==23.0.1
 joblib==1.6.0
 xgboost==3.4.1
 lightgbm==4.7.0
 torch==2.14.1
 jupyterlab==4.6.3
 ipykernel==7.3.0
+mlflow==3.17.1
+
+dvc==3.67.1

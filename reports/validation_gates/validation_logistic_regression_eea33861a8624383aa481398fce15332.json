@@ -1,0 +1,102 @@
+{
+  "artifacts": {
+    "artifact_sha256": "3078b0f0471239bb8a22e3b5054bd8fd9351c7ecd3a81bebc85e45fcd3b9a317",
+    "metadata_sha256": "229302cfbb08fb6ccb30baa2600dc16fbeff317238fa44b64b933d6562a38d9c",
+    "metadata_uri": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression_metadata.json",
+    "model_uri": "models/3fb3fda08f984b899e99498798ba83ce/logistic_regression.joblib",
+    "validation_evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "validation_evaluation_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  },
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "decision_reasons": [
+    "Mandatory quality threshold for logistic_regression is undefined in policy bank-fraud-validation-v1"
+  ],
+  "failure_reasons": [],
+  "gates": [
+    {
+      "name": "artifact_integrity",
+      "reason": "Artifact and required metadata are present and consistent",
+      "status": "PASS"
+    },
+    {
+      "name": "artifact_compatibility",
+      "reason": "Canonical inference loader verified artifact compatibility",
+      "status": "PASS"
+    },
+    {
+      "name": "provenance_lineage",
+      "reason": "Source record and pipeline lineage are verified",
+      "record_type": "artifact_import",
+      "source_record_id": "1ae816295848406da9be50a8b62192c1",
+      "status": "PASS"
+    },
+    {
+      "name": "git_provenance",
+      "reason": "Optional Git provenance is unavailable",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "name": "registry_lineage",
+      "reason": "Candidate validation does not require Registry registration",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "metric": "average_precision",
+      "name": "validation_metric",
+      "reason": "Required model-appropriate validation metric is present and finite",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.logistic_regression",
+      "status": "PASS",
+      "value": 0.7849098369703812
+    },
+    {
+      "metric": "average_precision",
+      "name": "quality_threshold",
+      "reason": "Mandatory quality threshold for logistic_regression is undefined in policy bank-fraud-validation-v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "threshold": null,
+      "value": 0.7849098369703812
+    }
+  ],
+  "limitations": [
+    "Validation decision is not production approval or deployment authorization",
+    "No test-set metrics are included"
+  ],
+  "lineage": {
+    "artifact_import_run_id": "1ae816295848406da9be50a8b62192c1",
+    "pipeline_run_id": "3fb3fda08f984b899e99498798ba83ce",
+    "registered_model_name": null,
+    "registered_model_version": null,
+    "training_run_id": null
+  },
+  "metrics": [
+    {
+      "interpretation": "sklearn average_precision_score over continuous fraud probabilities",
+      "name": "average_precision",
+      "source": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json:common_cohort_results.models.logistic_regression",
+      "value": 0.7849098369703812
+    }
+  ],
+  "missing_evidence": [
+    "Mandatory quality threshold for logistic_regression is undefined in policy bank-fraud-validation-v1"
+  ],
+  "model_family": "logistic_regression",
+  "policy": {
+    "policy_id": "bank-fraud-validation-v1",
+    "version": "1"
+  },
+  "production_approval": false,
+  "provenance": {
+    "git_branch": null,
+    "git_commit": null
+  },
+  "report_id": "eea33861a8624383aa481398fce15332",
+  "report_type": "model_validation_gates",
+  "schema_version": "1.0.0",
+  "score_type": "fraud_probability",
+  "validated_at_utc": "2026-10-13T15:00:10.606460+00:00",
+  "validation_evaluation": {
+    "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+    "report_sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+  }
+}

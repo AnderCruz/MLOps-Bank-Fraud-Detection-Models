@@ -1,128 +1,214 @@
 # Bank Fraud Detection
 
-## 1. Project Overview
+An end-to-end Data Science and Machine Learning project focused on detecting fraudulent credit card transactions in a highly imbalanced dataset.
 
-A notebook-based fraud detection project covering data preparation, Tier 1 machine learning, Tier 2 neural models, Tier 3 temporal models, and final test evaluation.
+The project covers exploratory data analysis, feature preparation, traditional machine learning, deep learning, model evaluation, experiment tracking, artifact management, automated testing, and model governance.
 
+> **Project status:** Research and validation. Reported results are preliminary validation results. Independent performance confirmation and production approval have not been established.
 
-## 2. Business Problem
+## 1. Project Objectives
 
-Fraud detection is an imbalanced binary classification problem: fraudulent transactions are a small fraction of the observations. The notebooks examine model ranking and the trade-offs between detecting fraud and generating false positives. The project evaluates whether neural and temporal approaches improve on traditional machine learning methods, with results documented in notebooks 03 and 04.
+The main objectives are to:
 
+* Investigate a highly imbalanced credit card transaction dataset.
+* Develop and compare traditional machine learning and deep learning models.
+* Evaluate models using metrics appropriate for fraud detection.
+* Track experiments, model metadata, and artifacts.
+* Establish automated validation and testing workflows.
+* Document reproducibility limitations, acceptance criteria, and governance requirements.
 
-## 3. Dataset
+## 2. Dataset
 
-The notebooks use the ULB Credit Card Fraud Detection dataset. The documented dataset contains 284,807 transactions and 31 original columns: `Time`, `V1`–`V28`, `Amount`, and the `Class` target. It contains 492 fraudulent transactions, approximately 0.17% of the data.
+The project uses the [Credit Card Fraud Detection dataset on Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), originally associated with the ULB Machine Learning Group.
 
-The modeling feature set has 32 columns:
+| Property                |                Value |
+| ----------------------- | -------------------: |
+| Total transactions      |              284,807 |
+| Legitimate transactions |              284,315 |
+| Fraudulent transactions |                  492 |
+| Fraud prevalence        | Approximately 0.173% |
+| Target variable         |              `Class` |
 
-- `V1`–`V28`
-- `Amount`
-- `Amount_log`
-- `Time`
-- `Time_hour`
+The target variable is defined as:
 
-`Amount_log` is derived from transaction amount. `Time_hour` is deterministically derived from elapsed `Time`. The candidate decision for `Time_hour` uses the chronological training portion only; validation and test labels do not inform it. Some full-dataset descriptive EDA and integrity checks inspected test distribution information, so final results are held-out rather than strictly blind.
+* `Class = 0`: Legitimate transaction
+* `Class = 1`: Fraudulent transaction
 
+Most input variables (`V1` to `V28`) are anonymized PCA-transformed features. `Time` and `Amount` provide additional transaction information.
 
-## 4. Project Structure
+The severe class imbalance makes accuracy alone unsuitable for assessing model performance.
+
+## 3. Data Preparation and Evaluation Design
+
+The modeling feature set contains 32 features:
+
+* `V1` to `V28`
+* `Amount`
+* `Amount_log`
+* `Time`
+* `Time_hour`
+
+The project uses a chronological 70/15/15 train-validation-test split.
+
+| Split      | Transactions | Fraudulent Transactions | Fraud Prevalence |
+| ---------- | -----------: | ----------------------: | ---------------: |
+| Train      |      199,364 |                     384 |          0.1926% |
+| Validation |       42,721 |                      56 |          0.1311% |
+| Test       |       42,722 |                      52 |          0.1217% |
+
+The validation and test partitions contain relatively few fraudulent transactions. Performance estimates may therefore be sensitive to individual predictions.
+
+**Evaluation limitation:** The test partition has previously been inspected. It must not be presented as an untouched, independent holdout. The results reported below are validation results.
+
+## 4. Models Evaluated
+
+### Traditional Machine Learning
+
+* Logistic Regression
+* Random Forest
+* XGBoost
+* LightGBM
+
+### Deep Learning for Tabular Data
+
+* Multilayer Perceptron (MLP)
+* Autoencoder
+
+### Temporal Deep Learning
+
+* Long Short-Term Memory (LSTM)
+* Gated Recurrent Unit (GRU)
+
+The eight model approaches above form the reported comparison. A 1D CNN was considered during planning but is not included in these results. Transformer and Graph Neural Network approaches remain potential future extensions.
+
+## 5. Evaluation Metrics
+
+The project emphasizes metrics suitable for highly imbalanced classification.
+
+* **Average Precision (AP):** Summarizes precision-recall performance and is useful when the positive class is rare.
+* **Precision:** Measures the proportion of flagged transactions that are fraudulent.
+* **Recall:** Measures the proportion of fraudulent transactions detected.
+* **F1-score:** Represents the harmonic mean of precision and recall at a specified decision threshold.
+
+Average Precision depends on the prevalence of fraud in the evaluation cohort. It should be interpreted alongside the cohort composition and the number of positive observations.
+
+Precision, recall, and F1-score also depend on the decision threshold. Model selection must account for false positives, missed fraud, and operational requirements rather than relying on a single metric.
+
+## 6. Validation Results
+
+The following Average Precision (AP) results were recorded on the common validation cohort.
+
+| Model               | Validation AP |
+| ------------------- | ------------: |
+| Random Forest       |      0.857966 |
+| MLP                 |      0.855181 |
+| LSTM                |      0.853892 |
+| GRU                 |      0.852555 |
+| XGBoost             |      0.828447 |
+| Logistic Regression |      0.784910 |
+| LightGBM            |      0.681359 |
+| Autoencoder         |     0.292606* |
+
+* The Autoencoder result is based on an anomaly score derived from reconstruction error, not a directly calibrated fraud probability. It is therefore reported separately and should not be interpreted as directly equivalent to a supervised classifier's probability output.
+
+### Interpretation
+
+Random Forest achieved the highest recorded AP among the supervised models, followed closely by MLP, LSTM, and GRU.
+
+These results are preliminary and specific to the evaluated models, checkpoints, and validation cohort. The validation set contains only 56 fraudulent transactions, limiting the strength of conclusions about model ranking and generalization.
+
+The results do not establish that the highest-ranked model is the best operational choice. Further work is required on threshold selection, error analysis, stability, reproducibility, and independent evaluation.
+
+## 7. Model Governance and Acceptance Policy
+
+The project includes a validation policy at:
+
+`configs/validation_policy_v2.json`
+
+The policy is intended to formalize model acceptance criteria and support consistent evaluation decisions.
+
+Current limitations include:
+
+* Numerical acceptance thresholds have not been defined.
+* The validation policy remains incomplete.
+* Independent confirmation of model performance has not been established.
+* The operational costs of false positives and false negatives have not been translated into approved acceptance criteria.
+* No model has been approved for production.
+
+Model acceptance should eventually consider detection performance, false-positive volume, stability, reproducibility, operational constraints, and the intended use case.
+
+**A strong validation AP score alone is insufficient for production approval.**
+
+## 8. Experiment Tracking and Artifact Management
+
+The project uses MLflow for experiment tracking and includes functionality for recording model metadata, provenance information, metrics, and artifacts.
+
+The repository also includes workflows for model validation, registry-related checks, and evidence-readiness assessment.
+
+Reproducibility limitations remain:
+
+* The local MLflow database and associated artifacts are not necessarily available in a clean Git checkout.
+* The inspected local MLflow registry did not contain the expected registered model versions.
+* Exact model artifacts and fitted preprocessing objects may not be available to another user.
+* Historical model results must be linked reliably to the corresponding model artifacts and evaluation evidence.
+* An implemented tracking workflow does not, by itself, demonstrate that every experiment can be reproduced from a clean environment.
+
+These limitations must be resolved and verified before claiming full end-to-end reproducibility.
+
+## 9. Automated Testing and Validation
+
+The repository includes automated tests covering validation gates, MLflow registry behavior, and evidence-readiness checks.
+
+The following focused test suites have passed:
+
+| Test Suite         | Tests Passed |
+| ------------------ | -----------: |
+| Validation gates   |           17 |
+| MLflow registry    |           11 |
+| Evidence readiness |           14 |
+| **Total**          |       **42** |
+
+These results establish that the tested behaviors passed their corresponding automated checks. They do not independently establish model quality, production readiness, or complete project reproducibility.
+
+## 10. Repository Structure
+
+The repository organizes the project into configuration, data, notebooks, source code, tests, and evaluation reports.
 
 ```text
 Bank-Fraud-Detection/
-├── .gitignore
-├── README.md
-├── requirements.txt
+├── configs/
+│   └── validation_policy_v2.json
 ├── data/
-│   ├── raw/                 # Local input data; excluded from Git
-│   └── processed/           # Generated datasets and scaler; excluded from Git
-├── models/                  # Saved sklearn and PyTorch artifacts with metadata
+│   └── raw/
 ├── notebooks/
-│   ├── 01_data_preparation.ipynb
-│   ├── 02_baseline_models.ipynb
-│   ├── 03_advanced_models.ipynb
-│   └── 04_model_evaluation.ipynb
 ├── reports/
-└── src/
-    └── train_models.py
+├── src/
+├── tests/
+├── .gitignore
+├── requirements.txt
+├── requirements-dev.txt
+└── README.md
 ```
 
-The `data/processed/` artifacts include the train, validation, and test feature and target datasets, scaled feature datasets, and the fitted RobustScaler generated by the preparation notebook.
+The exact contents of each directory may evolve as the project develops.
 
+## 11. Current Limitations and Next Steps
 
-## 5. Data Preparation
+The project is still in the research and validation stage.
 
-`01_data_preparation.ipynb` performs data quality checks and exploratory analysis, engineers the amount and time features, and defines the 32-feature modeling set. It preserves chronological order and partitions the data into 70% training, 15% validation, and 15% test data.
+The main priorities are:
 
-The RobustScaler is fitted on training data and then applied to the training, validation, and test features. The notebook exports processed Parquet datasets and the fitted scaler for use by the baseline notebook.
+1. **Complete the validation policy:** Define numerical acceptance thresholds and document their rationale.
+2. **Strengthen independent evaluation:** Establish a suitable independent evaluation cohort and avoid using previously inspected test results as independent confirmation.
+3. **Improve artifact provenance:** Ensure that reported metrics can be traced to the exact model artifacts, configurations, and evaluation outputs that produced them.
+4. **Verify reproducibility:** Test the documented workflow from a clean checkout with the required dependencies and data access.
+5. **Define operational requirements:** Specify acceptable false-positive rates, detection objectives, latency, monitoring, security, privacy, and rollback requirements.
+6. **Document model selection:** Combine performance evidence with operational constraints before recommending a model for deployment.
 
+## 12. Final Status
 
-## 6. Tier 1 Baseline Models
+This project demonstrates the implementation and evaluation of multiple machine learning approaches for credit card fraud detection, together with supporting experiment-tracking, testing, and governance workflows.
 
-`02_baseline_models.ipynb` compares four model families:
+The current validation results provide a basis for further investigation, not proof of independent generalization or production suitability.
 
-- Logistic Regression
-- Random Forest
-- XGBoost
-- LightGBM
-
-The notebook includes unweighted references and diagnostic configurations for class weighting and model complexity. Its primary reference comparison contains one configuration per model family. Configuration diagnostics are shown separately. The regularized unweighted LightGBM configuration is a validation-selected reference candidate; it is not a final model selection.
-
-
-## 7. Evaluation Strategy
-
-Average Precision (AP) is the primary PR-based ranking metric for this imbalanced classification task. ROC-AUC is reported as a secondary ranking metric. Precision, Recall, F1-score, and the confusion matrix describe classification behavior at the fixed threshold of 0.5. Precision, Recall, and F1 at 0.5 use the standard diagnostic threshold; it is not a production threshold.
-
-The validation set is used for model and configuration selection and to report validation metrics. Test data is excluded from fitting, hyperparameter optimization, early stopping, threshold optimization, and model selection. Test distribution information was inspected in exploratory and integrity checks before final test metrics were calculated. Notebook 04 performs the first final model evaluation; its results are a held-out evaluation, not a strictly blind holdout.
-
-
-## 8. Current Tier 1 Results
-
-**These are validation results, not test results.** The following primary reference comparison is from Section 7.1 of `02_baseline_models.ipynb`. Precision, Recall, and F1-score are reported at threshold 0.5.
-
-| Model | Reference configuration | Average Precision (AP) | Precision @ 0.5 | Recall @ 0.5 | F1-score @ 0.5 | ROC-AUC |
-|---|---|---:|---:|---:|---:|---:|
-| Logistic Regression | Unweighted | 0.7849 | 0.7500 | 0.5357 | 0.6250 | 0.9800 |
-| Random Forest | Unweighted | 0.8580 | 1.0000 | 0.6786 | 0.8085 | 0.9609 |
-| XGBoost | Unweighted | 0.8284 | 0.9762 | 0.7321 | 0.8367 | 0.9780 |
-| LightGBM | Regularized unweighted (validation-selected candidate) | 0.6814 | 0.9444 | 0.6071 | 0.7391 | 0.8767 |
-
-The notebook presents class-imbalance and model-complexity configurations in a separate diagnostic comparison. Validation results are subject to uncertainty because the validation split contains only 56 fraudulent transactions. Random Forest remains selected based on validation performance. Final test metrics are reported in notebook 04 and do not retroactively change model selection.
-
-
-## 9. Reproducibility and Environment
-
-`requirements.txt` records the project environment dependencies. It lists the packages used by the notebooks and the notebook environment. No Python version or operating-system compatibility matrix is specified by the repository.
-
-The notebooks resolve the project root from the current Jupyter directory, supporting launches from the repository root or `notebooks/` directory. PyTorch is included for the neural notebooks and training script.
-
-
-## 10. How to Run the Notebooks
-
-Obtain the dataset as described in Section 11, then place `creditcard.csv` at `data/raw/creditcard.csv`. Create a virtual environment and install the pinned dependencies:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Start JupyterLab with `jupyter lab`, then run the implemented notebooks in order:
-
-1. `notebooks/01_data_preparation.ipynb` — data preparation and exploratory analysis.
-2. `notebooks/02_baseline_models.ipynb` — Logistic Regression, Random Forest, XGBoost, and LightGBM.
-3. `notebooks/03_advanced_models.ipynb` — MLP, Autoencoder, LSTM, and GRU.
-4. `notebooks/04_model_evaluation.ipynb` — final evaluation of preselected Random Forest, MLP, and LSTM artifacts.
-
-Run notebooks 01–03 for preparation and model development. Notebook 04 evaluates saved artifacts without retraining.
-
-
-## 11. Data Availability and Git/Data Policy
-
-The documented input path is `data/raw/creditcard.csv`. Obtain the ULB Credit Card Fraud Detection dataset from its [Kaggle dataset page](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) and follow the dataset source's terms. The repository does not include a project license or grant rights to redistribute the dataset.
-
-`.gitignore` excludes `data/raw/` and `data/processed/` from Git. Users must provide the raw dataset locally and generate the processed artifacts by running the preparation notebook.
-
-
-## 12. Current Project Status
-
-All four notebooks document preparation, baseline and neural model experiments, and final evaluation. Implemented models are Logistic Regression, Random Forest, XGBoost, LightGBM, MLP, Autoencoder, LSTM, and GRU. The 1D CNN was considered but not implemented; Transformer and GNN approaches remain future work. Random Forest was selected based on validation Average Precision (AP). Temporal windows represent global chronological transaction order, not customer-, account-, or merchant-level histories. The saved neural artifacts are separate reproducible runs from the original interactive notebook experiments; stochastic training and execution order produce some validation AP differences (MLP 0.846886 vs. 0.857221 historical, Autoencoder 0.271484 vs. 0.285407, LSTM 0.846636 vs. 0.848276, GRU 0.847515 vs. 0.843658). Historical notebook results remain the reference experiment results, while notebook 04 evaluates the saved artifacts. Test distribution information was previously inspected, so final test performance is a held-out evaluation rather than a strictly blind holdout. There is currently no documented production deployment or inference service.
+**No model is currently approved for production.**

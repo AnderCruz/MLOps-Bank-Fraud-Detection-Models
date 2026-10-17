@@ -1,0 +1,103 @@
+{
+  "analysis_id": "a3d9952ae0f44206a6b4f1e20c372a5d",
+  "created_at_utc": "2026-10-09T22:27:15.130596+00:00",
+  "curve_analysis_id": "d034e61aaf394581ab9ffb8e3c471089",
+  "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+  "git": {
+    "branch": "feature/tier2-deep-learning",
+    "dirty": true,
+    "revision": "5e26600ec911631e5b1b1d8d71707ac5a9e5acd9"
+  },
+  "operating_point_procedure": "Read existing common-cohort precision/recall coordinates; nearest recall coordinate, ties by higher precision then higher recall; derive counts algebraically from 56 positive labels. No threshold value was retrieved or persisted.",
+  "outputs": {
+    "operational_feasibility_report.json": {
+      "path": "operational_feasibility_report.json",
+      "sha256": "7016f942db008580542dd4f7e0e2c966df7eb8c879f7fb4717cc058871a9ed41"
+    },
+    "operational_feasibility_report.md": {
+      "path": "operational_feasibility_report.md",
+      "sha256": "42b5e29fdcdbe4e7b15bad2d752380f8ad0924a4f78b4c3ffffe12519c2b59fb"
+    }
+  },
+  "record_type": "operational_feasibility_manifest",
+  "runtime": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "pyarrow": "23.0.1",
+    "python": "3.12.3",
+    "scikit_learn": "1.9.0",
+    "torch": "2.14.1"
+  },
+  "safety": {
+    "existing_reports_or_artifacts_modified": false,
+    "inference_or_prediction_run": false,
+    "mlflow_records_modified": false,
+    "models_loaded_for_inference": false,
+    "test_data_or_labels_accessed": false,
+    "threshold_selected_or_recommended": false,
+    "training_data_accessed": false,
+    "training_performed": false
+  },
+  "sources": [
+    {
+      "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+      "sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+    },
+    {
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/precision_recall_curves.json",
+      "sha256": "95a726d64dc7da708515128b0deda1cd47856cf5115af0b1cc93aaf77031adce"
+    },
+    {
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+      "sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17"
+    },
+    {
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/validation_scores.parquet",
+      "sha256": "d3af8746d40a687a6bce5f7b6219bf66e91b8a876444ed509d7d168bd367d945"
+    },
+    {
+      "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json",
+      "sha256": "82097a301ab7512761c75a46a965d50a190cb46f3afc64403cba4cd258456642"
+    },
+    {
+      "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/analysis_manifest.json",
+      "sha256": "e4679d017884ebead5814d6de27a936a0f3132546e29fb079eeae6a08eee235b"
+    },
+    {
+      "path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json",
+      "sha256": "12ba2b3d9794744f99607304f47bdadc91096b05452d0671e1b032ba57e4a134"
+    },
+    {
+      "path": "src/inference.py",
+      "sha256": "0d7a6e216f0ea97c33883d1a83b526ceef0553c8f7b49ca902b8368550e8a553"
+    },
+    {
+      "path": "src/train_models.py",
+      "sha256": "bc2ee1955b493cc4a04274fc565f5865690622f35d60ae7bafa8152d3cd4c568"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "d8c70e27094c6c10cd37a286d8730d20b802e9525215463fc1886b1dce2a1d05"
+    },
+    {
+      "path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+      "sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db"
+    },
+    {
+      "path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+      "sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98"
+    },
+    {
+      "path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+      "sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0"
+    },
+    {
+      "path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+      "sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab"
+    }
+  ],
+  "temporal_stability_analysis_id": "99ea1c0797ab47d5b2c3f8b10f2a4de2",
+  "test_suite": "Not run: the existing suite includes inference tests, which would violate the no-model-inference constraint."
+}

@@ -3,8 +3,17 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
-data/raw/
-data/processed/
+# Ignore raw datasets while preserving DVC metadata.
+data/raw/**/*.csv
+data/raw/**/*.parquet
+data/raw/**/*.joblib
+!data/raw/*.dvc
+
+# Ignore processed data while preserving DVC metadata.
+data/processed/**/*.csv
+data/processed/**/*.parquet
+data/processed/**/*.joblib
+!data/processed/*.dvc
 
 /models/
 *.pkl
@@ -15,3 +24,12 @@ data/processed/
 .env
 
 .DS_Store
+
+# Local MLflow tracking database and artifacts
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
+mlruns/
+
+# Local MLflow database backups
+/mlflow.backup*.db

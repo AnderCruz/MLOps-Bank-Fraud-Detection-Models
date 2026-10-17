@@ -1,0 +1,652 @@
+{
+  "aggregate_common_cohort_metrics": {
+    "gru": {
+      "average_precision": 0.8525546525963642,
+      "roc_auc": 0.9783316364805487,
+      "undefined_reason": null
+    },
+    "lstm": {
+      "average_precision": 0.8538918557190249,
+      "roc_auc": 0.9798127545279176,
+      "undefined_reason": null
+    },
+    "mlp": {
+      "average_precision": 0.8551814320480421,
+      "roc_auc": 0.9827507099989283,
+      "undefined_reason": null
+    },
+    "random_forest": {
+      "average_precision": 0.8579663875394855,
+      "roc_auc": 0.9609113355347766,
+      "undefined_reason": null
+    }
+  },
+  "analysis_id": "a3d9952ae0f44206a6b4f1e20c372a5d",
+  "candidate_evidence": [
+    "Random Forest has the highest common-cohort AP among the two primary candidates, while MLP has substantially higher aggregate ROC-AUC in the saved validation report.",
+    "At approximate 90% recall, the saved curve coordinates show fewer validation alerts for MLP than Random Forest; at approximate 95% recall, both produce very large false-positive counts. These are descriptive points, not operating recommendations.",
+    "RF and MLP alternate segment AP leaders; paired AP intervals include zero. Current evidence does not support preferring one as a production winner.",
+    "Artifact and implementation requirements differ: RF uses raw features and joblib, while MLP uses a fitted scaler and PyTorch state dictionary."
+  ],
+  "claims_not_supported": [
+    "A definitive production winner.",
+    "A production decision threshold.",
+    "Statistically reliable superiority from the observed AP difference.",
+    "Measured speed, memory, throughput, or serving-cost advantages.",
+    "Independent generalization based on the validation results or previously examined test split.",
+    "Entity-level temporal behavior from LSTM/GRU."
+  ],
+  "created_at_utc": "2026-10-09T22:27:15.130596+00:00",
+  "curve_analysis_id": "d034e61aaf394581ab9ffb8e3c471089",
+  "evaluation_id": "1d24658eef4f4241b4f4e4c1e3a00578",
+  "operating_point_method": {
+    "policy": "Select the stored curve coordinate with minimum absolute recall distance to the target; ties select the coordinate with greatest precision, then greater recall. Derive integer TP/FN from recall and 56 positives; derive alerts/FP from precision. No threshold values are retrieved, calculated, or recommended. These are descriptive validation counts, not future expectations.",
+    "source": "saved common-cohort precision_recall_curves.json",
+    "targets": [
+      0.5,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ]
+  },
+  "operating_points": {
+    "mlp": [
+      {
+        "achieved_recall": 0.5,
+        "curve_coordinate_index": 42424,
+        "false_negatives": 28,
+        "false_positives": 0,
+        "increment_from_previous_target": null,
+        "precision": 1.0,
+        "requested_recall": 0.5,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 28,
+        "true_positives": 28
+      },
+      {
+        "achieved_recall": 0.6964285714285714,
+        "curve_coordinate_index": 42413,
+        "false_negatives": 17,
+        "false_positives": 0,
+        "increment_from_previous_target": {
+          "additional_alerts": 11,
+          "additional_false_positives": 0,
+          "additional_true_positives": 11,
+          "change_in_false_negatives": -11
+        },
+        "precision": 1.0,
+        "requested_recall": 0.7,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 39,
+        "true_positives": 39
+      },
+      {
+        "achieved_recall": 0.8035714285714286,
+        "curve_coordinate_index": 42391,
+        "false_negatives": 11,
+        "false_positives": 16,
+        "increment_from_previous_target": {
+          "additional_alerts": 22,
+          "additional_false_positives": 16,
+          "additional_true_positives": 6,
+          "change_in_false_negatives": -6
+        },
+        "precision": 0.7377049180327869,
+        "requested_recall": 0.8,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 61,
+        "true_positives": 45
+      },
+      {
+        "achieved_recall": 0.8928571428571429,
+        "curve_coordinate_index": 42332,
+        "false_negatives": 6,
+        "false_positives": 73,
+        "increment_from_previous_target": {
+          "additional_alerts": 62,
+          "additional_false_positives": 57,
+          "additional_true_positives": 5,
+          "change_in_false_negatives": -5
+        },
+        "precision": 0.4065040650406504,
+        "requested_recall": 0.9,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 123,
+        "true_positives": 50
+      },
+      {
+        "achieved_recall": 0.9464285714285714,
+        "curve_coordinate_index": 37139,
+        "false_negatives": 3,
+        "false_positives": 5271,
+        "increment_from_previous_target": {
+          "additional_alerts": 5201,
+          "additional_false_positives": 5198,
+          "additional_true_positives": 3,
+          "change_in_false_negatives": -3
+        },
+        "precision": 0.009954921111945906,
+        "requested_recall": 0.95,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 5324,
+        "true_positives": 53
+      }
+    ],
+    "random_forest": [
+      {
+        "achieved_recall": 0.5,
+        "curve_coordinate_index": 58,
+        "false_negatives": 28,
+        "false_positives": 0,
+        "increment_from_previous_target": null,
+        "precision": 1.0,
+        "requested_recall": 0.5,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 28,
+        "true_positives": 28
+      },
+      {
+        "achieved_recall": 0.6964285714285714,
+        "curve_coordinate_index": 48,
+        "false_negatives": 17,
+        "false_positives": 0,
+        "increment_from_previous_target": {
+          "additional_alerts": 11,
+          "additional_false_positives": 0,
+          "additional_true_positives": 11,
+          "change_in_false_negatives": -11
+        },
+        "precision": 1.0,
+        "requested_recall": 0.7,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 39,
+        "true_positives": 39
+      },
+      {
+        "achieved_recall": 0.8035714285714286,
+        "curve_coordinate_index": 35,
+        "false_negatives": 11,
+        "false_positives": 8,
+        "increment_from_previous_target": {
+          "additional_alerts": 14,
+          "additional_false_positives": 8,
+          "additional_true_positives": 6,
+          "change_in_false_negatives": -6
+        },
+        "precision": 0.8490566037735849,
+        "requested_recall": 0.8,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 53,
+        "true_positives": 45
+      },
+      {
+        "achieved_recall": 0.8928571428571429,
+        "curve_coordinate_index": 6,
+        "false_negatives": 6,
+        "false_positives": 204,
+        "increment_from_previous_target": {
+          "additional_alerts": 201,
+          "additional_false_positives": 196,
+          "additional_true_positives": 5,
+          "change_in_false_negatives": -5
+        },
+        "precision": 0.1968503937007874,
+        "requested_recall": 0.9,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 254,
+        "true_positives": 50
+      },
+      {
+        "achieved_recall": 0.9285714285714286,
+        "curve_coordinate_index": 1,
+        "false_negatives": 4,
+        "false_positives": 2758,
+        "increment_from_previous_target": {
+          "additional_alerts": 2556,
+          "additional_false_positives": 2554,
+          "additional_true_positives": 2,
+          "change_in_false_negatives": -2
+        },
+        "precision": 0.018505338078291814,
+        "requested_recall": 0.95,
+        "selection_policy": "nearest stored recall; ties use highest precision, then higher recall",
+        "total_alerts": 2810,
+        "true_positives": 52
+      }
+    ]
+  },
+  "paired_ap_uncertainty": {
+    "comparison": "AP(Random Forest) - AP(MLP)",
+    "interpretation": "All saved 95% percentile intervals include zero; these are exploratory intervals conditional on the selected validation cohort, not independent generalization estimates.",
+    "methods": [
+      {
+        "block_length_rows": null,
+        "invalid_replicates": 0,
+        "method": "paired_row",
+        "observed_ap_difference": 0.0027849554914434194,
+        "percentile_interval": [
+          -0.024063638197532204,
+          0.032958865574287025
+        ],
+        "requested_replicates": 1000,
+        "valid_replicates": 1000
+      },
+      {
+        "block_length_rows": null,
+        "invalid_replicates": 0,
+        "method": "paired_class_stratified_row",
+        "observed_ap_difference": 0.0027849554914434194,
+        "percentile_interval": [
+          -0.02421795120166948,
+          0.031605182655916636
+        ],
+        "requested_replicates": 1000,
+        "valid_replicates": 1000
+      },
+      {
+        "block_length_rows": 10,
+        "invalid_replicates": 0,
+        "method": "paired_moving_block",
+        "observed_ap_difference": 0.0027849554914434194,
+        "percentile_interval": [
+          -0.025060167165802713,
+          0.03196006762565804
+        ],
+        "requested_replicates": 1000,
+        "valid_replicates": 1000
+      },
+      {
+        "block_length_rows": 68,
+        "invalid_replicates": 0,
+        "method": "paired_moving_block",
+        "observed_ap_difference": 0.0027849554914434194,
+        "percentile_interval": [
+          -0.023858737452733373,
+          0.03351344489832337
+        ],
+        "requested_replicates": 1000,
+        "valid_replicates": 1000
+      },
+      {
+        "block_length_rows": 372,
+        "invalid_replicates": 0,
+        "method": "paired_moving_block",
+        "observed_ap_difference": 0.0027849554914434194,
+        "percentile_interval": [
+          -0.023862033532553537,
+          0.03467304408831752
+        ],
+        "requested_replicates": 1000,
+        "valid_replicates": 1000
+      }
+    ],
+    "source_report_path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json"
+  },
+  "qualitative_comparison": [
+    {
+      "dimension": "Inference architecture",
+      "evidence_status": "documented implementation",
+      "mlp": "PyTorch feed-forward network 32\u219264\u219232\u21921; logits are converted with sigmoid.",
+      "random_forest": "200-tree scikit-learn RandomForestClassifier; class-1 probability is selected from predict_proba using estimator.classes_."
+    },
+    {
+      "dimension": "Preprocessing",
+      "evidence_status": "verified by evaluation manifest and inference code",
+      "mlp": "Scaled ordered 32 features using the saved RobustScaler; shared inference verifies scaler hash and does not refit it.",
+      "random_forest": "Raw ordered 32 features; no scaler required."
+    },
+    {
+      "dimension": "Runtime dependencies",
+      "evidence_status": "requirements and implementation inspected",
+      "mlp": "Python, NumPy/pandas, PyTorch, scikit-learn metric/provenance stack, saved scaler, strict architecture/state-dictionary compatibility.",
+      "random_forest": "Python, NumPy/pandas, scikit-learn, joblib, shared inference code."
+    },
+    {
+      "dimension": "Deployment complexity",
+      "evidence_status": "qualitative inference from implementation",
+      "mlp": "Requires matching PyTorch architecture, strict state-dictionary loading, evaluation mode, scaler integrity, and probability conversion.",
+      "random_forest": "Requires compatible joblib/scikit-learn loading and fixed feature schema. Actual operational simplicity is not measured."
+    },
+    {
+      "dimension": "Model artifact management",
+      "evidence_status": "verified from manifest and metadata",
+      "mlp": "PyTorch state dictionary plus architecture/config metadata and scaler reference/hash; evaluation manifest records lineage and hashes.",
+      "random_forest": "joblib estimator plus metadata; evaluation manifest records artifact and metadata hashes and training lineage."
+    },
+    {
+      "dimension": "Explainability and auditability",
+      "evidence_status": "partial/unknown",
+      "mlp": "Weights and architecture are recorded; the network is less directly interpretable and no explanation method is established here.",
+      "random_forest": "Tree structure and feature-importance facilities may be inspectable, but no explanation report or audit workflow is established here."
+    },
+    {
+      "dimension": "Monitoring and maintenance",
+      "evidence_status": "recommended considerations; not implemented evidence",
+      "mlp": "Monitor schema, scaler identity/input drift, probability behavior, and PyTorch/artifact compatibility. Monitoring system is not present in reviewed evidence.",
+      "random_forest": "Monitor feature schema/distribution, class-1 probability behavior, and estimator/dependency compatibility. Monitoring system is not present in reviewed evidence."
+    },
+    {
+      "dimension": "Latency and throughput",
+      "evidence_status": "unknown",
+      "mlp": "Not measured. Benchmark the same conditions, including scaler transformation and PyTorch execution.",
+      "random_forest": "Not measured. Benchmark with representative rows, batch sizes, concurrency, warm/cold loading, and target hardware."
+    },
+    {
+      "dimension": "Memory consumption",
+      "evidence_status": "unknown",
+      "mlp": "Not measured; measure model, framework, scaler, and peak batch memory.",
+      "random_forest": "Not measured; measure process/model memory at load and peak inference under intended batch/concurrency."
+    },
+    {
+      "dimension": "Serving cost",
+      "evidence_status": "unknown",
+      "mlp": "Unknown; requires target deployment architecture, utilization, resource pricing, and measured workload.",
+      "random_forest": "Unknown; requires target deployment architecture, utilization, resource pricing, and measured workload."
+    },
+    {
+      "dimension": "Temporal robustness",
+      "evidence_status": "descriptive validation only; segment counts are small",
+      "mlp": "Across four saved validation segments, AP ranks were 1,3,2,3; AP range 0.723158\u20130.914921.",
+      "random_forest": "Across four saved validation segments, AP ranks were 4,1,1,6; AP range 0.748056\u20130.920466."
+    },
+    {
+      "dimension": "Performance uncertainty",
+      "evidence_status": "exploratory paired bootstrap",
+      "mlp": "Same paired comparison; uncertainty is conditional on validation cohort and selected models.",
+      "random_forest": "RF\u2212MLP observed AP difference +0.002785; all saved 95% paired intervals include zero."
+    }
+  ],
+  "recommended_next_investigation": "Define operational constraints and benchmark RF and MLP under the intended serving hardware and workload, including preprocessing, cold/warm load, batch/concurrency, memory, and cost. Keep threshold policy separate and obtain a genuinely independent evaluation cohort before making generalization claims.",
+  "record_type": "operational_feasibility_analysis",
+  "scope": {
+    "cohort": "existing common validation cohort",
+    "contextual_models": [
+      "lstm",
+      "gru"
+    ],
+    "fraud_cases": 56,
+    "legitimate_cases": 42656,
+    "observations": 42712,
+    "primary_models": [
+      "random_forest",
+      "mlp"
+    ],
+    "test_set_disclosure": "This evaluation reads validation data only. The test split was used in prior analysis and is not an untouched or blind holdout.",
+    "thresholds_selected": false,
+    "training_or_inference_performed": false
+  },
+  "source_artifacts": [
+    {
+      "path": "reports/validation_evaluation_1d24658eef4f4241b4f4e4c1e3a00578.json",
+      "sha256": "30118ab93811feb24723910e54037838dbaef4bc02850cc13cfa89aa6a06b274"
+    },
+    {
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/precision_recall_curves.json",
+      "sha256": "95a726d64dc7da708515128b0deda1cd47856cf5115af0b1cc93aaf77031adce"
+    },
+    {
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/analysis_manifest.json",
+      "sha256": "a852f7d186fddfbefd6fa189fa421663b22dcd369dfd58d7e535dba18d630f17"
+    },
+    {
+      "path": "reports/validation_analysis/1d24658eef4f4241b4f4e4c1e3a00578/d034e61aaf394581ab9ffb8e3c471089/validation_scores.parquet",
+      "sha256": "d3af8746d40a687a6bce5f7b6219bf66e91b8a876444ed509d7d168bd367d945"
+    },
+    {
+      "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json",
+      "sha256": "82097a301ab7512761c75a46a965d50a190cb46f3afc64403cba4cd258456642"
+    },
+    {
+      "path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/analysis_manifest.json",
+      "sha256": "e4679d017884ebead5814d6de27a936a0f3132546e29fb079eeae6a08eee235b"
+    },
+    {
+      "path": "reports/validation_analysis/ap_uncertainty_v1/1d24658eef4f4241b4f4e4c1e3a00578/ed15981caa484568a534d15c73d51715/paired_ap_uncertainty.json",
+      "sha256": "12ba2b3d9794744f99607304f47bdadc91096b05452d0671e1b032ba57e4a134"
+    },
+    {
+      "path": "src/inference.py",
+      "sha256": "0d7a6e216f0ea97c33883d1a83b526ceef0553c8f7b49ca902b8368550e8a553"
+    },
+    {
+      "path": "src/train_models.py",
+      "sha256": "bc2ee1955b493cc4a04274fc565f5865690622f35d60ae7bafa8152d3cd4c568"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "d8c70e27094c6c10cd37a286d8730d20b802e9525215463fc1886b1dce2a1d05"
+    },
+    {
+      "path": "models/917ec001800745a6bc3e81dd11d9a929/random_forest_metadata.json",
+      "sha256": "6a56b874cc830311effe285e8ae78bf5663b7e3540270076dc422f72fd5968db"
+    },
+    {
+      "path": "models/05e4fc0601b34589b84053e1b3f8c683/mlp_metadata.json",
+      "sha256": "f2bcdaf49141eb5354e4d0673792ba6016d89d68f1d6547d347fca4c0da61e98"
+    },
+    {
+      "path": "models/136349275cab4fa482792ceef86d9ba2/lstm_metadata.json",
+      "sha256": "eb737750db1e0c075822484cdeb589241619b2591781035493640e2c80c65be0"
+    },
+    {
+      "path": "models/35a1905ea8634a169817e321ea9237b8/gru_metadata.json",
+      "sha256": "5018744f58b225bb1952eb71e2d14e210757491df84c407212fdfb8f572c88ab"
+    }
+  ],
+  "temporal_models_context": {
+    "entity_identifiers_available": false,
+    "features_scaled": true,
+    "first_rows_without_predictions": 9,
+    "limitation": "Consecutive transactions may belong to unrelated entities; these sequences cannot be interpreted as customer/account histories.",
+    "ordering": "global chronological transaction order",
+    "sequence_length": 10,
+    "target": "final row of each ordered sequence"
+  },
+  "temporal_stability": {
+    "interpretation": "RF and MLP segment AP rankings vary. This does not establish statistical significance, model superiority, or concept drift; each segment has few fraud cases.",
+    "rf_mlp_segment_results": [
+      {
+        "ap_leader": "mlp",
+        "first_observation_id": 199373,
+        "fraud_count": 10,
+        "last_observation_id": 210050,
+        "mlp_ap": 0.9006680026720107,
+        "mlp_ap_rank": 1,
+        "mlp_roc_auc": 0.98606111736033,
+        "rf_ap": 0.9000936504963476,
+        "rf_ap_rank": 4,
+        "rf_roc_auc": 0.946822272215973,
+        "segment": 1
+      },
+      {
+        "ap_leader": "random_forest",
+        "first_observation_id": 210051,
+        "fraud_count": 13,
+        "last_observation_id": 220728,
+        "mlp_ap": 0.7231582374342219,
+        "mlp_ap_rank": 3,
+        "mlp_roc_auc": 0.9471528003173573,
+        "rf_ap": 0.7480564365771005,
+        "rf_ap_rank": 1,
+        "rf_roc_auc": 0.9173428540517148,
+        "segment": 2
+      },
+      {
+        "ap_leader": "random_forest",
+        "first_observation_id": 220729,
+        "fraud_count": 14,
+        "last_observation_id": 231406,
+        "mlp_ap": 0.9092733417828474,
+        "mlp_ap_rank": 2,
+        "mlp_roc_auc": 0.9877290751259243,
+        "rf_ap": 0.9204660587639311,
+        "rf_ap_rank": 1,
+        "rf_roc_auc": 0.9967313256885652,
+        "segment": 3
+      },
+      {
+        "ap_leader": "logistic_regression",
+        "first_observation_id": 231407,
+        "fraud_count": 19,
+        "last_observation_id": 242084,
+        "mlp_ap": 0.9149205697920679,
+        "mlp_ap_rank": 3,
+        "mlp_roc_auc": 0.9995852281985572,
+        "rf_ap": 0.8877712250058278,
+        "rf_ap_rank": 6,
+        "rf_roc_auc": 0.9717017000706099,
+        "segment": 4
+      }
+    ],
+    "segment_composition": [
+      {
+        "first_observation_id": 199373,
+        "fraud_count": 10,
+        "fraud_prevalence": 0.0009365049634763064,
+        "last_observation_id": 210050,
+        "legitimate_count": 10668,
+        "row_count": 10678,
+        "segment": 1
+      },
+      {
+        "first_observation_id": 210051,
+        "fraud_count": 13,
+        "fraud_prevalence": 0.0012174564525191983,
+        "last_observation_id": 220728,
+        "legitimate_count": 10665,
+        "row_count": 10678,
+        "segment": 2
+      },
+      {
+        "first_observation_id": 220729,
+        "fraud_count": 14,
+        "fraud_prevalence": 0.001311106948866829,
+        "last_observation_id": 231406,
+        "legitimate_count": 10664,
+        "row_count": 10678,
+        "segment": 3
+      },
+      {
+        "first_observation_id": 231407,
+        "fraud_count": 19,
+        "fraud_prevalence": 0.0017793594306049821,
+        "last_observation_id": 242084,
+        "legitimate_count": 10659,
+        "row_count": 10678,
+        "segment": 4
+      }
+    ],
+    "source_report_path": "reports/validation_analysis/temporal_stability_v1/1d24658eef4f4241b4f4e4c1e3a00578/99ea1c0797ab47d5b2c3f8b10f2a4de2/temporal_stability_report.json",
+    "stability_summaries": {
+      "gru": {
+        "aggregate_ap_rank": 4,
+        "aggregate_rank_is_segment_top_rank": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "segment_ap_max": 0.9055247090490804,
+        "segment_ap_min": 0.7399640071971457,
+        "segment_ap_range": 0.16556070185193472,
+        "segment_ap_rank_max": 5,
+        "segment_ap_rank_min": 2,
+        "segment_ap_ranks": [
+          5,
+          2,
+          3,
+          5
+        ],
+        "segment_count": 4,
+        "segment_roc_auc_max": 0.9980989625767204,
+        "segment_roc_auc_min": 0.9427963503912871,
+        "segment_roc_auc_range": 0.05530261218543331,
+        "segments_without_defined_roc_auc": []
+      },
+      "lstm": {
+        "aggregate_ap_rank": 3,
+        "aggregate_rank_is_segment_top_rank": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "segment_ap_max": 0.9168338141946399,
+        "segment_ap_min": 0.7140109580680299,
+        "segment_ap_range": 0.20282285612661,
+        "segment_ap_rank_max": 4,
+        "segment_ap_rank_min": 2,
+        "segment_ap_ranks": [
+          2,
+          4,
+          4,
+          2
+        ],
+        "segment_count": 4,
+        "segment_roc_auc_max": 0.9989581327368519,
+        "segment_roc_auc_min": 0.9411590753362905,
+        "segment_roc_auc_range": 0.05779905740056135,
+        "segments_without_defined_roc_auc": []
+      },
+      "mlp": {
+        "aggregate_ap_rank": 2,
+        "aggregate_rank_is_segment_top_rank": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "segment_ap_max": 0.9149205697920679,
+        "segment_ap_min": 0.7231582374342219,
+        "segment_ap_range": 0.191762332357846,
+        "segment_ap_rank_max": 3,
+        "segment_ap_rank_min": 1,
+        "segment_ap_ranks": [
+          1,
+          3,
+          2,
+          3
+        ],
+        "segment_count": 4,
+        "segment_roc_auc_max": 0.9995852281985572,
+        "segment_roc_auc_min": 0.9471528003173573,
+        "segment_roc_auc_range": 0.05243242788119995,
+        "segments_without_defined_roc_auc": []
+      },
+      "random_forest": {
+        "aggregate_ap_rank": 1,
+        "aggregate_rank_is_segment_top_rank": [
+          false,
+          true,
+          true,
+          false
+        ],
+        "segment_ap_max": 0.9204660587639311,
+        "segment_ap_min": 0.7480564365771005,
+        "segment_ap_range": 0.17240962218683054,
+        "segment_ap_rank_max": 6,
+        "segment_ap_rank_min": 1,
+        "segment_ap_ranks": [
+          4,
+          1,
+          1,
+          6
+        ],
+        "segment_count": 4,
+        "segment_roc_auc_max": 0.9967313256885652,
+        "segment_roc_auc_min": 0.9173428540517148,
+        "segment_roc_auc_range": 0.07938847163685037,
+        "segments_without_defined_roc_auc": []
+      }
+    }
+  },
+  "temporal_stability_analysis_id": "99ea1c0797ab47d5b2c3f8b10f2a4de2",
+  "unresolved_questions": [
+    "No latency, throughput, memory, or serving-cost benchmark exists.",
+    "No agreed business cost or alert capacity is specified.",
+    "Validation was used for model/checkpoint selection.",
+    "The test split has been examined previously and is not an untouched or blind holdout.",
+    "Global temporal windows lack entity identifiers."
+  ]
+}
